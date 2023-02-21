@@ -1,0 +1,70 @@
+nav{
+    height: 100vh;
+    width: 7%;
+    background: #161D2F;
+    border-radius: 20px;
+    padding: 2rem;
+    margin-right: 2rem;
+    /* border: 1px solid white; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+nav .logo{
+    /* border: 1px solid white; */
+    background: url('../assets/logo.svg');
+    width: 2rem;
+    height: 1.56rem;
+    background-size: cover;
+    margin-bottom: 4.7rem;
+}
+
+nav .links{
+    /* border: 1px solid white; */
+    list-style: none;
+    height: 12.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0;
+}
+
+nav .links a{
+    /* border: 1px solid white; */
+    width: 1.25rem;
+    height: 1.25rem;
+}
+
+nav .links .home{
+    background: url('../assets/icon-nav-home.svg');
+    background-size: cover;
+}
+
+nav .links .tv-series{
+    background: url('../assets/icon-nav-tv-series.svg');
+    background-size: cover;
+}
+
+nav .links .movies{
+    background: url('../assets/icon-nav-movies.svg');
+    background-size: cover;
+}
+
+nav .links .bookmarks{
+    background: url('../assets/icon-nav-bookmark.svg');
+    width: 1rem;
+    background-size: cover;
+}
+
+nav .user-avatar{
+    border: 1px solid white;
+    margin-top: auto;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    background: url('../assets/image-avatar.png');
+    background-size: cover;
+}

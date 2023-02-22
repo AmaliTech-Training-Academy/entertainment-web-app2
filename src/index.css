@@ -3,24 +3,35 @@
 *{
     box-sizing: border-box;
     margin: 0;
+    width: auto;
     font-family: 'Outfit', sans-serif;
     color: #FFFFFF;
 }
 
-main{
+
+body{
+    width: 100%;
     background: #10141E;
-    padding: 2rem 2rem 3rem 2rem;
+}
+
+main{
+    
+    padding: 0 0 3rem 2rem;
     display: flex;
+    width: auto;
+    position: relative;
 }
 
 main section{
     border: 1px solid white;
-    width: 100vw;
-    padding-top: 2rem;
+    width: 100%;
+    padding: 4rem 2rem 0 2rem;
+    position: relative;
 }
 
 main section header{
-    border: 1px solid white;
+    /* border: 1px solid white; */
+    margin-bottom: 2.5rem;
 }
 
 section header h1{
@@ -29,4 +40,163 @@ font-weight: 300;
 font-size: 2rem;
 line-height: 2.5rem;
 letter-spacing: -0.5px;
+margin-bottom: 1.56rem;
+}
+
+section .trending{
+/* width: 100%; */
+/* display: none; */
+overflow: hidden;
+} 
+
+section .trending-items{
+    display: flex;
+    position: relative;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    justify-content: space-between;
+    
+}
+
+::-webkit-scrollbar {
+    display: none;
+    }
+
+.trending-items .trend{
+    /* border: 1px solid green; */
+    margin-right: 2.5rem;
+    position: relative;
+    border-radius: .5rem;
+    cursor: pointer;
+}
+
+.trending-items .trend .trend-image:hover{
+    opacity: .5;
+}
+
+.trend:nth-of-type(5){
+    margin-right: 0;
+}
+
+.trending-items .trend .trend-image .small{
+    display: none;
+} 
+
+.trend .trend-image .large{
+    width: 29rem;
+    height: 14rem;
+    background-size: cover;
+    border-radius: .5rem;
+}
+
+.trend .trend-info{
+    /* border: 1px solid pink; */
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 9.4rem;
+    left: 1.5rem;
+    z-index: 2;
+}
+
+.about{
+    display: flex;
+    align-items: center;
+    font-weight: 300;
+    font-size: 0.94rem;
+    line-height: 1.2rem;
+    opacity: 0.75;
+}
+
+.about .oval{
+    height: 3px;
+    width: 3px;
+    border-radius: 50%;
+    margin: 0 .5rem;
+    background: #FFFFFF;
+    opacity: 0.5;
+}
+
+.about span{
+    height: 0.75rem;
+    width: 0.75rem;
+    margin-right: .5rem;
+}
+
+.trend .trend-info .trend-title{
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.5rem;
+    line-height: 1.875rem;
+}
+
+.trend .bookmark-btn{
+    width: 2rem;
+    height: 2rem;
+    border: 1px solid white;
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    border-radius: 50%;
+    background: #10141E;
+    opacity: 0.5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.trend .bookmark-btn .btn-overlay{
+    width: 0.75rem;
+    height: 0.88rem;
+    background: url('./assets/icon-bookmark-empty.svg');
+}
+
+section .options{
+    border: 1px solid white;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-gap: 2rem;
+    /* width: 87vw ; */
+}
+
+.options h1{
+    font-style: normal;
+    font-weight: 300;
+    font-size: 2rem;
+    line-height: 2.5rem;
+    letter-spacing: -0.5px;
+    margin-bottom: 2rem;
+}
+
+.options .option{
+    border: 1px solid white;
+    width: 100%;   
+}
+
+.option .option-image{
+    border: 1px solid white;
+}
+
+.options .option .large{
+    height: 11rem;
+    width: 100%;
+    border-radius: 0.5rem;
+    margin-bottom: .4rem;
+}
+
+.options .option .medium, .small{
+    display: none;
+}
+.option .about{
+    border: 1px solid burlywood;
+    display: flex;
+}
+
+.option .option-info .option-title{
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.5rem;
+    line-height: 1.875rem;
 }

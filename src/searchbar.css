@@ -9,7 +9,7 @@ form{
 
 form .search{
     /* border: 1px solid white; */
-    background: url('/assets/icon-search.svg');
+    background: url('./assets/icon-search.svg');
     height: 2rem;
     width: 2rem;
     background-position: center;

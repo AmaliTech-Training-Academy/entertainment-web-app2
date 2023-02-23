@@ -1,6 +1,15 @@
 let trendsContainer = document.querySelector(".trending-items");
-
 let optionsContainer = document.querySelector(".options"); 
+// const activePage = window.location.pathname;
+// // console.log(activePage);
+
+// const navLinks = document.querySelectorAll('a');
+// navLinks.forEach(link => {
+//     if(link.href.includes(activePage)){
+//         console.log(activePage);
+//         link.classList.add('active');
+//     }
+// })
 
 
 let json_url = "data.json";
@@ -13,7 +22,7 @@ fetch(json_url).then(Response => Response.json())
             if(data[i].isTrending){
             trend +=
             '<div class="trend">' 
-            +'<div class="trend-image" >' 
+            +'<div class="trend-image">' 
             +'<div class="large" style="background:url('+data[i].thumbnail.trending.large+'); background-size:cover;"></div>'
             +'<div class="small" style="background:url('+data[i].thumbnail.trending.small+')"></div>'
             +'</div>' 
@@ -35,6 +44,10 @@ fetch(json_url).then(Response => Response.json())
             +'</div>'
             +'<div class="bookmark-btn">'
             +'<div class="btn-overlay">'+'</div>' 
+            +'</div>'
+            +'<div class="play">'
+            +'<div class="play-btn"></div>'
+            +'<p>Play</p>'
             +'</div>'
             +'</div>' ;
             }
@@ -73,5 +86,24 @@ fetch(json_url).then(Response => Response.json())
             }
         optionsContainer.innerHTML = options;    
         }
+       
+        const trends = document.querySelectorAll(".trend");
+        const trendImage = document.querySelectorAll(".trend-image");
+        const play = document.querySelector(".play");
+        trendImage.forEach(image => {
+            image.addEventListener('mouseover', () => {
+                image.classList.add('dark')
+            });
+            image.addEventListener('mouseout', () => {
+                image.classList.remove('dark')
+            });
+        });
+
+
+
+        
+    
     });
     
+
+   

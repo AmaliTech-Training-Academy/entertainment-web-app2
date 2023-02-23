@@ -90,11 +90,13 @@ section .trending-items{
     background: rgba(255, 255, 255, 0.25) ;
     border-radius: 28.5px;
     opacity: 0;
+    transition: 0.6s;
+    cursor: pointer;
 }
 
 .play.show{
     opacity: 1;
-    transition: 1s;
+    transition: 0.6s;
 }
 
 .play-btn{
@@ -113,6 +115,7 @@ section .trending-items{
 
 .dark{
     opacity: .5;
+    transition: 0.6s;
 }
 
 .trend:nth-of-type(5){
@@ -221,6 +224,12 @@ section .options{
 .option .option-image{
     /* border: 1px solid white; */
     z-index: 1;
+}
+
+.options .option .play{
+    position: absolute;
+    top: 4rem;
+    left: 5.4rem;
 }
 
 .option-image:hover{

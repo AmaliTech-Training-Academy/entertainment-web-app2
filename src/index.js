@@ -82,21 +82,67 @@ fetch(json_url).then(Response => Response.json())
             +'<div class="bookmark-btn">'
             +'<div class="btn-overlay">'+'</div>' 
             +'</div>'
-            +'</div>' ;
+            +'<div class="play">'
+            +'<div class="play-btn"></div>'
+            +'<p>Play</p>'
+            +'</div>'
+            +'</div>';
             }
         optionsContainer.innerHTML = options;    
         }
        
         const trends = document.querySelectorAll(".trend");
-        const trendImage = document.querySelectorAll(".trend-image");
-        const play = document.querySelector(".play");
-        trendImage.forEach(image => {
-            image.addEventListener('mouseover', () => {
-                image.classList.add('dark')
+
+        trends.forEach(trend => {
+            const img = trend.querySelector(".trend-image");
+            const play = trend.querySelector(".play");
+            const bookmark = trend.querySelector(".bookmark-btn");
+            const about = trend.querySelector(".trend-info")
+            img.addEventListener('mouseover', () => {
+                img.classList.add('dark')
+                play.classList.add('show')
             });
-            image.addEventListener('mouseout', () => {
-                image.classList.remove('dark')
+            img.addEventListener('mouseout', () => {
+                img.classList.remove('dark')
+                play.classList.remove('show')
             });
+            play.addEventListener('mouseover', () => {
+                img.classList.add('dark')
+                play.classList.add('show')
+            });
+            bookmark.addEventListener('mouseover', () => {
+                img.classList.add('dark')
+                play.classList.add('show')
+            });
+            about.addEventListener('mouseover', () => {
+                img.classList.add('dark')
+                play.classList.add('show')
+            });
+        });
+
+        const recommended = document.querySelectorAll(".option");
+
+        recommended.forEach(option => {
+            const img = option.querySelector(".option-image");
+            const play = option.querySelector(".play");
+            const bookmark = option.querySelector(".bookmark-btn");
+            img.addEventListener('mouseover', () => {
+                img.classList.add('dark')
+                play.classList.add('show')
+            });
+            img.addEventListener('mouseout', () => {
+                img.classList.remove('dark')
+                play.classList.remove('show')
+            });
+            play.addEventListener('mouseover', () => {
+                img.classList.add('dark')
+                play.classList.add('show')
+            });
+            bookmark.addEventListener('mouseover', () => {
+                img.classList.add('dark')
+                play.classList.add('show')
+            });
+
         });
 
 

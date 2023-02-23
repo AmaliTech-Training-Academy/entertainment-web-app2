@@ -3,30 +3,142 @@
 *{
     box-sizing: border-box;
     margin: 0;
+    width: auto;
     font-family: 'Outfit', sans-serif;
     color: #FFFFFF;
 }
 
-main{
+
+body{
+    width: 100%;
     background: #10141E;
-    padding: 2rem 2rem 3rem 2rem;
+}
+
+main{
+    
+    padding: 0 0 3rem 2rem;
     display: flex;
+    width: auto;
+    position: relative;
 }
 
 main section{
     border: 1px solid white;
-    width: 100vw;
-    padding-top: 2rem;
+    width: 100%;
+    padding: 4rem 2rem 0 2rem;
+    position: relative;
 }
 
 main section header{
-    border: 1px solid white;
+    /* border: 1px solid white; */
+    margin-bottom: 2.5rem;
 }
 
-section header h1{
+/* section header h1{
 font-style: normal;
 font-weight: 300;
 font-size: 2rem;
 line-height: 2.5rem;
 letter-spacing: -0.5px;
+margin-bottom: 1.56rem;
+} */
+
+section .series-items{
+    border: 1px solid white;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-gap: .5rem;
+    /* width: 87vw ; */
+}
+
+.videos h1{
+    font-style: normal;
+    font-weight: 300;
+    font-size: 2rem;
+    line-height: 2.5rem;
+    letter-spacing: -0.5px;
+    margin-bottom: 2rem;
+}
+
+.series-items .series{
+    border: 1px solid white;
+    width: 100%;   
+}
+
+.series .series-image{
+    border: 1px solid white;
+}
+
+.series-items .series .large{
+    height: 11rem;
+    width: 100%;
+    border-radius: 0.5rem;
+    margin-bottom: .4rem;
+}
+
+.series-items .series .medium, .small{
+    display: none;
+}
+.series .about{
+    border: 1px solid burlywood;
+    display: flex;
+}
+
+.series-items .series .series-image:hover{
+    opacity: .5;
+}
+
+.series .series-info .series-title{
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.5rem;
+    line-height: 1.125rem;
+}
+
+.series-title{
+    padding-top: 1rem;
+}
+
+.about .oval{
+    height: 3px;
+    width: 3px;
+    border-radius: 50%;
+    margin: .5rem .5rem;
+    background: #FFFFFF;
+    opacity: 0.5;
+}
+
+.about{
+    opacity: 0.75;
+    font-size: 13px;
+}
+
+.about span{
+    height: 0.75rem;
+    width: 0.75rem;
+    margin-right: .5rem;
+    margin-top: .2rem;
+}
+
+.series .bookmark-btn{
+    width: 2rem;
+    height: 2rem;
+    border: 1px solid white;
+    position: relative;
+    top: -14rem;
+    left: 17rem;
+    border-radius: 50%;
+    background: #10141E;
+    opacity: 0.5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.series-items .bookmark-btn .btn-overlay{
+    width: 0.75rem;
+    height: 0.88rem;
+    background: url('./assets/icon-bookmark-empty.svg');
 }

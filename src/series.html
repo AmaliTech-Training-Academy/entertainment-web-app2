@@ -5,10 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
     <link rel="stylesheet" href="series.css">
     <link rel="stylesheet" href="nav.css">
     <!-- <link rel="stylesheet" href="index.css"> -->
     <link rel="stylesheet" href="searchbar.css">
+
     <title>Entertainment web app</title>
 </head>
 <body>
@@ -17,8 +19,8 @@
           <div class="logo"></div>
           <div class="links">
               <a class="home" href="/src/index.html"></a>
-              <a class="tv-series" href="/src/series.html"></a>
               <a class="movies" href="/movies"></a>
+              <a class="tv-series" href="/src/series.html"></a>              
               <a class="bookmarks" href="/bookmarks"></a>
           </div>
           <div class="user-avatar"></div>
@@ -32,63 +34,19 @@
             placeholder="Search for TV-series"
             />
         </form>
-          <!-- <div class="videos">
-            <h1>TV Series</h1>
-            <div class="series-items">
-  
-            </div>
-          </div> -->
+          
         </header>
+        <div class="videos">
+          <h1>TV Series</h1>
+          <div class="series-items">
+
+          </div>
+        </div>
       </section>
       <!-- Recommended for you -->
     </main>
-    <!-- Display all TV series -->
-  <section class="grid-container">
-    <h1>TV Series</h1>
-    <div id="called">
-
-    </div>
-  </section>
-</main>
   
-  <script>
-    let xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-        let response = JSON.parse(xhttp.responseText);
-        let tvSeries = response;
-        let tvSeriesInfo = '';
-        for(i = 0; i < tvSeries.length; i++){
-          if(tvSeries[i].category === 'TV Series'){
-            tvSeriesInfo += 
-            '<div class="item">' + 
-              '<div class="item-image" >' +
-                '<img src="' + tvSeries[i].thumbnail.regular.large+ '"' +'>' + 
-                '<div class="bookmark-btn">'+
-                  '<div class="btn-overlay">'+'</div>' +
-                '</div>' + 
-              '</div>' + 
-              '<div class="item-info">' + 
-                '<div class="about">' +tvSeries[i].year + 
-                  '<div class="oval">'+
-                  '</div>' + 
-                  '<span>'+
-                    // '<img src="'+assets.icon-category-tv.svg +'"'+'>'+
-                  '</span>' + tvSeries[i].category + 
-                  '<div class="oval">'+'</div>' + tvSeries[i].rating + 
-                '</div>'+ 
-                  '<div class= "item-title">' +tvSeries[i].title+ 
-                  '</div>' +
-              '</div>' + 
-            '</div>' ;  
-          } 
-        }
-        document.getElementById("called").innerHTML = tvSeriesInfo;
-      }
-    };
-    xhttp.open("GET", "data.json", true);
-    xhttp.send();
-  </script>
+  <script src="series.js"></script>
     
 </body>
 </html>

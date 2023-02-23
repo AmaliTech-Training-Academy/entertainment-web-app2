@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,800;9..144,900&family=Outfit:wght@300&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+
+:root {
+    --color--semi-blue-black: #161d2f;
+    --color--dark-blue: #10141E;
+  --color--red: #fc4747;
+  --color--white: #ffffff;
+  --color--gray: #5a698f;
+
+  --font-outfit-light: 'Outfit', sans-serif;
+}
+
+body {
+    background: var(--color--dark-blue);
+    font-family: var(--font-outfit-light);
+    overflow: hidden;
+}
+
+
+.container .login-form {
+    width: 25rem;
+    height: 23rem;
+    border-radius: 1rem;
+    background: var(--color--semi-blue-black);
+    margin: 10rem auto;
+}
+
+.container .signup-form {
+    width: 25rem;
+    height: 26rem;
+    border-radius: 1rem;
+    background: var(--color--semi-blue-black);
+    margin: 10rem auto;
+}
+
+.login-form h2 {
+    color: var(--color--white);
+    font-family: var(--font-outfit-light);
+    padding: 2rem 2rem;
+}
+
+.login-form input {
+    width: 21rem;
+    height: 1.7rem;
+    color: var(--color--white);
+    font-family: var(--font-outfit-light);
+    margin: 0 0 2rem 2rem;
+    outline: none;
+    background: none;
+    border-bottom: 2px solid var(--color--gray)
+}
+
+.login-form button {
+    width: 21rem;
+    height: 3rem;
+    border-radius: 0.3rem;
+    margin: 0 2rem 2rem;
+    color: var(--color--white);
+    background: var(--color--red);
+    font-family: var(--font-outfit-light);
+    cursor: pointer;
+}
+
+.login-form p {
+    color: var(--color--white);
+    font-family: var(--font-outfit-light);
+}
+
+.login-form .text {
+    padding: 0 0 5rem 5rem;
+}
+
+.login-form a {
+    font-family: var(--font-outfit-light);
+    color: var(--color--red);
+    margin-left: 0.5rem;
+}
+
+.input-control {
+    display: flex;
+    flex-direction: row;
+}
+
+.input-control input:focus {
+    outline: 0;
+}
+
+.input-control.success input {
+    border-color: var(--color--white);
+}
+
+.input-control.error {
+    color: var(--color--red);
+    font-family: var(--font-outfit-light);
+}

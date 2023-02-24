@@ -5,17 +5,22 @@ const password = document.getElementById("password");
 const password2 = document.getElementById("password2");
 
 //function for the submit button when its clicked
-console.log(form);
+// console.log(form);
 form.addEventListener("submit", (event) => {
   event.preventDefault();
 
   validateInputs(); //calling the validate Input in the eventListener function
+  if (!form.classList.contains("invalid")) {
+    window.location = "login.html";
+  }
 });
+
 
 const setError = (element, message) => {
   const inputControl = element.parentElement;
   const errorDisplay = inputControl.querySelector(".error");
 
+  form.classList.add("invalid");
   errorDisplay.innerText = message;
   inputControl.classList.add("error");
   inputControl.classList.remove("success");
@@ -25,7 +30,7 @@ const setSuccess = (element) => {
   const inputControl = element.parentElement;
   const errorDisplay = inputControl.querySelector(".error");
   console.log(inputControl);
-
+  form.classList.remove("invalid");
   errorDisplay.innerText = "";
   inputControl.classList.add("success");
   inputControl.classList.remove("error");

@@ -77,3 +77,44 @@ nav .user-avatar{
     background: url('./assets/image-avatar.png');
     background-size: cover;
 }
+
+@media only screen and (max-width: 820px) and (min-width:480px) {
+
+    nav{
+        height: 50px;
+        width: 95%;
+        background: #161D2F;
+        border-radius: 20px;
+        /* padding: 2rem;
+        margin-top: 2rem; */
+        /* border: 1px solid white; */
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        /* align-items: center; */
+    
+    }
+    
+    nav .logo{
+        background: url(./assets/logo.svg);
+        background-size: cover;
+        margin-bottom: 0.1rem;
+    }
+    
+    nav .links{
+        height: 3.5rem;
+        flex-direction: row;
+        width: 15rem;
+        justify-content: space-between;
+    }
+    
+    nav .links a{
+        /* border: 1px solid white; */
+        width: 1.25rem;
+        height: 1.25rem;
+    }
+    nav .user-avatar{
+        margin-top: 0.1rem;
+       
+    }
+}

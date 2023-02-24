@@ -1,16 +1,5 @@
 let trendsContainer = document.querySelector(".trending-items");
 let optionsContainer = document.querySelector(".options"); 
-// const activePage = window.location.pathname;
-// // console.log(activePage);
-
-// const navLinks = document.querySelectorAll('a');
-// navLinks.forEach(link => {
-//     if(link.href.includes(activePage)){
-//         console.log(activePage);
-//         link.classList.add('active');
-//     }
-// })
-
 
 let json_url = "data.json";
 
@@ -43,7 +32,7 @@ fetch(json_url).then(Response => Response.json())
             +'</h3>'
             +'</div>'
             +'<div class="bookmark-btn">'
-            +'<div class="btn-overlay">'+'</div>' 
+            +'<svg width="12" height="14" xmlns="http://www.w3.org/2000/svg"><path d="m10.518.75.399 12.214-5.084-4.24-4.535 4.426L.75 1.036l9.768-.285Z"/></svg>'
             +'</div>'
             +'<div class="play">'
             +'<div class="play-btn"></div>'
@@ -80,11 +69,13 @@ fetch(json_url).then(Response => Response.json())
             +'</h3>'
             +'</div>'
             +'<div class="bookmark-btn">'
-            +'<div class="btn-overlay">'+'</div>' 
+            +'<svg width="12" height="14" xmlns="http://www.w3.org/2000/svg"><path d="m10.518.75.399 12.214-5.084-4.24-4.535 4.426L.75 1.036l9.768-.285Z"/></svg>'
             +'</div>'
+            +'<div class="play-items">'
             +'<div class="play">'
             +'<div class="play-btn"></div>'
             +'<p>Play</p>'
+            +'</div>'
             +'</div>'
             +'</div>';
             }
@@ -97,7 +88,8 @@ fetch(json_url).then(Response => Response.json())
             const img = trend.querySelector(".trend-image");
             const play = trend.querySelector(".play");
             const bookmark = trend.querySelector(".bookmark-btn");
-            const about = trend.querySelector(".trend-info")
+            const about = trend.querySelector(".trend-info");
+            const button = trend.querySelector("svg");
             img.addEventListener('mouseover', () => {
                 img.classList.add('dark')
                 play.classList.add('show')
@@ -113,6 +105,18 @@ fetch(json_url).then(Response => Response.json())
             bookmark.addEventListener('mouseover', () => {
                 img.classList.add('dark')
                 play.classList.add('show')
+                button.classList.add('choice')
+            });
+            bookmark.addEventListener('mouseout', () => {
+                button.classList.remove('choice')
+            })
+            bookmark.addEventListener('click', ()=>{
+                if(button.classList.contains('keep')){
+                    button.classList.remove('keep')
+                }
+                else{
+                    button.classList.add('keep')
+                }
             });
             about.addEventListener('mouseover', () => {
                 img.classList.add('dark')
@@ -145,10 +149,6 @@ fetch(json_url).then(Response => Response.json())
 
         });
 
-
-
-        
-    
     });
     
 

@@ -32,48 +32,41 @@ fetch(json_url).then(Response => Response.json())
         +'</h3>'
         +'</div>'
         +'<div class="bookmark-btn">'
-        +'<div class="btn-overlay">'+'</div>' 
+        +'<svg width="12" height="14" xmlns="http://www.w3.org/2000/svg"><path d="m10.518.75.399 12.214-5.084-4.24-4.535 4.426L.75 1.036l9.768-.285Z"/></svg>'
+        +'</div>'
+        +'<div class="play-items">'
+        +'<div class="play">'
+        +'<div class="play-btn"></div>'
+        // +'<p>Play</p>'
+        +'</div>'
         +'</div>'
         +'</div>' ;
         }
         seriesContainer.innerHTML = series;    
     }
-})
 
-// let xhttp = new XMLHttpRequest();
-//     xhttp.onreadystatechange = function() {
-//         if (this.readyState == 4 && this.status == 200) {
-//         let response = JSON.parse(xhttp.responseText);
-//         let tvSeries = response;
-//         let tvSeriesInfo = '';
-//         for(i = 0; i < tvSeries.length; i++){
-//           if(tvSeries[i].category === 'TV Series'){
-//             tvSeriesInfo += 
-//             '<div class="item">' + 
-//               '<div class="item-image" >' +
-//                 '<img src="' + tvSeries[i].thumbnail.regular.large+ '"' +'>' + 
-//                 '<div class="bookmark-btn">'+
-//                   '<div class="btn-overlay">'+'</div>' +
-//                 '</div>' + 
-//               '</div>' + 
-//               '<div class="item-info">' + 
-//                 '<div class="about">' +tvSeries[i].year + 
-//                   '<div class="oval">'+
-                     
-//                   '</div>' + 
-//                   '<span>'+
-//                     // '<img src="'+assets.icon-category-tv.svg +'"'+'>'+
-//                   '</span>' + tvSeries[i].category + 
-//                   '<div class="oval">'+'</div>' + tvSeries[i].rating + 
-//                 '</div>'+ 
-//                   '<div class= "item-title">' +tvSeries[i].title+ 
-//                   '</div>' +
-//               '</div>' + 
-//             '</div>' ;  
-//           } 
-//         }
-//         document.getElementById("called").innerHTML = tvSeriesInfo;
-//       }
-//     };
-//     xhttp.open("GET", "data.json", true);
-//     xhttp.send();
+    // const recommended = document.querySelectorAll(".option");
+
+    //     recommended.forEach(option => {
+    //         const img = option.querySelector(".series-image");
+    //         const play = option.querySelector(".play");
+    //         const bookmark = option.querySelector(".bookmark-btn");
+    //         img.addEventListener('mouseover', () => {
+    //             img.classList.add('dark')
+    //             play.classList.add('show')
+    //         });
+    //         img.addEventListener('mouseout', () => {
+    //             img.classList.remove('dark')
+    //             play.classList.remove('show')
+    //         });
+    //         play.addEventListener('mouseover', () => {
+    //             img.classList.add('dark')
+    //             play.classList.add('show')
+    //         });
+    //         bookmark.addEventListener('mouseover', () => {
+    //             img.classList.add('dark')
+    //             play.classList.add('show')
+    //         });
+
+    //     });
+})

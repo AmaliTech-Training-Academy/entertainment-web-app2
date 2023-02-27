@@ -3,7 +3,6 @@ const form = document.getElementById("form");
 const email = document.getElementById("email");
 const password = document.getElementById("password");
 const password2 = document.getElementById("password2");
-
 //function for the submit button when its clicked
 // console.log(form);
 form.addEventListener("submit", (event) => {
@@ -13,8 +12,17 @@ form.addEventListener("submit", (event) => {
   if (!form.classList.contains("invalid")) {
     window.location = "login.html";
   }
-});
 
+  //storing user data in localStorage
+  let userDetails = {
+    email: email.value,
+    password: password.value,
+  };
+  console.log("user", userDetails);
+
+  localStorage.setItem("User", JSON.stringify(userDetails));
+  console.log(JSON.stringify(userDetails));
+});
 
 const setError = (element, message) => {
   const inputControl = element.parentElement;

@@ -11,7 +11,7 @@ fetch(json_url).then(Response => Response.json())
             if(data[i].category==='Movie'){
             movies +=
             '<div class="movies">' 
-            +'<div class="movies-image" >'  
+            +'<div class="movies-image">'  
             +'<img class="large" src="'+data[i].thumbnail.regular.large+'"/>'
             +'<img class="medium" src="'+data[i].thumbnail.regular.medium+'"/>'
             +'<img class="small" src="'+data[i].thumbnail.regular.small+'"/>'
@@ -33,11 +33,52 @@ fetch(json_url).then(Response => Response.json())
             +'</h3>'
             +'</div>'
             +'<div class="bookmark-btn">'
-            +'<div class="btn-overlay">'+'</div>' 
+            +'<svg width="12" height="14" xmlns="http://www.w3.org/2000/svg"><path d="m10.518.75.399 12.214-5.084-4.24-4.535 4.426L.75 1.036l9.768-.285Z"/></svg>' 
+            +'</div>'
+            +'<div class="play">'
+            +'<div class="play-btn"></div>'
+            +'<p>Play</p>'
             +'</div>'
             +'</div>' ;
             }
         moviesContainer.innerHTML = movies;    
         }
-    });
+
+        const recommended = document.querySelectorAll(".movies");
+
+        recommended.forEach(movie => {
+            const img = movie.querySelector("movies-image");
+            const play = movie.querySelector(".play");
+            const bookmark = movie.querySelector(".bookmark-btn");
+            const button = movie.querySelector("svg");
+
+            img.addEventListener('mouseover', () => {
+                img.classList.add('dark')
+                play.classList.add('show')
+            });
+            img.addEventListener('mouseout', () => {
+                img.classList.remove('dark')
+                play.classList.remove('show')
+            });
+            play.addEventListener('mouseover', () => {
+                img.classList.add('dark')
+                play.classList.add('show')
+            });
+            bookmark.addEventListener('mouseover', () => {
+                // img.classList.add('dark')
+                // play.classList.add('show')
+                button.classList.add('choice')
+            });
+            bookmark.addEventListener('mouseout', () => {
+                button.classList.remove('choice')
+            });
+            bookmark.addEventListener('click', () => {
+            if(button.classList.contains('keep')){
+                button.classList.remove('keep')
+            } else {
+                button.classList.add('keep')
+            }
+            });
+        });
+    })
     

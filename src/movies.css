@@ -40,6 +40,48 @@ line-height: 2.5rem;
 letter-spacing: -0.5px;
 margin-bottom: 1.56rem;
 }
+.play{
+    position: absolute;
+    /* border: 1px solid white; */
+    color: #FFFFFF;
+    z-index: 3;
+    top: 5.6rem;
+    left: 11rem;
+    width: 7.3rem;
+    height: 3rem;
+    display: flex;
+    padding: 9px;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.25) ;
+    border-radius: 28.5px;
+    opacity: 0;
+    transition: 0.6s;
+    cursor: pointer;
+}
+
+.play.show{
+    opacity: 1;
+    transition: 0.6s;
+}
+
+.play-btn{
+    background: url('./assets/icon-play.svg')no-repeat;
+    width: 2rem;
+    height: 2rem;
+    margin-right: 1.2rem;
+    z-index: 5;
+}
+
+.play p{
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 23px;
+}
+
+.dark{
+    opacity: .5;
+    transition: 0.6s;
+}
 
 section .movies-items{
     /* border: 1px solid white; */
@@ -51,6 +93,7 @@ section .movies-items{
 .movies-items .movies{
     /* border: 1px solid white; */
     width: 100%;   
+    position: relative;
 }
 
 /* .movies .movies-image{
@@ -92,6 +135,17 @@ section .movies-items{
     width: 0.75rem;
     margin-right: .5rem;
 }
+.movies .movies .play{
+    position: absolute;
+    top: 4rem;
+    left: 5.4rem;
+    border: 1px solid white;
+}
+
+.movies-image:hover{
+    opacity: 0.5;
+    cursor: pointer;
+}
 
 .movies .movies-info .movies-title{
     font-style: normal;
@@ -99,16 +153,16 @@ section .movies-items{
     font-size: 1.5rem;
     line-height: 1.875rem;
 }
-.movies .bookmark-btn{
+.bookmark-btn{
     width: 2rem;
     height: 2rem;
-    border: 1px solid white;
+    /* border: 1px solid white; */
     position: relative;
     top: -13rem;
     left: 16rem;
     border-radius: 50%;
-    background: #10141E;
-    opacity: 0.5;
+    background: rgba(0, 0, 0, .5);
+    /* opacity: 0.5; */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -116,10 +170,26 @@ section .movies-items{
     z-index: 2;
 }
 
-.movies .bookmark-btn .btn-overlay{
+.bookmark-btn svg{
     width: 0.75rem;
     height: 0.88rem;
-    background: url('./assets/icon-bookmark-empty.svg');
+    stroke: #fff;
+    stroke-width: 1.5;
+    fill: none;
+    
+}
+.bookmark-btn:hover{
+    background: #fff;
+}
+.bookmark-btn .choice{
+    stroke: #10141E;
+}
+.bookmark-btn .keep{
+    stroke: #fff;
+    fill: #fff;
+}
+.bookmark-btn .keep:hover{
+    stroke: #10141E;
 }
 
 
@@ -204,6 +274,104 @@ section .movies-items{
         position: relative;
         top: -14rem;
         left: 12rem;
+        border-radius: 50%;
+        background: #10141E;
+        opacity: 0.5;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        z-index: 2;
+    }
+    
+    .movies .bookmark-btn .btn-overlay{
+        width: 0.75rem;
+        height: 0.88rem;
+        background: url('./assets/icon-bookmark-empty.svg');
+    }
+    
+}
+
+@media only screen and (max-width: 420px) and (min-width:305px) {
+
+    main section{
+        /* border: 1px solid white; */
+        width: 53rem;
+        height: 100%;
+        padding: 4rem 2rem 0 2rem;
+        position: absolute;
+        left: 1rem;
+        margin-bottom: 2rem;
+    }
+    
+     section{
+        /* border: 1px solid white;
+        width: 100%;
+        padding: 4rem 2rem 0 2rem; */
+        /* position: relative; */
+        margin-top: 5rem;
+    }
+    main{
+    
+        /* padding: 0 0 3rem 2rem; */
+        display: flex;
+        width: 55rem;
+        /* position: relative; */
+    }
+    section .movies-items{
+        /* border: 1px solid white; */
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-gap: 3rem;
+        margin-left: 2rem;
+        width: 21.438rem;
+    }
+    
+    .movies .movies{
+        /* border: 1px solid white; */
+        width: 100%;   
+    }
+    
+    /* .movies .movies-image{
+        border: 1px solid white;
+    } */
+    /* .movies-image .medium {
+       width: 13.75rem;
+       height: 8.75rem;
+    } */
+    .movies .movies .small{
+        display: inline;
+    }
+    .movies-items .movies .small {
+        width: 21.25rem;
+        height: 13rem;
+        border-radius: 0.5rem;
+        margin-bottom: .4rem;
+    }
+    
+    .movies .movies .large, .medium{
+        display: none;
+    }
+    
+    .movies .about{
+        /* border: 1px solid burlywood; */
+        display: flex;
+    }
+    
+    .movies .movies-info .movies-title{
+        font-style: normal;
+        font-weight: 500;
+        font-size: 1.5rem;
+        line-height: 1.875rem;
+        width: 14rem;
+    }
+    .movies .bookmark-btn{
+        width: 2rem;
+        height: 2rem;
+        border: 1px solid white;
+        position: relative;
+        top: -15rem;
+        left: 17.5rem;
         border-radius: 50%;
         background: #10141E;
         opacity: 0.5;

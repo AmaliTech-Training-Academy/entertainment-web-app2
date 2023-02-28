@@ -115,9 +115,10 @@ nav .user-avatar{
     }
     nav .user-avatar{
         margin-top: 0.1rem;
-       
     }
 }
+
+
 @media only screen and (max-width: 420px) and (min-width:305px) {
 
     nav{

@@ -69,7 +69,7 @@ nav .links a:hover{
 
 
 nav .user-avatar{
-    border: 1px solid white;
+    border: 2px solid white;
     margin-top: auto;
     width: 2.5rem;
     height: 2.5rem;
@@ -87,7 +87,6 @@ nav .user-avatar{
         justify-content: space-between;
         align-items: center;
         margin-bottom: 2rem;
-    
     }
    
     nav .logo{
@@ -104,23 +103,40 @@ nav .user-avatar{
 
 @media only screen and (max-width: 420px) and (min-width:320px){
     nav{
-        height: auto;
-        width: 100%;
+        height: 3.5rem;
+        width: 25.438rem;
         padding: 1.5rem;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
         margin-bottom: 2rem;
-    
+        margin-top: 0;
+        border-radius: 0;
     }
    
     nav .logo{
+        width: 1.563rem;
+        height: 1.25rem;
         margin-bottom: 0;
     }
     
     nav .links{
         height: auto;
         flex-direction: row;
-        width: 27%;
+        width: 40%;
+        /* gap: .5rem; */
+    }
+
+    nav .links a{
+        /* border: 1px solid white; */
+        width: 1.3rem;
+        height: 1.3rem;
+    }
+
+    nav .user-avatar{
+        /* border: 1px solid white; */
+        margin-top: 0;
+        width: 1.5rem;
+        height: 1.5rem;
     }
 }

@@ -43,11 +43,12 @@ fetch(json_url).then(Response => Response.json())
         seriesContainer.innerHTML = series;    
     }
 
-    const recommended = document.querySelectorAll(".series");
+    const contentContainer = document.querySelectorAll(".series");
 
 
-        recommended.forEach(seriesItems => {
+        contentContainer.forEach(seriesItems => {
             const img = seriesItems.querySelector(".series-image");
+            console.log(img);
             const play = seriesItems.querySelector(".play");
             const bookmark = seriesItems.querySelector(".bookmark-btn");
             const button = seriesItems.querySelector("svg");

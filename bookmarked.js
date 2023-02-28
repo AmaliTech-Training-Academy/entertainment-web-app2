@@ -1,5 +1,11 @@
 //Listening for form submit
-const bookMarkedButton = document.querySelector('').addEventListener('submit', saveBookmark)
+const bookMarkedButton = document.querySelector('.bookmark-btn')
+
+
+
+const JSON_URL = {
+    Data: "data.json"
+}
 
 // Save Bookmarked function
 function saveBookmark(e){

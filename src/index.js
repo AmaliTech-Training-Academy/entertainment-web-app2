@@ -146,10 +146,19 @@ fetch(json_url).then(Response => Response.json())
                 img.classList.add('dark')
                 play.classList.add('show')
             });
-
         });
 
     });
     
 
-   
+    // '<li class="searchItem">'
+    // +'<img class="search-item-img src="'+data[i].thumbnail.regular.small+'"/>'
+    // +'<div class="search-item-info">'
+    // +'<div class="search-item-title">'
+    // +data[i].title
+    // +'</div>'
+    // +'<div class="search-item-year">'
+    // +data[i].year
+    // +'</div>'
+    // +'</div>'
+    // +'</li>';

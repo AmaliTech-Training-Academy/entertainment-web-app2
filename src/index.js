@@ -1,3 +1,4 @@
+// let resultsContainer = document.querySelector(".searchItems");
 let trendsContainer = document.querySelector(".trending-items");
 let optionsContainer = document.querySelector(".options"); 
 
@@ -7,6 +8,7 @@ fetch(json_url).then(Response => Response.json())
 .then((data) => {
     let trend= '';
     let options= '';
+    let searchList = '';
 
         for(i = 0; i < data.length; i++){
             if(data[i].isTrending){
@@ -41,8 +43,8 @@ fetch(json_url).then(Response => Response.json())
             +'</div>'
             +'</div>' ;
             }
+            trendsContainer.innerHTML = trend;
         }
-        trendsContainer.innerHTML = trend;
 
         for(i = 0; i < data.length; i++){
             if(!data[i].isTrending){
@@ -82,7 +84,23 @@ fetch(json_url).then(Response => Response.json())
             }
         optionsContainer.innerHTML = options;    
         }
-       
+
+        // for(i = 0; i < data.length; i++){
+        //     searchList += 
+        //     '<li>'
+        //     +'<img class="search-item-img src="'+data[i].thumbnail.regular.small+'"/>'
+        //     +'<div class="search-item-info">'
+        //     +'<div class="search-item-title">'
+        //     +data[i].title
+        //     +'</div>'
+        //     +'<div class="search-item-year">'
+        //     +data[i].year
+        //     +'</div>'
+        //     +'</div>'
+        //     +'</li>';
+        // }
+        // resultsContainer.innerHTML = searchList;
+
         const trends = document.querySelectorAll(".trend");
 
         trends.forEach(trend => {
@@ -152,14 +170,3 @@ fetch(json_url).then(Response => Response.json())
     });
     
 
-    // '<li class="searchItem">'
-    // +'<img class="search-item-img src="'+data[i].thumbnail.regular.small+'"/>'
-    // +'<div class="search-item-info">'
-    // +'<div class="search-item-title">'
-    // +data[i].title
-    // +'</div>'
-    // +'<div class="search-item-year">'
-    // +data[i].year
-    // +'</div>'
-    // +'</div>'
-    // +'</li>';

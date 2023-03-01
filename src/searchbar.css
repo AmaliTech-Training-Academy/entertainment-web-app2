@@ -8,7 +8,6 @@ form{
 }
 
 form .search{
-    /* border: 1px solid white; */
     background: url('./assets/icon-search.svg');
     height: 2rem;
     width: 2rem;
@@ -41,4 +40,21 @@ input[type=search]:focus{
 
 input[type=text]:hover{
     cursor: pointer;
+}
+
+@media only screen and (max-width: 420px) and (min-width:320px){
+    form{
+        height: 1.5rem;
+    }
+
+    form .search{
+        height: 1.5rem;
+        width: 1.5rem;
+    }
+
+    input{
+        font-size: 1rem;
+        margin-left: -.5rem;
+        width: 80%;
+    }
 }

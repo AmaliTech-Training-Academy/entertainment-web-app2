@@ -6,7 +6,7 @@ let json_link = "data.json";
 fetch(json_link).then(Response => Response.json())
 .then((data) => {
 
-    console.log(data);
+    // console.log(data);
     let searchList = "";
     for(i = 0; i < data.length; i++){
         searchList += 

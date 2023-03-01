@@ -84,7 +84,7 @@ fetch(json_url).then(Response => Response.json())
         }
        
         const trends = document.querySelectorAll(".trend");
-
+        
         trends.forEach(trend => {
             const img = trend.querySelector(".trend-image");
             const play = trend.querySelector(".play");
@@ -150,6 +150,7 @@ fetch(json_url).then(Response => Response.json())
         });
 
     });
+    
     
 
     // '<li class="searchItem">'

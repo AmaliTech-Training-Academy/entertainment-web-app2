@@ -5,9 +5,7 @@
     margin: 0;
     width: 100%;
     font-family: 'Outfit', sans-serif;
-   
 }
-
 
 body{
     width: 100%;
@@ -28,11 +26,13 @@ main section{
     width: 93%;
     padding: 4rem 2rem 0 2rem;
     position: relative;
+    position: relative;
 }
 
 main section header{
     /* border: 1px solid white; */
     margin-bottom: 2.5rem;
+    position: relative;
 }
 
 section header h1{
@@ -56,7 +56,6 @@ section .trending-items{
     overflow-x: scroll;
     scroll-behavior: smooth;
     justify-content: space-between;
-    
 }
 
 ::-webkit-scrollbar {

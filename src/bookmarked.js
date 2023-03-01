@@ -103,3 +103,9 @@ function removeMovieFromBookmark(movieId) {
   },
   false
 );
+
+function removeMovieFromBookmark(movieId) {
+  let bookmarkedMovies = JSON.parse(localStorage.getItem('bookmarkedMovies')) || [];
+  bookmarkedMovies = bookmarkedMovies.filter(movie => movie.id !== movieId);
+  localStorage.setItem('bookmarkedMovies', JSON.stringify(bookmarkedMovies));
+}*/

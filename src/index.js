@@ -7,6 +7,7 @@ fetch(json_url).then(Response => Response.json())
 .then((data) => {
     let trend= '';
     let options= '';
+
         for(i = 0; i < data.length; i++){
             if(data[i].isTrending){
             trend +=

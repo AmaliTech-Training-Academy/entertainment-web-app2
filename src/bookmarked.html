@@ -1,19 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
-  <link rel="stylesheet" href="nav.css">
-  <link rel="stylesheet" href="index.css">
-  <link rel="stylesheet" href="searchbar.css">
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="nav.css" />
+    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="movies.css" />
+    <link rel="stylesheet" href="searchbar.css" />
 
-  <title>Frontend Mentor | Entertainment web app</title>
-  
-</head>
-<body>
-  <main>
+    <title>Frontend Mentor | Entertainment web app</title>
+  </head>
+  <body>
+    <main>
       <nav>
         <div class="logo"></div>
         <div class="links">
@@ -24,37 +29,64 @@
         </div>
         <div class="user-avatar"></div>
       </nav>
-    <section>
-      <header>
-        <form>
-          <div class="search"></div>
-          <input 
-          type="search" 
-          placeholder="Search for bookmarked shows"
-          />
-      </form>
-        <div class="trending">
-          <h1>Bookmarked Movies</h1>
-          <div class="">
-
+      <section>
+        <header>
+          <form>
+            <div class="search"></div>
+            <input type="search" placeholder="Search for bookmarked shows" />
+          </form>
+          <div class="trending">
+            <h1>Bookmarked Movies</h1>
+            <div class="movies-items"></div>
           </div>
+        </header>
+        <div class="options">
+          <h1>Bookmarked TV Series</h1>
         </div>
-      </header>
-      <div class="options">
-        <h1>Bookmarked TV Series</h1>
-        
-        </div>
+      </section>
+    </main>
+
+    <!-- Display recommended shows -->
+
+    <!-- <script src="index.js"></script> -->
+    <script>
+      document.addEventListener("DOMContentLoaded", (evt) => {
+        fetchBookmarks();
+      });
+
+      const renderMovie = (movie) => `
+    <div class="movie">
+      <div class="movie-image">
+        <img class="large" src="${movie.thumbnail.regular.large}">
+        <img class="medium" src="${movie.thumbnail.regular.medium}">
+        <img class="small" src="${movie.thumbnail.regular.small}">
       </div>
-    </section>
-  </main>
-  
-  
- 
+      <div class="movie-info">
+        <div class="about">${movie.year}<div class="oval"></div>
+        <span style="background:url(${movie.logo})"></span>${movie.category}<div class="oval">
+        </div>18+</div><h3 class="movie-title">${movie.title}</h3></div><div class="bookmark-btn"><svg width="12" height="14" xmlns="http://www.w3.org/2000/svg"><path d="m10.518.75.399 12.214-5.084-4.24-4.535 4.426L.75 1.036l9.768-.285Z"></path></svg>
+        </div><div class="play"><div class="play-btn">
+        </div><p>Play</p></div></div>
+  `;
+      function fetchBookmarks() {
+        const movieItems = document.querySelector(".movies-items");
+        //Getting bookmarks from localStorage
+        const bookmarks =
+          JSON.parse(localStorage.getItem("bookmarkedMovies")) || [];
+        //Getting output id
 
-  
-
-  <!-- Display recommended shows -->
-
-  <script src="index.js"></script>
-</body>
+        fetch("./data.json")
+          .then((response) => response.json())
+          .then((data) => {
+            // const data = response.json();
+            console.log(data);
+            data.filter((movie) => {
+              if (bookmarks.indexOf(movie.title) !== -1) {
+                movieItems.innerHTML += renderMovie(movie);
+              }
+            });
+          });
+      }
+    </script>
+  </body>
 </html>

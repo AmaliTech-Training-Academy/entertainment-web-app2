@@ -56,7 +56,7 @@ const isValidEmail = (email) => {
 const validateInputs = () => {
   const emailValue = email.value.trim();
   const passwordValue = password.value.trim();
-  const password2Value = password2.value.trim();
+  // const password2Value = password2.value.trim();
 
   if (emailValue === "") {
     setError(email, "Email is required");
@@ -76,11 +76,11 @@ const validateInputs = () => {
     setSuccess(password);
   }
 
-  if (password2Value === "") {
-    setError(password2, "Please confirm your password");
-  } else if (password2Value !== passwordValue) {
-    setError(password, "Password doesn't match");
-  } else {
-    setSuccess(password2);
-  }
+  // if (password2Value === "") {
+  //   setError(password2, "Please confirm your password");
+  // } else if (password2Value !== passwordValue) {
+  //   setError(password, "Password doesn't match");
+  // } else {
+  //   setSuccess(password2);
+  // }
 };

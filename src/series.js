@@ -48,7 +48,7 @@ fetch(json_url).then(Response => Response.json())
 
         contentContainer.forEach(seriesItems => {
             const img = seriesItems.querySelector(".series-image");
-            console.log(img);
+            // console.log(img);
             const play = seriesItems.querySelector(".play");
             const bookmark = seriesItems.querySelector(".bookmark-btn");
             const button = seriesItems.querySelector("svg");

@@ -9,7 +9,11 @@ nav{
     display: flex;
     flex-direction: column;
     align-items: center;
+}
 
+nav.light{
+    background: #5A698F;
+    border: 2px solid #161D2F;
 }
 
 nav .logo{
@@ -38,8 +42,8 @@ nav .links a{
     height: 1.25rem;
 }
 
-.active{
-    filter: brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(1%) hue-rotate(37deg) brightness(107%) contrast(101%);
+nav .links a.lightlinks{
+    filter: brightness(0) saturate(100%) invert(5%) sepia(8%) saturate(4816%) hue-rotate(187deg) brightness(90%) contrast(92%);
 }
 
 .active{
@@ -70,12 +74,6 @@ nav .links .bookmarks{
 nav .links a:hover{
     filter: brightness(0) saturate(100%) invert(59%) sepia(78%) saturate(5955%) hue-rotate(335deg) brightness(104%) contrast(102%);
     }
-
-
-nav .links a:hover{
-    filter: brightness(0) saturate(100%) invert(59%) sepia(78%) saturate(5955%) hue-rotate(335deg) brightness(104%) contrast(102%);
-    }
-
 
 nav .user-avatar{
     border: 2px solid white;
@@ -168,6 +166,11 @@ nav .user-avatar{
         border-radius: 50%;
         background: url('./assets/image-avatar.png');
         background-size: cover;
+    }
+
+    @media screen and (max-
+    ) {
+        
     }
     
 }

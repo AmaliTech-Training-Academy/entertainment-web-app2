@@ -3,7 +3,6 @@
 *{
     box-sizing: border-box;
     margin: 0;
-    width: 100%;
     font-family: 'Outfit', sans-serif;
 }
 
@@ -11,6 +10,11 @@ body{
     width: 100%;
     background: #10141E;
     color: #FFFFFF;
+}
+
+body.light{
+    background: #FFFFFF;
+    color: #10141E;
 }
 
 main{
@@ -72,6 +76,7 @@ section .trending-items{
 
 .trend-image{
     position: relative;
+    border-radius: .5rem;
 }
 
 .play{
@@ -84,6 +89,7 @@ section .trending-items{
     width: 7.3rem;
     height: 3rem;
     display: flex;
+    justify-content: space-between;
     padding: 8px;
     align-items: center;
     background: rgba(255, 255, 255, 0.25) ;
@@ -96,6 +102,7 @@ section .trending-items{
 .play.show{
     opacity: 1;
     transition: 0.6s;
+    justify-content: space-between;
 }
 
 .play-btn{
@@ -104,7 +111,6 @@ section .trending-items{
     height: 3rem;
     margin-right: 1.2rem;
     z-index: 5;
-    border-radius: 50%;
     background-position: center;
 }
 
@@ -112,18 +118,31 @@ section .trending-items{
     font-weight: 500;
     font-size: 18px;
     line-height: 23px;
+    position: absolute;
+    left: 50%;
+    color: #FFFFFF;
+    /* margin-left: .7rem; */
 }
 
-.dark{
-    opacity: .5;
-    transition: 0.6s;
+.overlay{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    z-index: 1;
+    border-radius: .5rem;
+}
+
+.overlay.dark{
+    background: rgba(0, 0, 0, 0.5);
+    transition: 0.5s;
 }
 
 .trend:nth-of-type(5){
     margin-right: 0;
 }
 
-.trending-items .trend .trend-image .small{
+.trend .trend-image .small{
     display: none;
 } 
 
@@ -152,6 +171,7 @@ section .trending-items{
     font-size: 0.94rem;
     line-height: 1.2rem;
     opacity: 0.75;
+    color: #FFFFFF;
 }
 
 .about .oval{
@@ -174,6 +194,8 @@ section .trending-items{
     font-weight: 500;
     font-size: 1.5rem;
     line-height: 1.875rem;
+    color: #FFFFFF;
+    
 }
 
 .trend .bookmark-btn{
@@ -189,7 +211,7 @@ section .trending-items{
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    z-index: 2;
+    z-index: 3;
 }
 
 .trend .bookmark-btn:hover{
@@ -225,7 +247,7 @@ section .options{
     /* width: 87vw ; */
 }
 
-.options h1{
+main section h1{
     font-style: normal;
     font-weight: 300;
     font-size: 2rem;
@@ -370,7 +392,7 @@ section .options{
     
     
     
-    .play-btn{
+    /* .play-btn{
         background: url('./assets/icon-play.svg')no-repeat;
         width: 5rem;
         height: 2rem;
@@ -382,18 +404,8 @@ section .options{
     .trend:nth-of-type(5){
         margin-right: 0;
     }
-    
-    .trending-items .trend .trend-image .small{
-        display: none;
-    } 
-    
-    .trend .trend-image .large{
-        width: 29rem;
-        height: 14rem;
-        background-size: cover;
-        border-radius: .5rem;
-    }
-    
+    */
+
     .trend .trend-info{
         /* border: 1px solid pink; */
         display: flex;
@@ -461,7 +473,7 @@ section .options{
         margin-right: 1rem;
     }
     
-    .options h1{
+    main section h1{
         font-style: normal;
         font-weight: 300;
         font-size: 2rem;
@@ -481,27 +493,25 @@ section .options{
         z-index: 1;
     }
     
-    /* .options .option .play{
-        position: absolute;
-        top: 4rem;
-        left: 4rem;
-        right: 4rem;
-    } */
+    .options .option .play{
+        left: 25%;
+        /* right: 20%; */
+    }
     
     .option-image:hover{
         opacity: 0.5;
         cursor: pointer;
     }
     
-    .options .option .large{
-        height: 11rem;
+    .options .option .large, .small{
+        display: none;
+    }
+    
+    .options .option .medium{
+        display: block;
         width: 100%;
         border-radius: 0.5rem;
         margin-bottom: .4rem;
-    }
-    
-    .options .option .medium, .small{
-        display: none;
     }
     .option .about{
         /* border: 1px solid burlywood; */
@@ -511,7 +521,7 @@ section .options{
     .option .option-info .option-title{
         font-style: normal;
         font-weight: 500;
-        font-size: 1.5rem;
+        font-size: 1.125rem;
         line-height: 1.875rem;
     }
 }

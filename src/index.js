@@ -1,5 +1,9 @@
+import { addBookmark } from "./bookmarked.js";
+
+let resultsContainer = document.querySelector(".searchItems");
+
 let trendsContainer = document.querySelector(".trending-items");
-let optionsContainer = document.querySelector(".options"); 
+let optionsContainer = document.querySelector(".options");
 
 let json_url = "data.json";
 
@@ -123,7 +127,7 @@ fetch(json_url).then(Response => Response.json())
             });
         });
 
-        const recommended = document.querySelectorAll(".option");
+    const recommended = document.querySelectorAll(".option");
 
         recommended.forEach(option => {
             const img = option.querySelector(".option-image");
@@ -158,7 +162,5 @@ fetch(json_url).then(Response => Response.json())
             });
         });
 
+    addBookmark();
     });
-    
-    
-

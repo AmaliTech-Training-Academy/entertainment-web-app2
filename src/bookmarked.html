@@ -11,9 +11,10 @@
       href="./assets/favicon-32x32.png"
     />
     <link rel="stylesheet" href="nav.css" />
-    <link rel="stylesheet" href="index.css" />
-    <link rel="stylesheet" href="movies.css" />
+    <!-- <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="movies.css" /> -->
     <link rel="stylesheet" href="searchbar.css" />
+    <link rel="stylesheet" href="bookmarked.css">
 
     <title>Frontend Mentor | Entertainment web app</title>
   </head>
@@ -55,16 +56,27 @@
       });
 
       const renderMovie = (movie) => `
-    <div class="movie">
+      <div class="movie">
       <div class="movie-image">
         <img class="large" src="${movie.thumbnail.regular.large}">
+        <img class="medium" src="${movie.thumbnail.regular.medium}">
+        <img class="small" src="${movie.thumbnail.regular.small}">
       </div>
       <div class="movie-info">
-        <div class="about">${movie.year}<div class="oval"></div>
-        <span style="background:url(${movie.logo})"></span>${movie.category}<div class="oval">
-        </div>18+</div><h3 class="movie-title">${movie.title}</h3></div><div class="bookmark-btn"><svg width="12" height="14" xmlns="http://www.w3.org/2000/svg"><path d="m10.518.75.399 12.214-5.084-4.24-4.535 4.426L.75 1.036l9.768-.285Z"></path></svg>
-        </div><div class="play"><div class="play-btn">
-        </div><p>Play</p></div></div>
+        <div class="about">${movie.year}
+          <div class="oval"></div>
+        <span style="background:url(${movie.logo})"></span>${movie.category}
+        <div class="oval">
+        </div>${movie.rating}
+        </div>
+        <h3 class="movie-title">${movie.title}</h3>
+      </div>
+      <div class="bookmark-btn"><svg width="12" height="14" xmlns="http://www.w3.org/2000/svg"><path d="m10.518.75.399 12.214-5.084-4.24-4.535 4.426L.75 1.036l9.768-.285Z"></path></svg>
+      </div>
+      <div class="play">
+        <div class="play-btn">
+        </div><p>Play</p></div>
+    </div>
   `;
       function fetchBookmarks() {
         const movieItems = document.querySelector(".movies-items");

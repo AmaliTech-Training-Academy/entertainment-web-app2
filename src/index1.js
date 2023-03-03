@@ -10,8 +10,15 @@ form.addEventListener("submit", (event) => {
 
   validateInputs(); //calling the validate Input in the eventListener function
   if (!form.classList.contains("invalid")) {
+    sendConfirmationEmail();
+    generateUserID(); //Generate user ID function
     window.location = "login.html";
   }
+
+  const userID = generateUserID();
+
+  // Store the user ID in local storage
+  localStorage.setItem('userID', userID);
 
   //storing user data in localStorage
   let userDetails = {
@@ -24,6 +31,28 @@ form.addEventListener("submit", (event) => {
   console.log(JSON.stringify(userDetails));
 });
 
+// form.addEventListener("submit", (event) => {
+//   event.preventDefault();
+//   validateLogin()
+//     if(form.classList.contains('invalid')){
+//       window.location = 'index.html'
+//     }
+// });
+
+function sendConfirmationEmail() {
+  console.log(document.querySelector("#email").value);
+  Email.send({
+    Host: "smtp.elasticemail.com",
+    Username: "whiy07@gmail.com",
+    Password: "6C312FF56E8DBCD1FBA9C64145E0E4A5EC29",
+    To: document.querySelector("#email").value,
+    From: "whiy07@gmail.com",
+    Subject: document.querySelector("#message"),
+    Body: "And this is the body",
+  })
+    .then((message) => alert(message))
+    .catch((err) => console.log(err));
+}
 
 const setError = (element, message) => {
   const inputControl = element.parentElement;
@@ -70,17 +99,44 @@ const validateInputs = () => {
 
   if (passwordValue === "") {
     setError(password, "Password is required");
-  } else if (passwordValue.length < 10) {
-    setError(password, "Password must be at least 10 characters");
+  } else if (passwordValue.length < 8) {
+    setError(password, "Password must be at least 8 characters");
   } else {
     setSuccess(password);
   }
-
-  // if (password2Value === "") {
-  //   setError(password2, "Please confirm your password");
-  // } else if (password2Value !== passwordValue) {
-  //   setError(password, "Password doesn't match");
-  // } else {
-  //   setSuccess(password2);
-  // }
 };
+
+// login confirmation
+const validateLogin = () => {
+  const loginEmail = email.value.trim();
+  const emailValue = email.value.trim();
+  // const passwordValue = passwordValue.value.trim();
+  const password2Value = password2.value.trim();
+
+  if (emailValue === "") {
+    setError(email, "Email is required");
+  } else if (isValidEmail(emailValue)) {
+    console.log(true);
+    setSuccess(email);
+  } else if (emailValue !== loginEmail) {
+    console.log('email not matched')
+    setError(email, 'Email must matched')
+  } else {
+    console.log(false);
+    setError(email, "Provide a valid email address");
+  }
+
+  if (password2Value === "") {
+    setError(password2, "Please confirm your password");
+  } else if (password2Value !== passwordValue) {
+    setError(password, "Password doesn't match");
+  } else {
+    setSuccess(password2);
+  }
+};
+
+//Generating user ID
+function generateUserID() {
+  const randomNum = Math.random().toString().slice(2, 8);
+  return `user-${randomNum}`;
+}

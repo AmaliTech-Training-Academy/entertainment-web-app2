@@ -203,7 +203,9 @@ section .series-items{
     section .series-items{
         grid-template-columns: auto auto auto;
     }
-
+    nav{
+        width: 40rem;
+    }
     .series-items .series .medium{
         display: inline;
         height: 8.75rem;
@@ -257,7 +259,8 @@ section .series-items{
 
     section .series-items{
         grid-template-columns: auto auto;
-        grid-gap: .5rem;
+        grid-gap: 1.5rem;
+        margin-left: 1rem;
     }
 
     .videos h1{
@@ -267,7 +270,7 @@ section .series-items{
     .series-items .series .small{
         display: inline;
         height: 6.875rem;
-        width: 10.25rem;
+        width: 13.25rem;
         border-radius: 0.5rem;
     }
 
@@ -285,11 +288,11 @@ section .series-items{
 
     .bookmark-btn{
         top: -9.7rem;
-        left: 7.8rem;
+        left: 11rem;
     }
 
     .play{
         top: -10rem;
-        left: 1.5rem;
+        left: 2.5rem;
     } 
 }

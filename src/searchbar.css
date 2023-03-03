@@ -16,8 +16,12 @@ form .search{
     margin-right: 1.5rem;
 }
 
+.search.lightmode{
+    filter: brightness(0) saturate(100%) invert(5%) sepia(7%) saturate(4212%) hue-rotate(185deg) brightness(95%) contrast(93%);
+}
+
 input{
-    width: 100%;
+    width: 90%;
     height: 100%;
     border: none;
     outline: none;
@@ -42,6 +46,40 @@ input[type=search]:focus{
 input[type=text]:hover{
     cursor: pointer;
 }
+
+.switch-mode{
+    width: 4rem;
+    height: 1.8rem;
+    border: 1px solid white;
+    background: #ffffff;
+    border-radius: 1rem;
+    padding: 0 0.2rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.switch-mode.light{
+    background: #000000;
+}
+
+.switch-mode .light-dark{
+    position: absolute;
+    left: 0.2rem;
+    height: 1.3rem;
+    width: 1.3rem;
+    border-radius: 50%;
+    background: black;
+}
+
+.light-dark.triggered{
+    background-color: #ffffff;
+    left: unset;
+    right: 0.2rem;
+    transition: 0.6s;
+}
+
 
 ul{
     border: 1px solid white;
@@ -81,7 +119,7 @@ ul li img{
 
     form .search{
         height: 1.5rem;
-        width: 1.5rem;
+        width: 2.5rem;
     }
 
     input{

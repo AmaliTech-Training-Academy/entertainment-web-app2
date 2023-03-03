@@ -200,7 +200,7 @@ section .movies-items{
     }
     main{
         display: flex;
-        width: 55rem;
+        width: 51rem;
     }
     section .movies-items{
         display: grid;
@@ -209,7 +209,9 @@ section .movies-items{
         margin-left: -.5rem;
         width: fit-content;
     }
-    
+    /* nav{
+        width: 50rem;
+    } */
     .movies .movie{
         width: 100%;   
     }

@@ -149,6 +149,8 @@ fetch(json_url).then(Response => Response.json())
             const img = option.querySelector(".option-image");
             const play = option.querySelector(".play");
             const bookmark = option.querySelector(".bookmark-btn");
+            const button = option.querySelector("svg");
+
             img.addEventListener('mouseover', () => {
                 img.classList.add('dark')
                 play.classList.add('show')
@@ -164,6 +166,18 @@ fetch(json_url).then(Response => Response.json())
             bookmark.addEventListener('mouseover', () => {
                 img.classList.add('dark')
                 play.classList.add('show')
+                button.classList.add('choice')
+            });
+            bookmark.addEventListener('mouseout', () => {
+                button.classList.remove('choice')
+            })
+            bookmark.addEventListener('click', ()=>{
+                if(button.classList.contains('keep')){
+                    button.classList.remove('keep')
+                }
+                else{
+                    button.classList.add('keep')
+                }
             });
         });
 

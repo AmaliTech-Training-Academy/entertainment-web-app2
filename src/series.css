@@ -244,9 +244,10 @@ section .series-items{
         position: relative;
     }
     main section{
-        width: 100%;
+        width: 30rem;
         padding: 0;
         position: relative;
+        margin-top: 3rem;
     }
     
     main section header{

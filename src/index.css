@@ -346,7 +346,7 @@ main section h1{
         position: relative;
     }
     main section{
-        border: 1px solid white;
+        /* border: 1px solid white; */
         width: 54rem;
         padding: 0;
         position: relative;
@@ -534,10 +534,11 @@ main section h1{
         position: relative;
     }
     main section{
-        border: 1px solid white;
+        /* border: 1px solid white; */
         width: 54rem;
         padding: 0;
         position: relative;
+        margin-top: 2rem;
     }
     
     main section header{
@@ -652,9 +653,9 @@ main section h1{
     section .options{
         display: grid;
         grid-template-columns: auto auto;
-        grid-gap: 3rem;
-        margin-left: 6rem;
-        width: 21.438rem;
+        grid-gap: 1rem;
+        margin-left: 4rem;
+        /* width: 21.438rem; */
     }
 
     
@@ -674,7 +675,7 @@ main section h1{
     }
     
     .option .option-image{
-        border: 1px solid white;
+        /* border: 1px solid white; */
         z-index: 1;
         width: 20rem;
     }

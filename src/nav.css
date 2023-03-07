@@ -92,7 +92,7 @@ nav .user-avatar{
         background: #161D2F;
         border-radius: 20px;
         padding: 1.5rem;
-        border: 1px solid white;
+        /* border: 1px solid white; */
         display: flex;
         flex-direction: row;
         justify-content: space-between;
@@ -168,10 +168,10 @@ nav .user-avatar{
         background-size: cover;
     }
 
-    @media screen and (max-
+    /* @media screen and (max-
     ) {
         
-    }
+    } */
     
 }
 
@@ -188,7 +188,7 @@ nav .user-avatar{
         display: flex;
         justify-content: space-between;
         flex-direction: row;
-        margin-left: -2rem;
+        margin-left: -1.7rem;
         margin-top: 0rem;
     
     }

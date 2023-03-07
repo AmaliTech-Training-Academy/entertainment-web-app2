@@ -24,11 +24,22 @@ form.addEventListener("submit", (event) => {
   let userDetails = {
     email: email.value,
     password: password.value,
+    userID
   };
-  console.log("user", userDetails);
+  // console.log("user", userDetails);
+
+  // if(userDetails = userID){
+  //   alert('User ID already exists')
+  // }
 
   localStorage.setItem("User", JSON.stringify(userDetails));
   console.log(JSON.stringify(userDetails));
+  if (localStorage.getItem(userID)) {
+    alert('User ID already exists!');
+  } else {
+    localStorage.setItem(userID, userDetails); // set the value associated with the key (user ID)
+    alert(`Confirmation email sent`);
+  }
 });
 
 // form.addEventListener("submit", (event) => {
@@ -47,16 +58,16 @@ function sendConfirmationEmail() {
     Password: "6C312FF56E8DBCD1FBA9C64145E0E4A5EC29",
     To: document.querySelector("#email").value,
     From: "whiy07@gmail.com",
-    Subject: document.querySelector("#message"),
-    Body: "And this is the body",
+    Subject: 'Confimation Email',
+    Body: "We sent you a confirmation email",
   })
-    .then((message) => alert(message))
+    .then((message) => alert('Confirmation email sent'))
     .catch((err) => console.log(err));
 }
 
 const setError = (element, message) => {
   const inputControl = element.parentElement;
-  const errorDisplay = inputControl.querySelector(".error");
+  const errorDisplay = inputControl.querySelector(".errorMessage");
 
   form.classList.add("invalid");
   errorDisplay.innerText = message;
@@ -66,7 +77,7 @@ const setError = (element, message) => {
 
 const setSuccess = (element) => {
   const inputControl = element.parentElement;
-  const errorDisplay = inputControl.querySelector(".error");
+  const errorDisplay = inputControl.querySelector(".errorMessage");
   console.log(inputControl);
   form.classList.remove("invalid");
   errorDisplay.innerText = "";
@@ -85,7 +96,7 @@ const isValidEmail = (email) => {
 const validateInputs = () => {
   const emailValue = email.value.trim();
   const passwordValue = password.value.trim();
-  // const password2Value = password2.value.trim();
+  const password2Value = password2.value.trim();
 
   if (emailValue === "") {
     setError(email, "Email is required");
@@ -98,7 +109,7 @@ const validateInputs = () => {
   }
 
   if (passwordValue === "") {
-    setError(password, "Password is required");
+    setError(password, "Can't be empty");
   } else if (passwordValue.length < 8) {
     setError(password, "Password must be at least 8 characters");
   } else {
@@ -137,6 +148,9 @@ const validateLogin = () => {
 
 //Generating user ID
 function generateUserID() {
-  const randomNum = Math.random().toString().slice(2, 8);
-  return `user-${randomNum}`;
+  const userID = Math.random().toString().slice(2, 8);
+  return `user-${userID}`;
 }
+
+// const userID = generateUserID();
+

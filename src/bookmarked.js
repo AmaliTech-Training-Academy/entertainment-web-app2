@@ -17,20 +17,7 @@ function addBookmark() {
     bookmarkedMovies.push(movie);
     localStorage.setItem("bookmarkedMovies", JSON.stringify(bookmarkedMovies));
   }
+ 
 }
-
-// bookmarks.forEach((movie) => (bookmarkedMovies.onclick = () => {
-//   const title = movie.previousElementSibling.children[1].textContent;
-//   removeMovieFromBookmark(title);
-// })
-// );
-
-// function removeMovieFromBookmark(movie) {
-//  const bookmarkedMovies =
-// JSON.parse(localStorage.getItem("bookmarkedMovies")) || [];
-// console.log(bookmarkedMovies);
-// bookmarkedMovies.slice(movie);
-// localStorage.setItem("bookmarkedMovies", JSON.stringify(bookmarkedMovies));
-// }
 
 export { addBookmark };

@@ -1,10 +1,12 @@
+import { addBookmark } from "./bookmarked.js";
+
 let moviesContainer = document.querySelector(".movies-items");
 let json_url = "data.json";
 
 fetch(json_url).then(Response => Response.json())
 .then((data) => {
     let movies= '';
-        for(i = 0; i < data.length; i++){
+        for(let i = 0; i < data.length; i++){
             if(data[i].category==='Movie'){
             movies +=
             '<div class="movie">' 
@@ -76,11 +78,8 @@ fetch(json_url).then(Response => Response.json())
                     button.classList.add('keep')
                 }
             });
-            about.addEventListener('mouseover', () => {
-                overlay.classList.add('dark')
-                play.classList.add('show')
-            });
-            });
+        })
+        addBookmark();
 
         const btn = document.querySelector('.light-dark');
         const screenSwitch = document.querySelector('.switch-mode');

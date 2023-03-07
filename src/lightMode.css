@@ -1,0 +1,18 @@
+body.light{
+    background: #FFFFFF;
+    color: #10141E;
+}
+.overlay.dark{
+    background: rgba(0, 0, 0, 0.5);
+    transition: 0.5s;
+}
+
+.category{
+    height: 0.75rem;
+    width: 0.75rem;
+    margin-right: .5rem;
+}
+
+.category.light-colour{
+    filter: brightness(0) saturate(100%) invert(5%) sepia(8%) saturate(4816%) hue-rotate(187deg) brightness(90%) contrast(92%);
+}

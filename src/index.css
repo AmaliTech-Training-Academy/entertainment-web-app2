@@ -172,7 +172,6 @@ section .trending-items{
     font-size: 0.94rem;
     line-height: 1.2rem;
     opacity: 0.75;
-    color: #FFFFFF;
 }
 
 .about .oval{
@@ -184,10 +183,14 @@ section .trending-items{
     opacity: 0.5;
 }
 
-.about span{
+.category{
     height: 0.75rem;
     width: 0.75rem;
     margin-right: .5rem;
+}
+
+.category.light-colour{
+    filter: brightness(0) saturate(100%) invert(5%) sepia(8%) saturate(4816%) hue-rotate(187deg) brightness(90%) contrast(92%);
 }
 
 .trend .trend-info .trend-title{

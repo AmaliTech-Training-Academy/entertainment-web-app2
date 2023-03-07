@@ -24,8 +24,8 @@ fetch(json_url).then(Response => Response.json())
             +data[i].year 
             +'<div class="oval">'
             +'</div>' 
-            +'<span style="background:url('+data[i].logo+')">'
-            +'</span>' 
+            +'<i class="category" style="background:url('+data[i].logo+')">'
+            +'</i>' 
             + data[i].category 
             +'<div class="oval">'
             +'</div>' 
@@ -62,8 +62,8 @@ fetch(json_url).then(Response => Response.json())
             +data[i].year 
             +'<div class="oval">'
             +'</div>' 
-            +'<span style="background:url('+data[i].logo+')">'
-            +'</span>' 
+            +'<i class="category" style="background:url('+data[i].logo+')">'
+            +'</i>' 
             + data[i].category 
             +'<div class="oval">'
             +'</div>' 

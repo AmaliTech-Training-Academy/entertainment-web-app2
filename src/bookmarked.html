@@ -43,6 +43,7 @@
         </header>
         <div class="options">
           <h1>Bookmarked TV Series</h1>
+          <div class="series-items"></div>
         </div>
       </section>
     </main>
@@ -78,8 +79,10 @@
         </div><p>Play</p></div>
     </div>
   `;
+
       function fetchBookmarks() {
         const movieItems = document.querySelector(".movies-items");
+        const seriesItems = document.querySelector(".series-items");
         //Getting bookmarks from localStorage
         const bookmarks =
           JSON.parse(localStorage.getItem("bookmarkedMovies")) || [];
@@ -88,18 +91,21 @@
         fetch("./data.json")
           .then((response) => response.json())
           .then((data) => {
-            // const data = response.json();
             console.log(data);
             data.filter((movie) => {
               if (bookmarks.indexOf(movie.title) !== -1) {
-                movieItems.innerHTML += renderMovie(movie);
+                if (movie.category === "Movie") {
+                  movieItems.innerHTML += renderMovie(movie);
+                } else {
+                  seriesItems.innerHTML += renderMovie(movie);
+                }
               }
             });
           });
       }
     </script>
     <script src="script.js"></script>
-    <script src="index.js"></script>
+    <script type="module" src="index.js"></script>
     <!-- <script src="movies.js"></script> -->
     <!-- <script src="series.js"></script> -->
   </body>

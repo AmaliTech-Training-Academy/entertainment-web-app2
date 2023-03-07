@@ -1,4 +1,4 @@
-import { addBookmark } from "./bookmarked.js";
+// import { addBookmark } from "./bookmarked.js";
 
 let seriesContainer = document.querySelector(".series-items");
 
@@ -29,10 +29,10 @@ fetch(json_url)
           data[i].year +
           '<div class="oval">' +
           "</div>" +
-          '<span style="background:url(' +
+          '<i class="category" style="background:url(' +
           data[i].logo +
           ')">' +
-          "</span>" +
+          "</i>" +
           data[i].category +
           '<div class="oval">' +
           "</div>" +
@@ -49,6 +49,7 @@ fetch(json_url)
           '<div class="play-btn"></div>' +
           "<p>Play</p>" +
           "</div>" +
+          '<div class="overlay"></div>'+
           "</div>";
       }
       seriesContainer.innerHTML = series;
@@ -56,40 +57,113 @@ fetch(json_url)
 
     const contentContainer = document.querySelectorAll(".series");
 
-    contentContainer.forEach((seriesItems) => {
-      const img = seriesItems.querySelector(".series-image");
-      // console.log(img);
-      const play = seriesItems.querySelector(".play");
-      const bookmark = seriesItems.querySelector(".bookmark-btn");
-      const button = seriesItems.querySelector("svg");
-      img.addEventListener("mouseover", () => {
-        img.classList.add("dark");
-        play.classList.add("show");
-      });
-      img.addEventListener("mouseout", () => {
-        img.classList.remove("dark");
-        play.classList.remove("show");
-      });
-      play.addEventListener("mouseover", () => {
-        img.classList.add("dark");
-        play.classList.add("show");
-      });
-      bookmark.addEventListener("mouseover", () => {
-        // img.classList.add('dark')
-        // play.classList.add('show')
-        button.classList.add("choice");
-      });
-      bookmark.addEventListener("mouseout", () => {
-        button.classList.remove("choice");
-      });
-      bookmark.addEventListener("click", () => {
-        if (button.classList.contains("keep")) {
-          button.classList.remove("keep");
-        } else {
-          button.classList.add("keep");
-        }
-      });
+    contentContainer.forEach((series) => {
+            const overlay = series.querySelector(".overlay");
+            const play = series.querySelector(".play");
+            const bookmark = series.querySelector(".bookmark-btn");
+            const about = series.querySelector(".series-info");
+            const button = series.querySelector("svg");
+            overlay.addEventListener('mouseover', () => {
+                overlay.classList.add('dark')
+                play.classList.add('show')
+            });
+            overlay.addEventListener('mouseout', () => {
+                overlay.classList.remove('dark')
+                play.classList.remove('show')
+            });
+            play.addEventListener('mouseover', () => {
+                overlay.classList.add('dark')
+                play.classList.add('show')
+            });
+            bookmark.addEventListener('mouseover', () => {
+                button.classList.add('choice')
+            });
+            bookmark.addEventListener('mouseout', () => {
+                button.classList.remove('choice')
+            });
+            bookmark.addEventListener('click', ()=>{
+                if(button.classList.contains('keep')){
+                    button.classList.remove('keep')
+                }
+                else{
+                    button.classList.add('keep')
+                }
+            });
+            about.addEventListener('mouseover', () => {
+                overlay.classList.add('dark')
+                play.classList.add('show')
+            });
     });
+
+    const btn = document.querySelector('.light-dark');
+    const screenSwitch = document.querySelector('.switch-mode');
+    const body = document.querySelector("body");
+    const searchIcon = document.querySelector(".search");
+    const nav = document.querySelector("nav");
+    const links = document.querySelectorAll("a");
+    const recommendedContainer = document.querySelector(".series-items");
+    const ovals = document.querySelectorAll(".oval");
+    const categories = document.querySelectorAll("i");
+    const info = recommendedContainer.querySelectorAll(".about")
+    const profile = document.querySelector(".user-avatar");
+    screenSwitch.addEventListener('click', lightMode);
+
+function lightMode() {
+        let theme;
+        if(btn.classList.contains('triggered')){
+            btn.classList.remove('triggered');
+            body.classList.remove('light');
+            screenSwitch.classList.remove('light');
+            searchIcon.classList.remove('lightmode');
+            nav.classList.remove("light");
+            links.forEach(link => link.classList.remove('lightlinks'));
+            profile.classList.remove('border');
+            categories.forEach(category => category.classList.remove('light-colour'));
+            ovals.forEach(oval => oval.classList.remove("light-theme"));
+            info.forEach(about => about.classList.remove("light-text"));
+            theme = 'DARK';
+        }else{
+            btn.classList.add('triggered');
+            body.classList.add('light');
+            screenSwitch.classList.add('light');
+            searchIcon.classList.add('lightmode');
+            nav.classList.add('light');
+            links.forEach(link => link.classList.add('lightlinks'));
+            profile.classList.add('border');
+            categories.forEach(category => category.classList.add('light-colour'));
+            ovals.forEach(oval => oval.classList.add("light-theme"));
+            info.forEach(about => about.classList.add("light-text"));
+            theme = 'LIGHT';
+        }
+        localStorage.setItem("PageTheme", JSON.stringify(theme));
+}
+    let getTheme = JSON.parse(localStorage.getItem("PageTheme"));
+console.log(getTheme, "Hello");
+
+if(getTheme === 'LIGHT'){
+    btn.classList.add('triggered');
+            body.classList.add('light');
+            screenSwitch.classList.add('light');
+            searchIcon.classList.add('lightmode');
+            nav.classList.add('light');
+            links.forEach(link => link.classList.add('lightlinks'));
+            profile.classList.add('border');
+            categories.forEach(category => category.classList.add('light-colour'));
+            ovals.forEach(oval => oval.classList.add("light-theme"));
+            info.forEach(about => about.classList.add("light-text"));
+
+}else if((getTheme === 'DARK')){
+    btn.classList.remove('triggered');
+            body.classList.remove('light');
+            screenSwitch.classList.remove('light');
+            searchIcon.classList.remove('lightmode');
+            nav.classList.remove("light");
+            links.forEach(link => link.classList.remove('lightlinks'));
+            profile.classList.remove('border');
+            categories.forEach(category => category.classList.remove('light-colour'));
+            ovals.forEach(oval => oval.classList.remove("light-theme"));
+            info.forEach(about => about.classList.remove("light-text"));
+}
 
     addBookmark();
   });

@@ -14,6 +14,7 @@
     <!-- <link rel="stylesheet" href="index.css"> -->
     <link rel="stylesheet" href="searchbar.css" />
     <link rel="stylesheet" href="movies.css" />
+    <link rel="stylesheet" href="lightMode.css" />
 
     <title>Entertainment web app</title>
   </head>
@@ -22,21 +23,27 @@
       <nav>
         <div class="logo"></div>
         <div class="links">
-          <a class="home" href="index.html"></a>
-          <a class="movies" href="movies.html"></a>
-          <a class="tv-series" href="series.html"></a>
-          <a class="bookmarks" href="bookmarked.html"></a>
+            <a class="home" href="index.html"></a>
+            <a class="movies" href="movies.html"></a>
+            <a class="tv-series" href="series.html"></a>
+            <a class="bookmarks" href="bookmarked.html"></a>
         </div>
-        <div class="user-avatar"></div>
+        <div class="user-avatar">
+          <a href="login.html"></a>
+        </div>
       </nav>
       <section>
         <header>
           <form>
             <div class="search"></div>
             <input type="search" placeholder="Search for movies " />
+            <div class="switch-mode">
+              <div class="light-dark"></div>
+            </div>
+            <ul class="searchItems"></ul>
           </form>
         </header>
-        <div class="movies">
+        <div class="moviesContainer">
           <h1>Movies</h1>
           <div class="movies-items"></div>
         </div>
@@ -45,9 +52,9 @@
 
     <!-- Display movies -->
 
-    <script src="movies.js"></script>
 
     <script type="module" src="index.js"></script>
     <script src="script.js"></script>
+    <script src="movies.js"></script>
   </body>
 </html>

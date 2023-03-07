@@ -147,11 +147,13 @@ fetch(json_url).then(Response => Response.json())
                 play.classList.add('show')
             });
             bookmark.addEventListener('mouseover', () => {
+                img.classList.add('dark')
+                play.classList.add('show')
                 button.classList.add('choice')
             });
             bookmark.addEventListener('mouseout', () => {
                 button.classList.remove('choice')
-            });
+            })
             bookmark.addEventListener('click', ()=>{
                 if(button.classList.contains('keep')){
                     button.classList.remove('keep')

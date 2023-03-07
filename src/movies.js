@@ -1,6 +1,5 @@
+
 let moviesContainer = document.querySelector(".movies-items");
-
-
 
 let json_url = "data.json";
 

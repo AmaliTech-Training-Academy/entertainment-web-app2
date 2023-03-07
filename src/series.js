@@ -1,4 +1,4 @@
-import { addBookmark } from "./bookmarked.js";
+// import { addBookmark } from "./bookmarked.js";
 
 let seriesContainer = document.querySelector(".series-items");
 

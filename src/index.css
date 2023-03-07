@@ -12,11 +12,6 @@ body{
     color: #FFFFFF;
 }
 
-body.light{
-    background: #FFFFFF;
-    color: #10141E;
-}
-
 main{
     
     padding: 0 0 3rem 2rem;
@@ -107,7 +102,7 @@ section .trending-items{
 
 .play-btn{
     background: url('./assets/icon-play.svg')no-repeat;
-    width: 4rem;
+    width: 2.5rem;
     height: 3rem;
     margin-right: 1.2rem;
     z-index: 5;
@@ -160,8 +155,8 @@ section .trending-items{
     position: absolute;
     top: 9.4rem;
     left: 1.5rem;
-    z-index: 2;
-    width: auto
+    width: auto;
+    z-index: 5;
 }
 
 .about{
@@ -174,6 +169,10 @@ section .trending-items{
     color: #FFFFFF;
 }
 
+.about.light-text{
+    color: #10141E;
+}
+
 .about .oval{
     height: 3px;
     width: 3px;
@@ -183,10 +182,8 @@ section .trending-items{
     opacity: 0.5;
 }
 
-.about span{
-    height: 0.75rem;
-    width: 0.75rem;
-    margin-right: .5rem;
+.oval.light-theme{
+    background: #10141E;
 }
 
 .trend .trend-info .trend-title{
@@ -195,7 +192,6 @@ section .trending-items{
     font-size: 1.5rem;
     line-height: 1.875rem;
     color: #FFFFFF;
-    
 }
 
 .trend .bookmark-btn{
@@ -259,7 +255,7 @@ main section h1{
 .options .option{
     /* border: 1px solid white; */
     width: 100%;
-    position: relative;   
+    position: relative; 
 }
 
 .option .option-image{
@@ -293,25 +289,35 @@ main section h1{
     display: flex;
 }
 
+.option .option-info{
+position: relative;
+    z-index: 5;
+}
+
 .option .option-info .option-title{
     font-style: normal;
     font-weight: 500;
     font-size: 1.5rem;
     line-height: 1.875rem;
 }
+
 .option .bookmark-btn{
     width: 2rem;
     height: 2rem;
-    position: relative;
-    top: -13rem;
-    left: 16rem;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
     border-radius: 50%;
     background: rgba(0, 0, 0, .5);
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    z-index: 2;
+    z-index: 3;
+}
+
+.option .bookmark-btn:hover{
+    background: #FFFFFF;
 }
 
 .option .bookmark-btn svg{
@@ -320,22 +326,17 @@ main section h1{
     stroke: #fff;
     stroke-width: 1.5;
     fill: none;
-    
 }
-.option .bookmark-btn:hover{
-    background: #fff;
-}
+
 .option .bookmark-btn .choice{
     stroke: #10141E;
+    transition: 0.3s;
 }
 .option .bookmark-btn .keep{
     stroke: #fff;
     fill: #fff;
+    transition: 0.3s;
 }
-.option .bookmark-btn .keep:hover{
-    stroke: #10141E;
-}
-
 
 
 @media  only screen and (max-width: 820px) and (min-width:480px){

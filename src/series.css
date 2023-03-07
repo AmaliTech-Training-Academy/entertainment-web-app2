@@ -44,6 +44,9 @@ section .series-items{
     letter-spacing: -0.5px;
     margin-bottom: 2rem;
 }
+::-webkit-scrollbar {
+    display: none;
+    }
 
 .series-items .series{
     width: 100%;   

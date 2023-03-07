@@ -1,6 +1,4 @@
-
 let moviesContainer = document.querySelector(".movies-items");
-
 let json_url = "data.json";
 
 fetch(json_url).then(Response => Response.json())

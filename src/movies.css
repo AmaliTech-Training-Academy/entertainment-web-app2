@@ -81,7 +81,9 @@ margin-bottom: 1.56rem;
     opacity: .5;
     transition: 0.6s;
 }
-
+::-webkit-scrollbar {
+    display: none;
+    }
 section .movies-items{
     display: grid;
     grid-template-columns: auto auto auto auto;

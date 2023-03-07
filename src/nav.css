@@ -12,8 +12,8 @@ nav{
 }
 
 nav.light{
-    background: #5A698F;
-    border: 2px solid #161D2F;
+    background: #FFFFFF;
+    /* border: 2px solid #161D2F; */
 }
 
 nav .logo{
@@ -81,6 +81,13 @@ nav .user-avatar{
     width: 2.5rem;
     height: 2.5rem;
     border-radius: 50%;
+}
+
+nav .user-avatar a{
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
     background: url('./assets/image-avatar.png');
     background-size: cover;
 }
@@ -92,7 +99,7 @@ nav .user-avatar{
         background: #161D2F;
         border-radius: 20px;
         padding: 1.5rem;
-        border: 1px solid white;
+        /* border: 1px solid white; */
         display: flex;
         flex-direction: row;
         justify-content: space-between;
@@ -168,10 +175,10 @@ nav .user-avatar{
         background-size: cover;
     }
 
-    @media screen and (max-
+    /* @media screen and (max-
     ) {
         
-    }
+    } */
     
 }
 
@@ -188,7 +195,7 @@ nav .user-avatar{
         display: flex;
         justify-content: space-between;
         flex-direction: row;
-        margin-left: -2rem;
+        margin-left: -1.7rem;
         margin-top: 0rem;
     
     }

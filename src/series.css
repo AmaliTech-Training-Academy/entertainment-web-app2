@@ -5,12 +5,13 @@
     margin: 0;
     width: auto;
     font-family: 'Outfit', sans-serif;
-    color: #FFFFFF;
 }
 
 body{
     width: 100%;
     background: #10141E;
+    color: #FFFFFF;
+
 }
 
 main{ 
@@ -47,7 +48,9 @@ section .series-items{
 
 .series-items .series{
     width: 100%;   
+    height: 100%;
     margin-bottom: -5rem;
+    position: relative;
 }
 
 .series-items .series .large{
@@ -65,7 +68,6 @@ section .series-items{
 }
 
 .series-image:hover{
-    opacity: .5;
     cursor: pointer;
 }
 
@@ -85,6 +87,10 @@ section .series-items{
     opacity: 0.5;
 }
 
+.oval.light-theme{
+    background: #10141E;
+}
+
 .about{
     display: flex;
     align-items: center;
@@ -94,11 +100,15 @@ section .series-items{
     opacity: 0.75;
 }
 
-.about span{
+.about i{
     height: 0.75rem;
     width: 0.75rem;
     margin-right: .5rem;
     margin-top: -.1rem;
+}
+
+.about.light-text{
+    color: #10141E;
 }
 
 .bookmark-btn{
@@ -137,10 +147,6 @@ section .series-items{
     fill: #FFFFFF;
 }
 
-.bookmark-btn .keep:hover{
-    stroke: #10141E;
-}
-
 .play{
     position: relative;
     color: #FFFFFF;
@@ -176,12 +182,6 @@ section .series-items{
     font-size: 18px;
     line-height: 23px;
 }
-
-.dark{
-    opacity: .5;
-    transition: 0.6s;
-}
-
 
 @media only screen and (max-width: 820px) and (min-width:480px){
     main{

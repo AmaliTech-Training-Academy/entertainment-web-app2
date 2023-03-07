@@ -82,6 +82,7 @@ fetch(json_url).then(Response => Response.json())
             +'<p>Play</p>'
             +'</div>'
             +'</div>'
+            +'<div class="overlay"></div>'
             +'</div>';
             }
         optionsContainer.innerHTML = options;    
@@ -98,11 +99,11 @@ fetch(json_url).then(Response => Response.json())
             overlay.addEventListener('mouseover', () => {
                 overlay.classList.add('dark')
                 play.classList.add('show')
-            })
+            });
             overlay.addEventListener('mouseout', () => {
                 overlay.classList.remove('dark')
                 play.classList.remove('show')
-            })
+            });
             play.addEventListener('mouseover', () => {
                 overlay.classList.add('dark')
                 play.classList.add('show')
@@ -112,7 +113,7 @@ fetch(json_url).then(Response => Response.json())
             });
             bookmark.addEventListener('mouseout', () => {
                 button.classList.remove('choice')
-            })
+            });
             bookmark.addEventListener('click', ()=>{
                 if(button.classList.contains('keep')){
                     button.classList.remove('keep')
@@ -128,32 +129,29 @@ fetch(json_url).then(Response => Response.json())
         });
 
     const recommended = document.querySelectorAll(".option");
-
         recommended.forEach(option => {
-            const img = option.querySelector(".option-image");
+            const overlay = option.querySelector(".overlay");
             const play = option.querySelector(".play");
             const bookmark = option.querySelector(".bookmark-btn");
             const button = option.querySelector("svg");
-            img.addEventListener('mouseover', () => {
-                img.classList.add('dark')
+            overlay.addEventListener('mouseover', () => {
+                overlay.classList.add('dark')
                 play.classList.add('show')
             });
-            img.addEventListener('mouseout', () => {
-                img.classList.remove('dark')
+            overlay.addEventListener('mouseout', () => {
+                overlay.classList.remove('dark')
                 play.classList.remove('show')
             });
             play.addEventListener('mouseover', () => {
-                img.classList.add('dark')
+                overlay.classList.add('dark')
                 play.classList.add('show')
             });
             bookmark.addEventListener('mouseover', () => {
-                img.classList.add('dark')
-                play.classList.add('show')
                 button.classList.add('choice')
             });
             bookmark.addEventListener('mouseout', () => {
                 button.classList.remove('choice')
-            })
+            });
             bookmark.addEventListener('click', ()=>{
                 if(button.classList.contains('keep')){
                     button.classList.remove('keep')
@@ -164,5 +162,74 @@ fetch(json_url).then(Response => Response.json())
             });
         });
 
+        const btn = document.querySelector('.light-dark');
+            const screenSwitch = document.querySelector('.switch-mode');
+            const body = document.querySelector("body");
+            const searchIcon = document.querySelector(".search");
+            const nav = document.querySelector("nav");
+            const links = document.querySelectorAll("a");
+            const recommendedContainer = document.querySelector(".options");
+            const ovals = recommendedContainer.querySelectorAll(".oval");
+            const categories = recommendedContainer.querySelectorAll("i");
+            const info = recommendedContainer.querySelectorAll(".about")
+            const profile = document.querySelector(".user-avatar");
+            screenSwitch.addEventListener('click', lightMode);
+        
+        function lightMode() {
+                let theme;
+                if(btn.classList.contains('triggered')){
+                    btn.classList.remove('triggered');
+                    body.classList.remove('light');
+                    screenSwitch.classList.remove('light');
+                    searchIcon.classList.remove('lightmode');
+                    nav.classList.remove("light");
+                    links.forEach(link => link.classList.remove('lightlinks'));
+                    profile.classList.remove('border');
+                    categories.forEach(category => category.classList.remove('light-colour'));
+                    ovals.forEach(oval => oval.classList.remove("light-theme"));
+                    info.forEach(about => about.classList.remove("light-text"));
+                    theme = 'DARK';
+                }else{
+                    btn.classList.add('triggered');
+                    body.classList.add('light');
+                    screenSwitch.classList.add('light');
+                    searchIcon.classList.add('lightmode');
+                    nav.classList.add('light');
+                    links.forEach(link => link.classList.add('lightlinks'));
+                    profile.classList.add('border');
+                    categories.forEach(category => category.classList.add('light-colour'));
+                    ovals.forEach(oval => oval.classList.add("light-theme"));
+                    info.forEach(about => about.classList.add("light-text"));
+                    theme = 'LIGHT';
+                }
+                localStorage.setItem("PageTheme", JSON.stringify(theme));
+        }
+            let getTheme = JSON.parse(localStorage.getItem("PageTheme"));
+        console.log(getTheme, "Hello");
+        
+        if(getTheme === 'LIGHT'){
+            btn.classList.add('triggered');
+                    body.classList.add('light');
+                    screenSwitch.classList.add('light');
+                    searchIcon.classList.add('lightmode');
+                    nav.classList.add('light');
+                    links.forEach(link => link.classList.add('lightlinks'));
+                    profile.classList.add('border');
+                    categories.forEach(category => category.classList.add('light-colour'));
+                    ovals.forEach(oval => oval.classList.add("light-theme"));
+                    info.forEach(about => about.classList.add("light-text"));
+        
+        }else if((getTheme === 'DARK')){
+            btn.classList.remove('triggered');
+                    body.classList.remove('light');
+                    screenSwitch.classList.remove('light');
+                    searchIcon.classList.remove('lightmode');
+                    nav.classList.remove("light");
+                    links.forEach(link => link.classList.remove('lightlinks'));
+                    profile.classList.remove('border');
+                    categories.forEach(category => category.classList.remove('light-colour'));
+                    ovals.forEach(oval => oval.classList.remove("light-theme"));
+                    info.forEach(about => about.classList.remove("light-text"));
+        }
     addBookmark();
     });

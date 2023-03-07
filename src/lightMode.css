@@ -2,6 +2,54 @@ body.light{
     background: #FFFFFF;
     color: #10141E;
 }
+
+.search.lightmode{
+    filter: brightness(0) saturate(100%) invert(5%) sepia(7%) saturate(4212%) hue-rotate(185deg) brightness(95%) contrast(93%);
+}
+
+.switch-mode{
+    width: 4rem;
+    height: 1.8rem;
+    border: 1px solid white;
+    background: #ffffff;
+    border-radius: 1rem;
+    padding: 0 0.2rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.switch-mode.light{
+    background: #10141E;
+}
+
+.switch-mode .light-dark{
+    position: absolute;
+    left: 0.2rem;
+    height: 1.3rem;
+    width: 1.3rem;
+    border-radius: 50%;
+    background: black;
+}
+
+.light-dark.triggered{
+    background-color: #ffffff;
+    left: unset;
+    right: 0.2rem;
+    transition: 0.6s;
+}
+
+.overlay{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    z-index: 1;
+    border-radius: .5rem;
+    cursor: pointer;
+}
+
 .overlay.dark{
     background: rgba(0, 0, 0, 0.5);
     transition: 0.5s;
@@ -15,4 +63,15 @@ body.light{
 
 .category.light-colour{
     filter: brightness(0) saturate(100%) invert(5%) sepia(8%) saturate(4816%) hue-rotate(187deg) brightness(90%) contrast(92%);
+}
+
+.bookmark-btn .choice{
+    stroke:#10141E;
+    transition: 0.3s;
+}
+
+.bookmark-btn .keep{
+    stroke: #FFFFFF;
+    fill: #FFFFFF;
+    transition: 0.3s;
 }

@@ -17,7 +17,7 @@ function addBookmark() {
     bookmarkedMovies.push(movie);
     localStorage.setItem("bookmarkedMovies", JSON.stringify(bookmarkedMovies));
   }
- 
 }
 
 export { addBookmark };
+

@@ -58,10 +58,6 @@ margin-bottom: 1.56rem;
     cursor: pointer;
 }
 
-.show{
-    opacity: 1;
-    transition: 0.6s;
-}
 
 .play-btn{
     background: url('./assets/icon-play.svg')no-repeat;
@@ -91,13 +87,19 @@ margin-bottom: 1.56rem;
     margin-bottom: 2rem;
 }
 
-section .movies-items, .options .series-items{
+section .movies-items{
     display: grid;
     grid-template-columns: auto auto auto auto;
     grid-gap: 2rem;
 }
 
-.movies-items .movie, .options .series-items .movie{
+.options .series-items{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-gap: 2rem;
+}
+
+.movie{
     width: 100%;   
     position: relative;
 }

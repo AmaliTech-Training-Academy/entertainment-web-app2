@@ -15,6 +15,8 @@
     <link rel="stylesheet" href="movies.css" /> -->
     <link rel="stylesheet" href="searchbar.css" />
     <link rel="stylesheet" href="bookmarked.css"/>
+    <link rel="stylesheet" href="lightMode.css" />
+
 
     <title>Frontend Mentor | Entertainment web app</title>
   </head>
@@ -37,6 +39,10 @@
           <form>
             <div class="search"></div>
             <input type="search" placeholder="Search for bookmarked shows" />
+              <div class="switch-mode">
+                <div class="light-dark"></div>
+              </div>
+              <ul class="searchItems"></ul>
           </form>
           <div class="trending">
             <h1>Bookmarked Movies</h1>
@@ -68,7 +74,7 @@
       <div class="movie-info">
         <div class="about">${movie.year}
           <div class="oval"></div>
-        <span style="background:url(${movie.logo})"></span>${movie.category}
+        <i style="background:url(${movie.logo})"></i>${movie.category}
         <div class="oval">
         </div>${movie.rating}
         </div>
@@ -79,6 +85,7 @@
       <div class="play">
         <div class="play-btn">
         </div><p>Play</p></div>
+        <div class="overlay"></div>
     </div>
   `;
 
@@ -110,5 +117,6 @@
     <script type="module" src="index.js"></script>
     <!-- <script src="movies.js"></script> -->
     <!-- <script src="series.js"></script> -->
+    <script src="BookmarkPage.js"></script>
   </body>
 </html>

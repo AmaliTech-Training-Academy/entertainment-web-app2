@@ -241,7 +241,7 @@ section .series-items{
 
 @media only screen and (max-width: 420px) and (min-width:320px){
     main{
-        padding: 0;
+        padding: .1rem;
         flex-direction: column;
         width: auto;
         position: relative;
@@ -250,7 +250,7 @@ section .series-items{
         width: 30rem;
         padding: 0;
         position: relative;
-        margin-top: 3rem;
+        margin-top: 3.5rem;
     }
     
     main section header{

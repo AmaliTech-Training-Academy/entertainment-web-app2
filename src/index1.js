@@ -1,3 +1,4 @@
+
 //Initializing the inputs
 const form = document.getElementById("form");
 const email = document.getElementById("email");
@@ -12,43 +13,28 @@ form.addEventListener("submit", (event) => {
   if (!form.classList.contains("invalid")) {
     sendConfirmationEmail();
     generateUserID(); //Generate user ID function
-    window.location = "login.html";
+    window.location.href = "login.html";
+    // LoginConfirmation()
+    alert('Confirmation email sent')
   }
 
   const userID = generateUserID();
 
   // Store the user ID in local storage
-  localStorage.setItem('userID', userID);
+  // localStorage.setItem('userID', userID);
 
   //storing user data in localStorage
   let userDetails = {
     email: email.value,
     password: password.value,
-    userID
+    userID: userID
   };
-  // console.log("user", userDetails);
-
-  // if(userDetails = userID){
-  //   alert('User ID already exists')
-  // }
 
   localStorage.setItem("User", JSON.stringify(userDetails));
-  console.log(JSON.stringify(userDetails));
-  if (localStorage.getItem(userID)) {
-    alert('User ID already exists!');
-  } else {
-    localStorage.setItem(userID, userDetails); // set the value associated with the key (user ID)
-    alert(`Confirmation email sent`);
+  if(localStorage.getItem(email.value && password.value == userID)){
+    alert('User ID already exists')
   }
 });
-
-// form.addEventListener("submit", (event) => {
-//   event.preventDefault();
-//   validateLogin()
-//     if(form.classList.contains('invalid')){
-//       window.location = 'index.html'
-//     }
-// });
 
 function sendConfirmationEmail() {
   console.log(document.querySelector("#email").value);
@@ -61,8 +47,8 @@ function sendConfirmationEmail() {
     Subject: 'Confimation Email',
     Body: "We sent you a confirmation email",
   })
-    .then((message) => alert('Confirmation email sent'))
-    .catch((err) => console.log(err));
+    // .then((message) => alert('Confirmation email sent'))
+    // .catch((err) => console.log(err));
 }
 
 const setError = (element, message) => {
@@ -115,34 +101,13 @@ const validateInputs = () => {
   } else {
     setSuccess(password);
   }
-};
 
-// login confirmation
-const validateLogin = () => {
-  const loginEmail = email.value.trim();
-  const emailValue = email.value.trim();
-  // const passwordValue = passwordValue.value.trim();
-  const password2Value = password2.value.trim();
-
-  if (emailValue === "") {
-    setError(email, "Email is required");
-  } else if (isValidEmail(emailValue)) {
-    console.log(true);
-    setSuccess(email);
-  } else if (emailValue !== loginEmail) {
-    console.log('email not matched')
-    setError(email, 'Email must matched')
-  } else {
-    console.log(false);
-    setError(email, "Provide a valid email address");
-  }
-
-  if (password2Value === "") {
-    setError(password2, "Please confirm your password");
-  } else if (password2Value !== passwordValue) {
-    setError(password, "Password doesn't match");
-  } else {
-    setSuccess(password2);
+  if(password2Value === '') {
+    setError(password2, "Please confirm your password")
+  }else if(password2Value !== passwordValue){
+    setError(password2, "Password doesn't matched")
+  }else {
+    setSuccess(password2)
   }
 };
 

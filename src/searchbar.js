@@ -32,47 +32,55 @@ fetch(json_link).then(Response => Response.json())
         resultsContainer.classList.add('result');
     })
     
-    searchBar.addEventListener('click', () => {
-        if (!searchBar){
-            resultsContainer.classList.remove('result');
-        }
+    searchBar.addEventListener('blur', () => {
+        resultsContainer.classList.remove('result');
     })
-    
+
+    searchBar.addEventListener('keyup', () => {
+        searchValue = searchBar.value;
+        console.log(searchValue);
+
+        filterResult = searchByName(searchValue);
+        console.log(filterResult);
+
+        filterList = "";
+        for(i = 0; i < filterResult.length; i++){
+           filterList += 
+            '<li>'
+            +'<img class="search-item-img" src="'+filterResult[i].thumbnail.regular.small+'"/>'
+            +'<div class="search-item-info">'
+            +'<div class="search-item-title">'
+            +filterResult[i].title
+            +'</div>'
+            +'<div class="search-item-year">'
+            +filterResult[i].year
+            +'</div>'
+            +'</div>'
+            +'</li>';
+        }
+        resultsContainer.innerHTML = filterList;
+    });
+
+    function searchByName(title) {
+        const results = [];
+        for (let i = 0; i < data.length; i++) {
+          if (data[i].title.toLowerCase().includes(title.toLowerCase())) {
+            results.push(data[i]);
+          }
+        }
+        return results;
+      }
+
+
 
     
+});
+   
     
     
     
-})
 
 
 
-// window.onclick = (evt) => {
-//     console.log(evt.target);
-//     if(evt.target === resultsContainer) {
-//         resultsContainer.style.opacity = 0;
-//     }
-// }
-/*
-const closeSearchBar = (event) => {
-    console.log(event.target);
-    if (event.currentTarget.classList.contains('searchItems') && resultsContainer.classList.contains('result')) {
-        resultsContainer.style.display = 'none';
-        // resultContainer.style.opacity = "0";
-        console.log(event.target.classList.contains('ul'))
-    }
-}
 
-document.body.addEventListener('click', closeSearchBar);
-*/
-/*
-document.body.onclick = (evt) => {
-    console.log(evt.target);
-    const target = evt.target;
-    const searchInput = document.querySelector('input[type="search"]');
-    if (!target.classList.contains('searchItems') || !target.classList.contains(searchInput)) {
-        resultsContainer.style.display = 'none';    
-        console.log('ere');
-    }
-}
-*/
+

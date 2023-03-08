@@ -7,48 +7,35 @@ const password2 = document.getElementById("password2");
 // console.log(form);
 form.addEventListener("submit", (event) => {
   event.preventDefault();
-
+  console.log("password", password.value);
   validateInputs(); //calling the validate Input in the eventListener function
   if (!form.classList.contains("invalid")) {
-    sendConfirmationEmail();
-    generateUserID(); //Generate user ID function
-    window.location = "login.html";
-  }
+    const userID = generateUserID();
 
-  const userID = generateUserID();
+    // Store the user ID in local storage
+    // localStorage.setItem('userID', userID);
 
-  // Store the user ID in local storage
-  localStorage.setItem('userID', userID);
+    //storing user data in localStorage
+    let userDetails = {
+      email: email.value,
+      password: password.value,
+      userID: userID,
+    };
+    console.log("userDetails", userDetails);
 
-  //storing user data in localStorage
-  let userDetails = {
-    email: email.value,
-    password: password.value,
-    userID
-  };
-  // console.log("user", userDetails);
-
-  // if(userDetails = userID){
-  //   alert('User ID already exists')
-  // }
-
-  localStorage.setItem("User", JSON.stringify(userDetails));
-  console.log(JSON.stringify(userDetails));
-  if (localStorage.getItem(userID)) {
-    alert('User ID already exists!');
-  } else {
-    localStorage.setItem(userID, userDetails); // set the value associated with the key (user ID)
-    alert(`Confirmation email sent`);
+    let ls = JSON.parse(localStorage.getItem("User"));
+    
+    if (ls.email === email.value) {
+      alert("User ID already exists");
+    } else {
+      localStorage.setItem("User", JSON.stringify(userDetails));
+      sendConfirmationEmail();
+      // LoginConfirmation()
+      alert("Confirmation email sent");
+      window.location.href = "login.html";
+    }
   }
 });
-
-// form.addEventListener("submit", (event) => {
-//   event.preventDefault();
-//   validateLogin()
-//     if(form.classList.contains('invalid')){
-//       window.location = 'index.html'
-//     }
-// });
 
 function sendConfirmationEmail() {
   console.log(document.querySelector("#email").value);
@@ -58,11 +45,11 @@ function sendConfirmationEmail() {
     Password: "6C312FF56E8DBCD1FBA9C64145E0E4A5EC29",
     To: document.querySelector("#email").value,
     From: "whiy07@gmail.com",
-    Subject: 'Confimation Email',
+    Subject: "Confimation Email",
     Body: "We sent you a confirmation email",
-  })
-    .then((message) => alert('Confirmation email sent'))
-    .catch((err) => console.log(err));
+  });
+  // .then((message) => alert('Confirmation email sent'))
+  // .catch((err) => console.log(err));
 }
 
 const setError = (element, message) => {
@@ -115,32 +102,11 @@ const validateInputs = () => {
   } else {
     setSuccess(password);
   }
-};
-
-// login confirmation
-const validateLogin = () => {
-  const loginEmail = email.value.trim();
-  const emailValue = email.value.trim();
-  // const passwordValue = passwordValue.value.trim();
-  const password2Value = password2.value.trim();
-
-  if (emailValue === "") {
-    setError(email, "Email is required");
-  } else if (isValidEmail(emailValue)) {
-    console.log(true);
-    setSuccess(email);
-  } else if (emailValue !== loginEmail) {
-    console.log('email not matched')
-    setError(email, 'Email must matched')
-  } else {
-    console.log(false);
-    setError(email, "Provide a valid email address");
-  }
 
   if (password2Value === "") {
     setError(password2, "Please confirm your password");
   } else if (password2Value !== passwordValue) {
-    setError(password, "Password doesn't match");
+    setError(password2, "Password doesn't matched");
   } else {
     setSuccess(password2);
   }
@@ -149,8 +115,7 @@ const validateLogin = () => {
 //Generating user ID
 function generateUserID() {
   const userID = Math.random().toString().slice(2, 8);
-  return `user-${userID}`;
+  return `${userID}`;
 }
 
 // const userID = generateUserID();
-

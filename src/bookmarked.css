@@ -86,13 +86,19 @@ main section header{
     margin-bottom: 2rem;
 }
 
-section .movies-items, .options .series-items{
+section .movies-items{
     display: grid;
     grid-template-columns: auto auto auto auto;
     grid-gap: 2rem;
 }
 
-.movies-items .movie, .options .series-items .movie{
+.options .series-items{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-gap: 2rem;
+}
+
+.movie{
     width: 100%;   
     position: relative;
 }

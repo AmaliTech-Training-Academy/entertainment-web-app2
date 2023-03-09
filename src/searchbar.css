@@ -2,7 +2,7 @@ form{
     /* border: 1px solid white; */
     height: 3rem;
     display: flex;
-    justify-content: row-reverse;
+    justify-content: space-between;
     align-items: center;
     margin-bottom: 2rem;
     position: relative;
@@ -17,7 +17,7 @@ form .search{
 }
 
 input{
-    width: 90%;
+    width: 80%;
     height: 100%;
     border: none;
     outline: none;
@@ -30,11 +30,19 @@ input{
 
 input{ 
     caret-color: red; 
+    width: 100%;
 }
 
 input[type=search]:focus{
     border-bottom: 1px solid #5A698F;
     color: #ffffff;
+    opacity: 1;
+    background: transparent;
+}
+
+input[type=search]:focus.light{
+    border-bottom: 1px solid #5A698F;
+    color: #10141E;
     opacity: 1;
     background: transparent;
 }
@@ -58,8 +66,14 @@ ul{
 }
 
 .result{
-    z-index: 5;
+    z-index: 6;
     opacity: 1;
+    transition: 0.3s;
+}
+
+.light-theme{
+    background: rgba(255, 255, 255, 0.78);
+    color: #10141E;
 }
 
 ul li{

@@ -70,10 +70,6 @@ fetch(json_link).then(Response => Response.json())
         }
         return results;
       }
-
-
-
-    
 });
    
     

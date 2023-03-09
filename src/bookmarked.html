@@ -44,12 +44,12 @@
               </div>
               <ul class="searchItems"></ul>
           </form>
-          <div class="trending">
+          <div class="movies-section">
             <h1>Bookmarked Movies</h1>
             <div class="movies-items"></div>
           </div>
         </header>
-        <div class="options">
+        <div class="series-section">
           <h1>Bookmarked TV Series</h1>
           <div class="series-items"></div>
         </div>
@@ -60,63 +60,10 @@
 
     
     <script>
-      document.addEventListener("DOMContentLoaded", (evt) => {
-        fetchBookmarks();
-      });
-
-      const renderMovie = (movie) => `
-      <div class="movie">
-      <div class="movie-image">
-        <img class="large" src="${movie.thumbnail.regular.large}">
-        <img class="medium" src="${movie.thumbnail.regular.medium}">
-        <img class="small" src="${movie.thumbnail.regular.small}">
-      </div>
-      <div class="movie-info">
-        <div class="about">${movie.year}
-          <div class="oval"></div>
-        <i style="background:url(${movie.logo})"></i>${movie.category}
-        <div class="oval">
-        </div>${movie.rating}
-        </div>
-        <h3 class="movie-title">${movie.title}</h3>
-      </div>
-      <div class="bookmark-btn"><svg width="12" height="14" xmlns="http://www.w3.org/2000/svg"><path d="m10.518.75.399 12.214-5.084-4.24-4.535 4.426L.75 1.036l9.768-.285Z"></path></svg>
-      </div>
-      <div class="play">
-        <div class="play-btn">
-        </div><p>Play</p></div>
-        <div class="overlay"></div>
-    </div>
-  `;
-
-      function fetchBookmarks() {
-        const movieItems = document.querySelector(".movies-items");
-        const seriesItems = document.querySelector(".series-items");
-        //Getting bookmarks from localStorage
-        const bookmarks =
-          JSON.parse(localStorage.getItem("bookmarkedMovies")) || [];
-        //Getting output id
-
-        fetch("./data.json")
-          .then((response) => response.json())
-          .then((data) => {
-            console.log(data);
-            data.filter((movie) => {
-              if (bookmarks.indexOf(movie.title) !== -1) {
-                if (movie.category === "Movie") {
-                  movieItems.innerHTML += renderMovie(movie);
-                } else {
-                  seriesItems.innerHTML += renderMovie(movie);
-                }
-              }
-            });
-          });
-      }
     </script>
     <script src="script.js"></script>
     <script type="module" src="index.js"></script>
-    <!-- <script src="movies.js"></script> -->
-    <!-- <script src="series.js"></script> -->
+    <script src="searchbar.js"></script>
     <script src="BookmarkPage.js"></script>
     <script src="removeBookmarked.js"></script>
   </body>

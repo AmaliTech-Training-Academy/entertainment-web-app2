@@ -10,10 +10,10 @@ body{
     width: 100%;
     background: #10141E;
     color: #FFFFFF;
+    transition: 1s;
 }
 
 main{
-    
     padding: 0 0 3rem 2rem;
     display: flex;
     width: auto;

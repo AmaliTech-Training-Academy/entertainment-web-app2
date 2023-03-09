@@ -3,14 +3,13 @@
 *{
     box-sizing: border-box;
     margin: 0;
-    width: auto;
     font-family: 'Outfit', sans-serif;
-    color: #FFFFFF;
+    
 }
 
 body{
-    width: 100%;
     background: #10141E;
+    color: #FFFFFF;
 }
 
 main{
@@ -35,12 +34,16 @@ main section header{
     left: 5.4rem;
 } */
 
-.movies-items .movie .play, .options .series-items .movie .play{
+::-webkit-scrollbar{
+display: none;
+}
+
+    .play{
     position: absolute;
     color: #FFFFFF;
     z-index: 3;
-    top: 4rem;
-    left: 5.5rem;
+    top: 30%;
+    left: 30%;
     width: 7.3rem;
     height: 3rem;
     display: flex;
@@ -58,26 +61,26 @@ main section header{
     /* transition: 0.6s; */
 }
 
-.movies-items .movie .play-btn, .options .series-items .movie .play-btn{
+    .play-btn{
     background: url('./assets/icon-play.svg')no-repeat;
     width: 2rem;
     height: 2rem;
     margin-right: 1.2rem;
     z-index: 5;
 }
-
-.movie-items .movie .play p, .options .series-items .movie .play p{
+    
+    .play p{
     font-weight: 500;
     font-size: 18px;
     line-height: 23px;
 }
 
-.movies-items .movie .dark{
+.movie.dark{
     opacity: .5;
     transition: 0.6s;
 }
 
-.trending h1, .options h1{
+    h1{
     font-style: normal;
     font-weight: 300;
     font-size: 2rem;
@@ -96,6 +99,7 @@ section .movies-items{
     display: grid;
     grid-template-columns: auto auto auto auto;
     grid-gap: 2rem;
+    position: relative;
 }
 
 .movie{
@@ -103,20 +107,18 @@ section .movies-items{
     position: relative;
 }
 
-.movies-items .movie .large, .series-items .movie .large{
+.large{
     height: 11rem;
-    width: 17.5rem;
+    width: 100%;
     border-radius: 0.5rem;
     margin-bottom: .4rem;
 }
 
-.movies-items .movie .movie-image .medium, .small{
+.medium, 
+.small{
     display: none;
 }
 
-.series-items .movie .movie-image .medium, .small{
-    display: none;
-}
 .movie .about{
     display: flex;
     align-items: center;
@@ -125,9 +127,11 @@ section .movies-items{
     line-height: 1.2rem;
     opacity: 0.75;
 }
-.movie .about{
-    display: flex;
+
+.about.light-text{
+    color: #10141E;
 }
+
 .about .oval{
     height: 3px;
     width: 3px;
@@ -137,29 +141,29 @@ section .movies-items{
     opacity: 0.5;
 }
 
-.about span{
-    height: 0.75rem;
-    width: 0.75rem;
-    margin-right: .5rem;
+.oval.light-theme{
+    background: #10141E;
 }
+
 
 .movie-image:hover{
     opacity: 0.5;
     cursor: pointer;
 }
 
-.movie .movie-info .movie-title{
+.movie-title{
     font-style: normal;
     font-weight: 500;
     font-size: 1.5rem;
     line-height: 1.875rem;
 }
-.movies-items .movie .bookmark-btn, .series-items .movie .bookmark-btn{
+    
+.bookmark-btn{
     width: 2rem;
     height: 2rem;
-    position: relative;
-    top: -13.5rem;
-    left: 14rem;
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
     border-radius: 50%;
     background: rgba(0, 0, 0, .5);
     display: flex;
@@ -169,7 +173,7 @@ section .movies-items{
     z-index: 2;
 }
 
-.movies-items .movie .bookmark-btn svg, .series-items .movie .bookmark-btn svg{
+.bookmark-btn svg{
     width: 0.75rem;
     height: 0.88rem;
     stroke: #fff;
@@ -177,114 +181,100 @@ section .movies-items{
     fill: none;
     
 }
-.movies-items .movie .bookmark-btn:hover, .series-items .movie .bookmark-btn:hover{
+.bookmark-btn:hover{
     background: #fff;
 }
-.movies-items .movie .bookmark-btn .choice{
+.bookmark-btn.choice{
     stroke: #10141E;
 }
-.movies-items .movie .bookmark-btn .keep{
+.bookmark-btn.keep{
     stroke: #fff;
     fill: #fff;
 }
-.movies-items .movie .bookmark-btn .keep:hover{
+.bookmark-btn.keep:hover{
     stroke: #10141E;
 }
 
 
 
-@media only screen and (max-width: 820px) and (min-width:480px) {
-    
-    main section{
-        width: 53rem;
-        height: 100%;
-        padding: 4rem 2rem 0 2rem;
-        position: absolute;
-        left: 1rem;
-        margin-bottom: 2rem;
-    }
-    
-     section{
-        margin-top: 5rem;
-    }
+@media screen and (max-width: 820px) {
     main{
         display: flex;
-        width: 51rem;
+        flex-direction: column;
+        padding: 0 1.5rem;
     }
+
+    main section{
+    padding: 0;
+    width: 100%;
+    }
+
     section .movies-items, .options .series-items{
         display: grid;
         grid-template-columns: auto auto auto ;
-        grid-gap: 2rem;
-        margin-left: -.5rem;
-        width: fit-content;
+        grid-gap: 1rem;
     }
+
     /* nav{
         width: 50rem;
-    } */
-    /* .movies-items .movie{
+    }  */
+    .movie-section .movie{
         width: 100%;   
-    } */
+    } 
     
-    .movies-items .movie .movie-image .medium {
+
+    .large{
+        display: none;
+    }
+
+    .medium {
         display: inline;
         height: 10rem;
-        width: 15rem;
+        width: 100%;
         border-radius: 0.5rem;
         margin-bottom: .4rem;
     }
 
-    .series-items .movie .movie-image .medium{
-        display: inline;
-        height: 10rem;
-        width: 15rem;
-        border-radius: 0.5rem;
-        margin-bottom: .4rem;
-    }
-    
-    .movies-items .movie .movie-image .large, .small{
+    .small{
         display: none;
     }
-
-    .series-items .movie .movie-image .large, .small{
-        display: none;
-    }
-   
     
     .movie .about{
         display: flex;
     }
     
-    .movies-items .movie-info .movie-title{
+    .movie-title{
         font-size: 1.3rem;
     }
-    .options .series-items .movie-info .movie-title{
-        font-size: 1.3rem;
-    }
-    .movies-items .movie .play{
+
+    .play{
         position: absolute;
-        top: 5rem;
-        left: 5.4rem;
+        top: 27%;
+        left: 27%;
     }
-    .movie .bookmark-btn{
-        top: -12.5rem;
-        left: 12rem;
+}
+
+@media screen and (max-width: 582px){
+    .play{
+        position: absolute;
+        top: 27%;
+        left: 10%;
     }
     
 }
 
-@media only screen and (max-width: 420px) and (min-width:320px) {
+@media screen and (max-width: 440px) {
     main{
-        padding: .5rem;
+        padding: 0;
         flex-direction: column;
-        width: 29rem;
         position: relative;
     }
 
     main section{
-        width: 30rem;
         padding: 0;
         position: relative;
-        margin-top: 3rem;
+        margin-top: 0;
+        padding: 1rem;
     }
     
      /* section{
@@ -292,8 +282,7 @@ section .movies-items{
     } */
     section .movies-items, .options .series-items{
         grid-template-columns: auto auto;
-        grid-gap: 1.5rem;
-        margin-left: 1rem;
+        grid-gap: 1rem;
     }    
 
     .trending h1, .options h1 {
@@ -301,27 +290,14 @@ section .movies-items{
         margin-left: 1rem;
     }
    
-    .movies-items .movie .small{
+    .small{
         display: inline;
-        width: 18.25rem;
+        width: 100%;
         height: 10rem;
         border-radius: 0.5rem;
-        /* margin-bottom: .4rem; */
     }
 
-    .options .series-items .movie .small{
-        display: inline;
-        width: 18.25rem;
-        height: 10rem;
-        border-radius: 0.5rem;
-        /* margin-bottom: .4rem; */
-    }
-    
-    .movies-items .movie .large, .medium{
-        display: none;
-    }
-
-    .options .series-items .movie .large, .medium{
+    .medium{
         display: none;
     }
     
@@ -329,28 +305,17 @@ section .movies-items{
         font-size: 0.875rem;
     }
 
-    .options .series-items .about {
+    .about {
         font-size: 0.875rem;
     }
     
-    .movies-items .movie-info .movie-title{
+    .movie-title{
         font-size: 1rem;
     }
 
-    .options .series-items .movie-info .movie-title{
-        font-size: 1rem;
-    }
-
-    .movies-items .movie .play{
+    .play{
         position: absolute;
-        top: 6rem;
-        left: 6rem;   
+        top: 27%;
+        left: 20%
     }
-    .movie .bookmark-btn{
-        position: relative;
-        top: -12.5rem;
-        left: 14.5rem;
-    }
-    
-   
 }

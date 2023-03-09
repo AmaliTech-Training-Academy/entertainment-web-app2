@@ -99,6 +99,8 @@ fetch(json_url)
     const screenSwitch = document.querySelector('.switch-mode');
     const body = document.querySelector("body");
     const searchIcon = document.querySelector(".search");
+    const searchQuery = document.querySelector("input");
+    const searchResults = document.querySelector("ul");  
     const nav = document.querySelector("nav");
     const links = document.querySelectorAll("a");
     const recommendedContainer = document.querySelector(".series-items");
@@ -115,6 +117,8 @@ function lightMode() {
             body.classList.remove('light');
             screenSwitch.classList.remove('light');
             searchIcon.classList.remove('lightmode');
+            searchResults.classList.remove('light-theme');
+            searchQuery.classList.remove('light');
             nav.classList.remove("light");
             links.forEach(link => link.classList.remove('lightlinks'));
             profile.classList.remove('border');
@@ -127,6 +131,8 @@ function lightMode() {
             body.classList.add('light');
             screenSwitch.classList.add('light');
             searchIcon.classList.add('lightmode');
+            searchResults.classList.add('light-theme');
+            searchQuery.classList.add('light');
             nav.classList.add('light');
             links.forEach(link => link.classList.add('lightlinks'));
             profile.classList.add('border');
@@ -145,6 +151,8 @@ if(getTheme === 'LIGHT'){
             body.classList.add('light');
             screenSwitch.classList.add('light');
             searchIcon.classList.add('lightmode');
+            searchResults.classList.add('light-theme');
+            searchQuery.classList.add('light');
             nav.classList.add('light');
             links.forEach(link => link.classList.add('lightlinks'));
             profile.classList.add('border');
@@ -157,6 +165,8 @@ if(getTheme === 'LIGHT'){
             body.classList.remove('light');
             screenSwitch.classList.remove('light');
             searchIcon.classList.remove('lightmode');
+            searchResults.classList.remove('light-theme');
+            searchQuery.classList.remove('light');
             nav.classList.remove("light");
             links.forEach(link => link.classList.remove('lightlinks'));
             profile.classList.remove('border');

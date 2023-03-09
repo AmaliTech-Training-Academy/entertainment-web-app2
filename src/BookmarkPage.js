@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const shows = document.getElementsByClassName("movie");
+    const shows = document.getElementsByClassName(".movie");
 Array.from(shows).forEach(show => {
     const overlay = show.querySelector(".overlay");
     const play = show.querySelector(".play");

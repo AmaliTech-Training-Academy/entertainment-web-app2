@@ -105,7 +105,7 @@ section .movies-items{
 
 .movies-items .movie .large, .series-items .movie .large{
     height: 11rem;
-    width: 100%;
+    width: 17.5rem;
     border-radius: 0.5rem;
     margin-bottom: .4rem;
 }
@@ -158,8 +158,8 @@ section .movies-items{
     width: 2rem;
     height: 2rem;
     position: relative;
-    top: -13rem;
-    left: 16rem;
+    top: -13.5rem;
+    left: 14rem;
     border-radius: 50%;
     background: rgba(0, 0, 0, .5);
     display: flex;

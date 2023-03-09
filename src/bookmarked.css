@@ -165,7 +165,7 @@ display: none;
     top: 1rem;
     right: 1.5rem;
     border-radius: 50%;
-    background: rgba(0, 0, 0, .5);
+    background: rgbagit(0, 0, 0, .5);
     display: flex;
     align-items: center;
     justify-content: center;

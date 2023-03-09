@@ -38,12 +38,12 @@ main section header{
 display: none;
 }
 
-    .play{
+.play{
     position: absolute;
     color: #FFFFFF;
     z-index: 3;
     top: 30%;
-    left: 30%;
+    left: 17%;
     width: 7.3rem;
     height: 3rem;
     display: flex;
@@ -56,12 +56,12 @@ display: none;
     cursor: pointer;
 }
 
-.movies-items .movie .show{
+.series-items .movie .show, .movies-items .movie .show{
     opacity: 1;
     /* transition: 0.6s; */
 }
 
-    .play-btn{
+.play-btn{
     background: url('./assets/icon-play.svg')no-repeat;
     width: 2rem;
     height: 2rem;
@@ -80,7 +80,7 @@ display: none;
     transition: 0.6s;
 }
 
-    h1{
+h1{
     font-style: normal;
     font-weight: 300;
     font-size: 2rem;
@@ -103,13 +103,13 @@ display: none;
 }
 
 .movie{
-    width: 100%;   
+    width: 91%;   
     position: relative;
 }
 
 .large{
     height: 11rem;
-    width: 100%;
+    width: 17.5rem;
     border-radius: 0.5rem;
     margin-bottom: .4rem;
 }
@@ -163,9 +163,10 @@ display: none;
     height: 2rem;
     position: absolute;
     top: 1rem;
-    right: 1.5rem;
+    left: 14.5rem;
+    /* right: 10.5rem; */
     border-radius: 50%;
-    background: rgbagit(0, 0, 0, .5);
+    background: rgba(0, 0, 0, .5);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -178,7 +179,7 @@ display: none;
     height: 0.88rem;
     stroke: #fff;
     stroke-width: 1.5;
-    fill: none;
+    fill: #fff;
     
 }
 .bookmark-btn:hover{
@@ -236,8 +237,8 @@ display: none;
 
     .medium {
         display: inline;
-        height: 10rem;
-        width: 100%;
+        height: 8.75rem;
+        width: 13.75rem;
         border-radius: 0.5rem;
         margin-bottom: .4rem;
     }
@@ -250,7 +251,7 @@ display: none;
         display: flex;
     }
     
-    .movie-title{
+    .movie-title, .series-items .movie-title{
         font-size: 1.3rem;
     }
 
@@ -258,6 +259,10 @@ display: none;
         position: absolute;
         top: 27%;
         left: 27%;
+    }
+
+    .bookmark-btn{
+        left: 10.5rem;
     }
 }
 
@@ -275,6 +280,7 @@ display: none;
         padding: 0;
         flex-direction: column;
         position: relative;
+        width: 24.5rem
     }
 
     main section{
@@ -301,15 +307,15 @@ display: none;
     position: relative;
 }
 
-    .trending h1, .options h1 {
+    .movies-section h1, .series-section h1 {
         font-size: 1.5rem;
-        margin-left: 1rem;
+        /* margin-left: 1rem; */
     }
    
     .small{
         display: inline;
-        width: 100%;
-        height: 10rem;
+        width: 10.5rem;
+        height: 6.875rem;
         border-radius: 0.5rem;
     }
 
@@ -317,21 +323,21 @@ display: none;
         display: none;
     }
     
-    .movies-items .about {
-        font-size: 0.875rem;
-    }
-
-    .about {
-        font-size: 0.875rem;
+    .movies-items .about, .series-items .about {
+        font-size: 0.688rem;
     }
     
-    .movie-title{
-        font-size: 1rem;
+    .movie-title, .series-items .movie-title{
+        font-size: 0.875rem;
     }
 
     .play{
         position: absolute;
         top: 27%;
         left: 20%
+    }
+
+    .bookmark-btn{
+        left: 7.5rem;
     }
 }

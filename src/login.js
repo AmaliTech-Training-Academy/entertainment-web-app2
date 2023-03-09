@@ -1,15 +1,15 @@
 const form2 = document.getElementById("form2-login");
 
- //storing user data in localStorage
-//  let userDetails = {
-//     email: email.value,
-//     password: password.value,
-//   };
+//  storing user data in localStorage
+ let userDetails = {
+    email: email.value,
+    password: password.value,
+  };
 
-//   localStorage.setItem("User", JSON.stringify(userDetails));
-//   if(localStorage.getItem(email.value && password.value == userID)){
-//     alert('User ID already exists')
-//   }
+  localStorage.setItem("User", JSON.stringify(userDetails));
+  if(localStorage.getItem(email.value && password.value == userID)){
+    alert('User ID already exists')
+  }
 
 form2.addEventListener("submit", (event) => {
   event.preventDefault();

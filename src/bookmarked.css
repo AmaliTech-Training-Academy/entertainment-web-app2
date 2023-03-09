@@ -89,13 +89,13 @@ display: none;
     margin-bottom: 2rem;
 }
 
-section .movies-items{
+.movies-items{
     display: grid;
     grid-template-columns: auto auto auto auto;
     grid-gap: 2rem;
 }
 
-.options .series-items{
+.series-items{
     display: grid;
     grid-template-columns: auto auto auto auto;
     grid-gap: 2rem;
@@ -209,12 +209,19 @@ section .movies-items{
     width: 100%;
     }
 
-    section .movies-items, .options .series-items{
-        display: grid;
-        grid-template-columns: auto auto auto ;
-        grid-gap: 1rem;
+    .movies-items{
+            display: grid;
+            grid-template-columns: auto auto auto;
+            grid-gap: 2rem;
+            position: relative;
     }
 
+    .series-items{
+        display: grid;
+        grid-template-columns: auto auto auto;
+        grid-gap: 2rem;
+        position: relative;
+    }
     /* nav{
         width: 50rem;
     }  */
@@ -280,10 +287,19 @@ section .movies-items{
      /* section{
         margin-top: 5rem;
     } */
-    section .movies-items, .options .series-items{
+    .movies-items{
+        display: grid;
         grid-template-columns: auto auto;
         grid-gap: 1rem;
-    }    
+        position: relative;
+}
+
+.series-items{
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 1rem;
+    position: relative;
+}
 
     .trending h1, .options h1 {
         font-size: 1.5rem;

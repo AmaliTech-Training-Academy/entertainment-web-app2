@@ -28,7 +28,22 @@ fetch(json_link).then(Response => Response.json())
     // console.log(result)
     
 
-    searchBar.addEventListener('click', () => {
+    // function displayResults(resultsArray) {
+    //     const resultList = resultsArray.map(result => `<li>${result}</li>`).join("");
+    //     searchResults.innerHTML = resultList;
+    //   }
+      
+    //   displayResults(result);
+      
+    //   searchBar.addEventListener("input", function(event) {
+    //     const searchValue = event.target.value.toLowerCase();
+    //     const filteredResults = results.filter(result => {
+    //       return result.toLowerCase().includes(searchValue);
+    //     });
+    //     displayResults(filteredResults);
+    //   });
+
+    searchBar.addEventListener('input', () => {
         resultsContainer.classList.add('result');
     })
     
@@ -38,7 +53,7 @@ fetch(json_link).then(Response => Response.json())
 
     searchBar.addEventListener('keyup', () => {
         searchValue = searchBar.value;
-        console.log(searchValue);
+    //     console.log(searchValue);
 
         filterResult = searchByName(searchValue);
         console.log(filterResult);

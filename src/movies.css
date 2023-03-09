@@ -39,6 +39,11 @@ line-height: 2.5rem;
 letter-spacing: -0.5px;
 margin-bottom: 1.56rem;
 }
+main section  {
+    height: 100vh;
+    /* overflow: hidden; */
+    overflow: scroll; 
+}
 
 .play{
     position: absolute;
@@ -88,6 +93,7 @@ section .movies-items{
     display: grid;
     grid-template-columns: auto auto auto auto;
     grid-gap: 2rem;
+    height: 1rem;
 }
 
 .movies-items .movie{
@@ -300,6 +306,11 @@ section .movies-items{
         grid-gap: 3rem;
         margin-left: 2rem;
         width: 21.438rem;
+    }
+    main section  {
+        height: 100rem;
+        /* overflow: hidden; */
+        overflow: none; 
     }
     
     .moviesContainer .movie{

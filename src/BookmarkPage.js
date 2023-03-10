@@ -52,7 +52,6 @@ function fetchBookmarks() {
             const play = show.querySelector(".play");
             const bookmark = show.querySelector(".bookmark-btn");
             console.log(bookmark);
-            const about = show.querySelector(".movie-info");
             const button = show.querySelector("svg");
             overlay.addEventListener('mouseover', () => {
                 overlay.classList.add('dark')

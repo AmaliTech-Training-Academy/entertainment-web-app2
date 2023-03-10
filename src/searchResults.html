@@ -11,11 +11,14 @@
       href="./assets/favicon-32x32.png"
     />
     <link rel="stylesheet" href="nav.css" />
-    <link rel="stylesheet" href="index.css" />
+    <!-- <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="movies.css" /> -->
     <link rel="stylesheet" href="searchbar.css" />
+    <link rel="stylesheet" href="bookmarked.css"/>
     <link rel="stylesheet" href="lightMode.css" />
 
-    <title>Entertainment web app</title>
+
+    <title>Frontend Mentor | Entertainment web app</title>
   </head>
   <body>
     <main>
@@ -35,38 +38,24 @@
         <header>
           <form>
             <div class="search"></div>
-            <input type="search" placeholder="Search for movies or tv-series" onkeydown="dbsearch(event)"/>
-            <div class="switch-mode">
-              <div class="light-dark"></div>
-            </div>
+            <input type="search" placeholder="" />
+              <div class="switch-mode">
+                <div class="light-dark"></div>
+              </div>
           </form>
-          <div class="trending">
-            <h1>Trending</h1>
-            <div class="trending-items"></div>
-        </div>
-      </header>
-      <h1>Recommended for you</h1>
-      <div class="options">
-      </div>
+          <div class="searchItems"></div>
       </section>
-        
     </main>
 
     <!-- Display recommended shows -->
+
+    
     <script>
-       function dbsearch(event) {
-      if (event.keyCode == 13) {
-         console.log("Enter key is pressed");
-         return true;
-      } else {
-         return false;
-      }
-   }
     </script>
-    <!-- <script src="search2.js"></script> -->
-    <script type="module" src="index.js"></script>
     <script src="script.js"></script>
+    <script type="module" src="index.js"></script>
+    <script src="search2.js"></script>
     <script src="searchbar.js"></script>
-    <script type="module" src="bookmarked.js"></script>
+    <script src="removeBookmarked.js"></script>
   </body>
 </html>

@@ -150,6 +150,10 @@ section .series-items{
     fill: #FFFFFF;
 }
 
+.bookmark-btn .keep:hover{
+    stroke: #10141E;
+}
+
 .play{
     position: relative;
     color: #FFFFFF;

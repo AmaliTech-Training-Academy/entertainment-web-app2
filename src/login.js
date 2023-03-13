@@ -1,15 +1,31 @@
 const form2 = document.getElementById("form2-login");
 
-//  storing user data in localStorage
- const userDetails = {
-    email: email.value,
-    password: password.value,
-  };
 
-  localStorage.setItem("User", JSON.stringify(userDetails));
-  if(localStorage.getItem(email.value && password.value == userID)){
-    alert('User ID already exists')
-  }
+// const setError = (element, message) => {
+//     const inputControl = element.parentElement;
+//     const errorDisplay = inputControl.querySelector(".errorMessage");
+  
+//     form.classList.add("invalid");
+//     errorDisplay.innerText = message;
+//     inputControl.classList.add("error");
+//     inputControl.classList.remove("success");
+//   };
+  
+//   const setSuccess = (element) => {
+//     const inputControl = element.parentElement;
+//     const errorDisplay = inputControl.querySelector(".errorMessage");
+//     console.log(inputControl);
+//     form.classList.remove("invalid");
+//     errorDisplay.innerText = "";
+//     inputControl.classList.add("success");
+//     inputControl.classList.remove("error");
+//   };
+
+
+
+const userStorage = JSON.parse(localStorage.getItem("User"));
+
+const getUserByEmail = (email) => userStorage[email];
 
 form2.addEventListener("submit", (event) => {
   event.preventDefault();
@@ -17,23 +33,29 @@ form2.addEventListener("submit", (event) => {
   const email = document.getElementById("email").value;
   const password = document.getElementById("password").value;
 
-//   if (email && password == userDetails) {
-    // Make an API call or retrieve user data from a database
-    const userDetails = {
-      email: email,
-      password: password,
-    };
-
-    // Check if the user's input email and password match the stored credentials
-    if (email === userDetails.email && password === userDetails.password) {
-      // Authentication successful
-      window.location.href = "index.html";
-      alert("Login successful");
-    } else {
-      // Authentication failed
-      const error = document.getElementsByClassName("errorMessage");
-    //   error.innerHTML = "Incorrect email or password";
-        alert('Incorrect email or password')
-    }
-//   }
+  //   if (email && password == userDetails) {
+  // Make an API call or retrieve user data from a database
+  const userDetails = {
+    email: email,
+    password: password,
+  };
+  console.log(userStorage);
+  alert()
+  // Check if the user's input email and password match the stored credentials
+  if (
+    userStorage.email === userDetails.email &&
+    userStorage.password === userDetails.password
+  ) {
+    // Authentication successful
+    alert("Login successful");
+    window.location.href = "index.html";
+  } else {
+    // Authentication failed
+    const error = document.getElementsByClassName("error");
+      error.innerHTML = "Incorrect email or password";
+      alert("Incorrect email or password")
+    // console.log(false)
+    // setError(email, password, "Incorrect email or password");
+  }
+  //   }
 });

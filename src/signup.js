@@ -11,6 +11,7 @@ form.addEventListener("submit", (event) => {
   validateInputs(); //calling the validate Input in the eventListener function
   if (!form.classList.contains("invalid")) {
     const userID = generateUserID();
+    // saveUserCredentials()
 
     // Store the user ID in local storage
     // localStorage.setItem('userID', userID);
@@ -22,21 +23,24 @@ form.addEventListener("submit", (event) => {
       userID: userID,
     };
 
-    let ls = JSON.parse(localStorage.getItem("User"));
-    console.log(ls);
+    console.log(userDetails);
+    let ls = JSON.parse(localStorage.getItem("User")) || [];
     if (ls.email === email.value) {
       alert("User ID already exists");
     } else {
       console.log("userDetails", userDetails);
+      console.log(ls);
       localStorage.setItem("User", JSON.stringify(userDetails));
-      sendConfirmationEmail();
+      sendConfirmationEmail(userID);
       alert("Confirmation email sent");
-      window.location.href = "login.html";
+      console.log(window.location);
+      window.location.replace("login.html");
+      // return;
     }
   }
 });
 
-function sendConfirmationEmail() {
+function sendConfirmationEmail(userID) {
   console.log(document.querySelector("#email").value);
   Email.send({
     Host: "smtp.elasticemail.com",
@@ -45,7 +49,8 @@ function sendConfirmationEmail() {
     To: document.querySelector("#email").value,
     From: "whiy07@gmail.com",
     Subject: "Confimation Email",
-    Body: "We sent you a confirmation email",
+    // Body: "We sent you a confirmation email",
+    Body: `We sent you a confirmation email ID  ${userID}`
   });
   // .then((message) => alert('Confirmation email sent'))
   // .catch((err) => console.log(err));
@@ -118,4 +123,10 @@ function generateUserID() {
   return `${userID}`;
 }
 
-// const userID = generateUserID();
+
+// //Saving userCredentials to localStorage (Database)
+// function saveUserCredentials(email, password) {
+//   const userDetails = JSON.parse(localStorage.getItem('users') || '{}');
+//   userDetails[email] = { email, password };
+//   localStorage.setItem('users', JSON.stringify(userDetails));
+// }

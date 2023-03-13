@@ -22,7 +22,13 @@ body {
     font-family: var(--font-outfit-light);
     overflow: hidden;
 }
-
+/* 
+input[type=password]:focus{
+    border-bottom: 1px solid #5A698F;
+    color: #ffffff;
+    opacity: 1;
+    background: transparent;
+} */
 
 .container .login-form {
     width: 25rem;
@@ -91,7 +97,7 @@ body {
     /* position: absolute; */
 }
 
-.input-control input:focus {
+input:focus {
     outline: 0;
 }
 

@@ -35,11 +35,10 @@
         <header>
           <form>
             <div class="search"></div>
-            <input type="search" placeholder="Search for movies or tv-series" />
+            <input type="search" placeholder="Search for movies or tv-series" onkeydown="dbsearch(event)"/>
             <div class="switch-mode">
               <div class="light-dark"></div>
             </div>
-            <ul class="searchItems"></ul>
           </form>
           <div class="trending">
             <h1>Trending</h1>
@@ -54,11 +53,20 @@
     </main>
 
     <!-- Display recommended shows -->
-
+    <script>
+       function dbsearch(event) {
+      if (event.keyCode == 13) {
+         console.log("Enter key is pressed");
+         return true;
+      } else {
+         return false;
+      }
+   }
+    </script>
+    <!-- <script src="search2.js"></script> -->
     <script type="module" src="index.js"></script>
     <script src="script.js"></script>
-    <script src="index.js"></script>
     <script src="searchbar.js"></script>
-    <script src="bookmarked.js"></script>
+    <script type="module" src="bookmarked.js"></script>
   </body>
 </html>

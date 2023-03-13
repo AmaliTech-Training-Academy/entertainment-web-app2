@@ -1,68 +1,58 @@
-import { addBookmark } from "./bookmarked.js";
+document.addEventListener("DOMContentLoaded", (evt) => {
+    fetchBookmarks();
+    });
 
-let seriesContainer = document.querySelector(".series-items");
+const renderMovie = (movie) => `
+    <div class="movie">
+        <div class="movie-image">
+            <img class="large" src="${movie.thumbnail.regular.large}">
+            <img class="medium" src="${movie.thumbnail.regular.medium}">
+            <img class="small" src="${movie.thumbnail.regular.small}">
+        </div>
+        <div class="movie-info">
+            <div class="about">${movie.year}
+                <div class="oval"></div>
+                <i class="category" style="background:url(${movie.logo})"></i>${movie.category}
+                <div class="oval"></div>${movie.rating}
+            </div>
+        <h3 class="movie-title">${movie.title}</h3>
+        </div>
+        <div class="bookmark-btn"><svg width="12" height="14" xmlns="http://www.w3.org/2000/svg"><path d="m10.518.75.399 12.214-5.084-4.24-4.535 4.426L.75 1.036l9.768-.285Z"></path></svg>
+        </div>
+        <div class="play">
+            <div class="play-btn">
+            </div><p>Play</p></div>
+        <div class="overlay"></div>
+</div>`;
 
-let json_url = "data.json";
+function fetchBookmarks() {
+    const movieItems = document.querySelector(".movies-items");
+    const seriesItems = document.querySelector(".series-items");
+    //Getting bookmarks from localStorage
+    const bookmarks =
+        JSON.parse(localStorage.getItem("bookmarkedMovies")) || [];
+    //Getting output id
 
-fetch(json_url)
-  .then((Response) => Response.json())
-  .then((data) => {
-    let series = "";
-
-    for (let i = 0; i < data.length; i++) {
-      if (data[i].category === "TV Series") {
-        series +=
-          '<div class="series">' +
-          '<div class="series-image" >' +
-          '<img class="large" src="' +
-          data[i].thumbnail.regular.large +
-          '"/>' +
-          '<img class="medium" src="' +
-          data[i].thumbnail.regular.medium +
-          '"/>' +
-          '<img class="small" src="' +
-          data[i].thumbnail.regular.small +
-          '"/>' +
-          "</div>" +
-          '<div class="series-info">' +
-          '<div class="about">' +
-          data[i].year +
-          '<div class="oval">' +
-          "</div>" +
-          '<i class="category" style="background:url(' +
-          data[i].logo +
-          ')">' +
-          "</i>" +
-          data[i].category +
-          '<div class="oval">' +
-          "</div>" +
-          data[i].rating +
-          "</div>" +
-          '<h3 class= "series-title">' +
-          data[i].title +
-          "</h3>" +
-          "</div>" +
-          '<div class="bookmark-btn">' +
-          '<svg width="12" height="14" xmlns="http://www.w3.org/2000/svg"><path d="m10.518.75.399 12.214-5.084-4.24-4.535 4.426L.75 1.036l9.768-.285Z"/></svg>' +
-          "</div>" +
-          '<div class="play">' +
-          '<div class="play-btn"></div>' +
-          "<p>Play</p>" +
-          "</div>" +
-          '<div class="overlay"></div>'+
-          "</div>";
-      }
-      seriesContainer.innerHTML = series;
-    }
-
-    const contentContainer = document.querySelectorAll(".series");
-
-    contentContainer.forEach((series) => {
-            const overlay = series.querySelector(".overlay");
-            const play = series.querySelector(".play");
-            const bookmark = series.querySelector(".bookmark-btn");
-            const about = series.querySelector(".series-info");
-            const button = series.querySelector("svg");
+    fetch("./data.json")
+        .then((response) => response.json())
+        .then((data) => {
+        console.log(data);
+        data.filter((movie) => {
+            if (bookmarks.indexOf(movie.title) !== -1) {
+            if (movie.category === "Movie") {
+                movieItems.innerHTML += renderMovie(movie);
+            } else {
+                seriesItems.innerHTML += renderMovie(movie);
+            }
+            }
+        });
+        const savedShows = document.querySelectorAll(".movie");
+        savedShows.forEach(show => {
+            const overlay = show.querySelector(".overlay");
+            const play = show.querySelector(".play");
+            const bookmark = show.querySelector(".bookmark-btn");
+            console.log(bookmark);
+            const button = show.querySelector("svg");
             overlay.addEventListener('mouseover', () => {
                 overlay.classList.add('dark')
                 play.classList.add('show')
@@ -89,13 +79,9 @@ fetch(json_url)
                     button.classList.add('keep')
                 }
             });
-            about.addEventListener('mouseover', () => {
-                overlay.classList.add('dark')
-                play.classList.add('show')
-            });
-    });
-
-    const btn = document.querySelector('.light-dark');
+        })
+    
+        const btn = document.querySelector('.light-dark');
     const screenSwitch = document.querySelector('.switch-mode');
     const body = document.querySelector("body");
     const searchIcon = document.querySelector(".search");
@@ -103,10 +89,8 @@ fetch(json_url)
     const searchResults = document.querySelector("ul");  
     const nav = document.querySelector("nav");
     const links = document.querySelectorAll("a");
-    const recommendedContainer = document.querySelector(".series-items");
     const ovals = document.querySelectorAll(".oval");
-    const categories = document.querySelectorAll("i");
-    const info = recommendedContainer.querySelectorAll(".about")
+    const categories = document.getElementsByTagName("i");
     const profile = document.querySelector(".user-avatar");
     screenSwitch.addEventListener('click', lightMode);
 
@@ -121,10 +105,9 @@ function lightMode() {
             searchQuery.classList.remove('light');
             nav.classList.remove("light");
             links.forEach(link => link.classList.remove('lightlinks'));
-            profile.classList.remove('border');
-            categories.forEach(category => category.classList.remove('light-colour'));
             ovals.forEach(oval => oval.classList.remove("light-theme"));
-            info.forEach(about => about.classList.remove("light-text"));
+            profile.classList.remove('border');
+            Array.from(categories).forEach(category => category.classList.remove('light-colour'));
             theme = 'DARK';
         }else{
             btn.classList.add('triggered');
@@ -135,10 +118,9 @@ function lightMode() {
             searchQuery.classList.add('light');
             nav.classList.add('light');
             links.forEach(link => link.classList.add('lightlinks'));
-            profile.classList.add('border');
-            categories.forEach(category => category.classList.add('light-colour'));
             ovals.forEach(oval => oval.classList.add("light-theme"));
-            info.forEach(about => about.classList.add("light-text"));
+            profile.classList.add('border');
+            Array.from(categories).forEach(category => category.classList.add('light-colour'));
             theme = 'LIGHT';
         }
         localStorage.setItem("PageTheme", JSON.stringify(theme));
@@ -155,10 +137,9 @@ if(getTheme === 'LIGHT'){
             searchQuery.classList.add('light');
             nav.classList.add('light');
             links.forEach(link => link.classList.add('lightlinks'));
-            profile.classList.add('border');
-            categories.forEach(category => category.classList.add('light-colour'));
             ovals.forEach(oval => oval.classList.add("light-theme"));
-            info.forEach(about => about.classList.add("light-text"));
+            profile.classList.add('border');
+            Array.from(categories).forEach(category => category.classList.add('light-colour'));
 
 }else if((getTheme === 'DARK')){
     btn.classList.remove('triggered');
@@ -169,11 +150,14 @@ if(getTheme === 'LIGHT'){
             searchQuery.classList.remove('light');
             nav.classList.remove("light");
             links.forEach(link => link.classList.remove('lightlinks'));
-            profile.classList.remove('border');
-            categories.forEach(category => category.classList.remove('light-colour'));
             ovals.forEach(oval => oval.classList.remove("light-theme"));
-            info.forEach(about => about.classList.remove("light-text"));
+            profile.classList.remove('border');
+            Array.from(categories).forEach(category => category.classList.remove('light-colour'));
 }
 
-    addBookmark();
-  });
+
+
+    });
+}
+
+    

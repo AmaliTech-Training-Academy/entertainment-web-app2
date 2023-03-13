@@ -218,8 +218,9 @@ section .movies-items{
         width: 51rem;
     }
     main section  {
-        height: 110rem;
-        overflow: none;  
+        height: 70rem;
+        overflow: scroll;  
+        margin-bottom: -1rem;
     } 
     section .movies-items{
         display: grid;
@@ -302,6 +303,7 @@ section .movies-items{
     main{
         display: flex;
         width: 55rem;
+        margin-left: -2.5rem;
     }
     section .movies-items{
         display: grid;

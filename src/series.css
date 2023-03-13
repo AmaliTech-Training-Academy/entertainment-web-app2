@@ -254,7 +254,7 @@ section .series-items{
     main{
         padding: .1rem;
         flex-direction: column;
-        width: auto;
+        width: 35rem;
         position: relative;
     }
     main section{

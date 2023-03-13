@@ -357,7 +357,7 @@ position: relative;
         position: relative;
     }
     main section{
-        height: 65rem;
+        height: 75rem;
         overflow:   scroll;
         /* margin-bottom: -1rem; */
     }
@@ -540,15 +540,18 @@ position: relative;
     main{
         padding: 0 1.5rem 3rem 1.5rem;
         flex-direction: column;
-        width: 40.5rem;
+        width: 70.5rem;
+        left: -1.5rem;
+        margin-right: -20rem;
         position: relative;
     }
     main section{
         /* border: 1px solid white; */
-        width: 54rem;
+        width: 67rem;
         padding: 0;
         position: relative;
         margin-top: 2rem;
+        margin-left: 2.5rem;
     }
     
     main section header{
@@ -706,10 +709,24 @@ position: relative;
         opacity: 0.5;
         cursor: pointer;
     }
-    
-    .options .option .small{
-        height: 11rem;
-        width: 50rem;
+     /* .play-btn{
+        background: url('./assets/icon-play.svg')no-repeat;
+        width: 2.5rem;
+        height: 3rem;
+        margin-right: -2.2rem;
+        z-index: 5;
+        background-position: center;
+    } */
+    .option .play{
+        z-index: 3;
+        top: 6.6rem;
+        margin-right: 7rem;
+        width: 7.3rem;
+        height: 3rem;
+    }
+    .options .option .large{
+        height: 12rem;
+        width: 20rem;
         border-radius: 0.5rem;
         margin-bottom: .4rem;
     }

@@ -1,7 +1,7 @@
 const form2 = document.getElementById("form2-login");
 
 //  storing user data in localStorage
- let userDetails = {
+ const userDetails = {
     email: email.value,
     password: password.value,
   };
@@ -32,7 +32,8 @@ form2.addEventListener("submit", (event) => {
     } else {
       // Authentication failed
       const error = document.getElementsByClassName("errorMessage");
-      error.innerHTML = "Incorrect email or password";
+    //   error.innerHTML = "Incorrect email or password";
+        alert('Incorrect email or password')
     }
 //   }
 });

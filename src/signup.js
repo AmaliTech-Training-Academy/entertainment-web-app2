@@ -21,16 +21,15 @@ form.addEventListener("submit", (event) => {
       password: password.value,
       userID: userID,
     };
-    console.log("userDetails", userDetails);
 
     let ls = JSON.parse(localStorage.getItem("User"));
-    
+    console.log(ls);
     if (ls.email === email.value) {
       alert("User ID already exists");
     } else {
+      console.log("userDetails", userDetails);
       localStorage.setItem("User", JSON.stringify(userDetails));
       sendConfirmationEmail();
-      // LoginConfirmation()
       alert("Confirmation email sent");
       window.location.href = "login.html";
     }
@@ -114,7 +113,8 @@ const validateInputs = () => {
 
 //Generating user ID
 function generateUserID() {
-  const userID = Math.random().toString().slice(2, 8);
+  // const userID = Math.random().toString().slice(2, 8);
+  const userID = Date.now().toString(36) + Math.random().toString(36).substr(2);
   return `${userID}`;
 }
 

@@ -25,7 +25,11 @@ main section{
     width: 93%;
     padding: 4rem 2rem 0 2rem;
     position: relative;
-    position: relative;
+}
+main section{
+    height: 45rem;
+    overflow:   scroll;
+    /* margin-bottom: -1rem; */
 }
 
 main section header{
@@ -352,6 +356,11 @@ position: relative;
         padding: 0;
         position: relative;
     }
+    main section{
+        height: 65rem;
+        overflow:   scroll;
+        /* margin-bottom: -1rem; */
+    }
     
     main section header{
         /* border: 1px solid white; */
@@ -546,6 +555,11 @@ position: relative;
         /* border: 1px solid white; */
         margin-bottom: 2.5rem;
         margin-top: 1.5rem;
+    }
+    main section{
+        height: 110rem;
+        overflow:   scroll;
+        /* margin-bottom: -1rem; */
     }
     
     section header h1{

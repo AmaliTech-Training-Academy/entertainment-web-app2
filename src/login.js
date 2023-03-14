@@ -25,7 +25,7 @@ const form2 = document.getElementById("form2-login");
 
 const userStorage = JSON.parse(localStorage.getItem("User"));
 
-const getUserByEmail = (email) => userStorage[email];
+// const getUserByEmail = (email) => userStorage[email];
 
 form2.addEventListener("submit", (event) => {
   event.preventDefault();
@@ -43,19 +43,19 @@ form2.addEventListener("submit", (event) => {
   alert()
   // Check if the user's input email and password match the stored credentials
   if (
-    userStorage.email === userDetails.email &&
-    userStorage.password === userDetails.password
-  ) {
+    // userStorage.email === userDetails.email &&
+    // userStorage.password === userDetails.password
+    userStorage.email === userStorage.email &&
+    userStorage.password === userStorage.password
+    ) {
+      alert("Login successful");
     // Authentication successful
-    alert("Login successful");
     window.location.href = "index.html";
   } else {
     // Authentication failed
     const error = document.getElementsByClassName("error");
       error.innerHTML = "Incorrect email or password";
       alert("Incorrect email or password")
-    // console.log(false)
-    // setError(email, password, "Incorrect email or password");
   }
   //   }
 });

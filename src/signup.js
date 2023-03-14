@@ -4,17 +4,22 @@ const email = document.getElementById("email");
 const password = document.getElementById("password");
 const password2 = document.getElementById("password2");
 //function for the submit button when its clicked
-// console.log(form);
+
+let userStorage = JSON.parse(localStorage.getItem("User")) || [
+  { email: "", password: "" },
+];
+
+
+const getUserByEmail = (email) => {
+  return userStorage.find((user) => user.email === email);
+};
+
 form.addEventListener("submit", (event) => {
   event.preventDefault();
-  console.log("password", password.value);
+
   validateInputs(); //calling the validate Input in the eventListener function
   if (!form.classList.contains("invalid")) {
     const userID = generateUserID();
-    // saveUserCredentials()
-
-    // Store the user ID in local storage
-    // localStorage.setItem('userID', userID);
 
     //storing user data in localStorage
     let userDetails = {
@@ -23,20 +28,26 @@ form.addEventListener("submit", (event) => {
       userID: userID,
     };
 
-    console.log(userDetails);
-    let ls = JSON.parse(localStorage.getItem("User")) || [];
-    if (ls.email === email.value) {
+    const user = getUserByEmail(userDetails.email);
+    console.log(user);
+
+    if (user) {
+      // if (user.email === email.value) {
       alert("User ID already exists");
     } else {
-      console.log("userDetails", userDetails);
-      console.log(ls);
-      localStorage.setItem("User", JSON.stringify(userDetails));
+      // console.log("userDetails", userDetails);
+      userStorage.push(userDetails);
+      localStorage.setItem("User", JSON.stringify(userStorage));
+
       sendConfirmationEmail(userID);
       alert("Confirmation email sent");
-      console.log(window.location);
       window.location.replace("login.html");
       // return;
     }
+    // } else {
+    //   console.log(userDetails);
+    //   localStorage.setItem("User", JSON.stringify([].push(userDetails)));
+    // }
   }
 });
 
@@ -50,7 +61,7 @@ function sendConfirmationEmail(userID) {
     From: "whiy07@gmail.com",
     Subject: "Confimation Email",
     // Body: "We sent you a confirmation email",
-    Body: `We sent you a confirmation email ID  ${userID}`
+    Body: `We sent you a confirmation email ID  ${userID}`,
   });
   // .then((message) => alert('Confirmation email sent'))
   // .catch((err) => console.log(err));
@@ -123,10 +134,9 @@ function generateUserID() {
   return `${userID}`;
 }
 
-
 // //Saving userCredentials to localStorage (Database)
 // function saveUserCredentials(email, password) {
-//   const userDetails = JSON.parse(localStorage.getItem('users') || '{}');
+//   const us = JSON.parse(localStorage.getItem('users') || '{}');
 //   userDetails[email] = { email, password };
 //   localStorage.setItem('users', JSON.stringify(userDetails));
 // }

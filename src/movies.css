@@ -26,7 +26,10 @@ main section{
     width: 100%;
     padding: 4rem 2rem 0 2rem;
     position: relative;
+    overflow:   scroll;
+    /* margin-bottom: -1rem; */
 }
+
 main section header{
     margin-bottom: 2.5rem;
 }
@@ -39,6 +42,7 @@ line-height: 2.5rem;
 letter-spacing: -0.5px;
 margin-bottom: 1.56rem;
 }
+
 
 .play{
     position: absolute;
@@ -88,6 +92,7 @@ section .movies-items{
     display: grid;
     grid-template-columns: auto auto auto auto;
     grid-gap: 2rem;
+    height: 1rem;
 }
 
 .movies-items .movie{
@@ -191,6 +196,9 @@ section .movies-items{
     stroke: #fff;
     fill: #fff;
 }
+.bookmark-btn .keep:hover{
+    stroke: #10141E;
+}
 
 
 
@@ -212,6 +220,11 @@ section .movies-items{
         display: flex;
         width: 51rem;
     }
+    main section  {
+        height: 70rem;
+        overflow: scroll;  
+        margin-bottom: -1rem;
+    } 
     section .movies-items{
         display: grid;
         grid-template-columns: auto auto auto ;
@@ -253,8 +266,8 @@ section .movies-items{
     }
     .moviesContainer .movie .play{
         position: absolute;
-        top: 5rem;
-        left: 5.4rem;
+        top: 4rem;
+        left: 3rem;
     }
     .movie .bookmark-btn{
         width: 2rem;
@@ -293,6 +306,7 @@ section .movies-items{
     main{
         display: flex;
         width: 55rem;
+        margin-left: -2.5rem;
     }
     section .movies-items{
         display: grid;
@@ -301,6 +315,11 @@ section .movies-items{
         margin-left: 2rem;
         width: 21.438rem;
     }
+    main section  {
+        height: 110rem;
+        overflow: none; 
+        margin-bottom: -5rem;
+    } 
     
     .moviesContainer .movie{
         width: 100%;   
@@ -356,3 +375,11 @@ section .movies-items{
    
 }
 
+/* @media only screen and (max-width:1050px) and (min-width:90) {
+ 
+    main section  {
+        height: 100vh;
+        overflow: scroll; 
+    }
+
+} */

@@ -25,7 +25,11 @@ main section{
     width: 93%;
     padding: 4rem 2rem 0 2rem;
     position: relative;
-    position: relative;
+}
+main section{
+    height: 45rem;
+    overflow:   scroll;
+    /* margin-bottom: -1rem; */
 }
 
 main section header{
@@ -427,6 +431,11 @@ grid-area: one;
         padding: 0;
         position: relative;
     }
+    main section{
+        height: 75rem;
+        overflow:   scroll;
+        /* margin-bottom: -1rem; */
+    }
     
     main section header{
         /* border: 1px solid white; */
@@ -606,21 +615,29 @@ grid-area: one;
     main{
         padding: 0 1.5rem 3rem 1.5rem;
         flex-direction: column;
-        width: 40.5rem;
+        width: 70.5rem;
+        left: -1.5rem;
+        margin-right: -20rem;
         position: relative;
     }
     main section{
         /* border: 1px solid white; */
-        width: 54rem;
+        width: 67rem;
         padding: 0;
         position: relative;
         margin-top: 2rem;
+        margin-left: 2.5rem;
     }
     
     main section header{
         /* border: 1px solid white; */
         margin-bottom: 2.5rem;
         margin-top: 1.5rem;
+    }
+    main section{
+        height: 110rem;
+        overflow:   scroll;
+        /* margin-bottom: -1rem; */
     }
     
     section header h1{
@@ -767,10 +784,24 @@ grid-area: one;
         opacity: 0.5;
         cursor: pointer;
     }
-    
-    .options .option .small{
-        height: 11rem;
-        width: 50rem;
+     /* .play-btn{
+        background: url('./assets/icon-play.svg')no-repeat;
+        width: 2.5rem;
+        height: 3rem;
+        margin-right: -2.2rem;
+        z-index: 5;
+        background-position: center;
+    } */
+    .option .play{
+        z-index: 3;
+        top: 6.6rem;
+        margin-right: 7rem;
+        width: 7.3rem;
+        height: 3rem;
+    }
+    .options .option .large{
+        height: 12rem;
+        width: 20rem;
         border-radius: 0.5rem;
         margin-bottom: .4rem;
     }

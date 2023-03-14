@@ -11,6 +11,7 @@ form.addEventListener("submit", (event) => {
   validateInputs(); //calling the validate Input in the eventListener function
   if (!form.classList.contains("invalid")) {
     const userID = generateUserID();
+    // saveUserCredentials()
 
     // Store the user ID in local storage
     // localStorage.setItem('userID', userID);
@@ -21,23 +22,25 @@ form.addEventListener("submit", (event) => {
       password: password.value,
       userID: userID,
     };
-    console.log("userDetails", userDetails);
 
-    let ls = JSON.parse(localStorage.getItem("User"));
-    
+    console.log(userDetails);
+    let ls = JSON.parse(localStorage.getItem("User")) || [];
     if (ls.email === email.value) {
       alert("User ID already exists");
     } else {
+      console.log("userDetails", userDetails);
+      console.log(ls);
       localStorage.setItem("User", JSON.stringify(userDetails));
-      sendConfirmationEmail();
-      // LoginConfirmation()
+      sendConfirmationEmail(userID);
       alert("Confirmation email sent");
-      window.location.href = "login.html";
+      console.log(window.location);
+      window.location.replace("login.html");
+      // return;
     }
   }
 });
 
-function sendConfirmationEmail() {
+function sendConfirmationEmail(userID) {
   console.log(document.querySelector("#email").value);
   Email.send({
     Host: "smtp.elasticemail.com",
@@ -46,7 +49,8 @@ function sendConfirmationEmail() {
     To: document.querySelector("#email").value,
     From: "whiy07@gmail.com",
     Subject: "Confimation Email",
-    Body: "We sent you a confirmation email",
+    // Body: "We sent you a confirmation email",
+    Body: `We sent you a confirmation email ID  ${userID}`
   });
   // .then((message) => alert('Confirmation email sent'))
   // .catch((err) => console.log(err));
@@ -114,8 +118,15 @@ const validateInputs = () => {
 
 //Generating user ID
 function generateUserID() {
-  const userID = Math.random().toString().slice(2, 8);
+  // const userID = Math.random().toString().slice(2, 8);
+  const userID = Date.now().toString(36) + Math.random().toString(36).substr(2);
   return `${userID}`;
 }
 
-// const userID = generateUserID();
+
+// //Saving userCredentials to localStorage (Database)
+// function saveUserCredentials(email, password) {
+//   const userDetails = JSON.parse(localStorage.getItem('users') || '{}');
+//   userDetails[email] = { email, password };
+//   localStorage.setItem('users', JSON.stringify(userDetails));
+// }

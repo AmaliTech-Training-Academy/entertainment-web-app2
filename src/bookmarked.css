@@ -24,6 +24,13 @@ main section{
     padding: 4rem 2rem 0 2rem;
     position: relative;
 }
+
+main section{
+    height: 45rem;
+    overflow:   scroll;
+    /* margin-bottom: -1rem; */
+}
+
 main section header{
     margin-bottom: 2.5rem;
 }
@@ -154,7 +161,7 @@ h1{
 .movie-title{
     font-style: normal;
     font-weight: 500;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     line-height: 1.875rem;
 }
     
@@ -192,7 +199,7 @@ h1{
     stroke: #fff;
     fill: #fff;
 }
-.bookmark-btn.keep:hover{
+.bookmark-btn .keep:hover{
     stroke: #10141E;
 }
 
@@ -208,6 +215,12 @@ h1{
     main section{
     padding: 0;
     width: 100%;
+    }
+
+    main section{
+        height: 75rem;
+        overflow:   scroll;
+        /* margin-bottom: -1rem; */
     }
 
     .movies-items{

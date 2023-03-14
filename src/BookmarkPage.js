@@ -1,6 +1,8 @@
+import { removeBookmark } from "./removeBookmarked.js";
+
 document.addEventListener("DOMContentLoaded", (evt) => {
-    fetchBookmarks();
-    });
+  fetchBookmarks();
+});
 
 const renderMovie = (movie) => `
     <div class="movie">
@@ -26,138 +28,141 @@ const renderMovie = (movie) => `
 </div>`;
 
 function fetchBookmarks() {
-    const movieItems = document.querySelector(".movies-items");
-    const seriesItems = document.querySelector(".series-items");
-    //Getting bookmarks from localStorage
-    const bookmarks =
-        JSON.parse(localStorage.getItem("bookmarkedMovies")) || [];
-    //Getting output id
+  const movieItems = document.querySelector(".movies-items");
+  const seriesItems = document.querySelector(".series-items");
+  //Getting bookmarks from localStorage
+  const bookmarks = JSON.parse(localStorage.getItem("bookmarkedMovies")) || [];
+  //Getting output id
 
-    fetch("./data.json")
-        .then((response) => response.json())
-        .then((data) => {
-        console.log(data);
-        data.filter((movie) => {
-            if (bookmarks.indexOf(movie.title) !== -1) {
-            if (movie.category === "Movie") {
-                movieItems.innerHTML += renderMovie(movie);
-            } else {
-                seriesItems.innerHTML += renderMovie(movie);
-            }
-            }
+  fetch("./data.json")
+    .then((response) => response.json())
+    .then((data) => {
+      // console.log(data);
+      data.filter((movie) => {
+        if (bookmarks.indexOf(movie.title) !== -1) {
+          if (movie.category === "Movie") {
+            movieItems.innerHTML += renderMovie(movie);
+          } else {
+            seriesItems.innerHTML += renderMovie(movie);
+          }
+        }
+      });
+      const savedShows = document.querySelectorAll(".movie");
+      savedShows.forEach((show) => {
+        const overlay = show.querySelector(".overlay");
+        const play = show.querySelector(".play");
+        const bookmark = show.querySelector(".bookmark-btn");
+        // console.log(bookmark);
+        const button = show.querySelector("svg");
+        overlay.addEventListener("mouseover", () => {
+          overlay.classList.add("dark");
+          play.classList.add("show");
         });
-        const savedShows = document.querySelectorAll(".movie");
-        savedShows.forEach(show => {
-            const overlay = show.querySelector(".overlay");
-            const play = show.querySelector(".play");
-            const bookmark = show.querySelector(".bookmark-btn");
-            console.log(bookmark);
-            const button = show.querySelector("svg");
-            overlay.addEventListener('mouseover', () => {
-                overlay.classList.add('dark')
-                play.classList.add('show')
-            });
-            overlay.addEventListener('mouseout', () => {
-                overlay.classList.remove('dark')
-                play.classList.remove('show')
-            });
-            play.addEventListener('mouseover', () => {
-                overlay.classList.add('dark')
-                play.classList.add('show')
-            });
-            bookmark.addEventListener('mouseover', () => {
-                button.classList.add('choice')
-            });
-            bookmark.addEventListener('mouseout', () => {
-                button.classList.remove('choice')
-            });
-            bookmark.addEventListener('click', ()=>{
-                if(button.classList.contains('keep')){
-                    button.classList.remove('keep')
-                }
-                else{
-                    button.classList.add('keep')
-                }
-            });
-        })
-    
-        const btn = document.querySelector('.light-dark');
-    const screenSwitch = document.querySelector('.switch-mode');
-    const body = document.querySelector("body");
-    const searchIcon = document.querySelector(".search");
-    const searchQuery = document.querySelector("input");
-    const searchResults = document.querySelector("ul");  
-    const nav = document.querySelector("nav");
-    const links = document.querySelectorAll("a");
-    const ovals = document.querySelectorAll(".oval");
-    const categories = document.getElementsByTagName("i");
-    const profile = document.querySelector(".user-avatar");
-    screenSwitch.addEventListener('click', lightMode);
+        overlay.addEventListener("mouseout", () => {
+          overlay.classList.remove("dark");
+          play.classList.remove("show");
+        });
+        play.addEventListener("mouseover", () => {
+          overlay.classList.add("dark");
+          play.classList.add("show");
+        });
+        bookmark.addEventListener("mouseover", () => {
+          button.classList.add("choice");
+        });
+        bookmark.addEventListener("mouseout", () => {
+          button.classList.remove("choice");
+        });
+        bookmark.addEventListener("click", () => {
+          if (button.classList.contains("keep")) {
+            button.classList.remove("keep");
+          } else {
+            button.classList.add("keep");
+          }
+        });
+        // location.reload();
+	});
+	removeBookmark();
 
-function lightMode() {
+	const btn = document.querySelector(".light-dark");
+	const screenSwitch = document.querySelector(".switch-mode");
+	const body = document.querySelector("body");
+	const searchIcon = document.querySelector(".search");
+	const searchQuery = document.querySelector("input");
+	const searchResults = document.querySelector("ul");
+	const nav = document.querySelector("nav");
+	const links = document.querySelectorAll("a");
+	const ovals = document.querySelectorAll(".oval");
+	const categories = document.getElementsByTagName("i");
+	const profile = document.querySelector(".user-avatar");
+	screenSwitch.addEventListener("click", lightMode);
+
+      function lightMode() {
         let theme;
-        if(btn.classList.contains('triggered')){
-            btn.classList.remove('triggered');
-            body.classList.remove('light');
-            screenSwitch.classList.remove('light');
-            searchIcon.classList.remove('lightmode');
-            searchResults.classList.remove('light-theme');
-            searchQuery.classList.remove('light');
-            nav.classList.remove("light");
-            links.forEach(link => link.classList.remove('lightlinks'));
-            ovals.forEach(oval => oval.classList.remove("light-theme"));
-            profile.classList.remove('border');
-            Array.from(categories).forEach(category => category.classList.remove('light-colour'));
-            theme = 'DARK';
-        }else{
-            btn.classList.add('triggered');
-            body.classList.add('light');
-            screenSwitch.classList.add('light');
-            searchIcon.classList.add('lightmode');
-            searchResults.classList.add('light-theme');
-            searchQuery.classList.add('light');
-            nav.classList.add('light');
-            links.forEach(link => link.classList.add('lightlinks'));
-            ovals.forEach(oval => oval.classList.add("light-theme"));
-            profile.classList.add('border');
-            Array.from(categories).forEach(category => category.classList.add('light-colour'));
-            theme = 'LIGHT';
+        if (btn.classList.contains("triggered")) {
+          btn.classList.remove("triggered");
+          body.classList.remove("light");
+          screenSwitch.classList.remove("light");
+          searchIcon.classList.remove("lightmode");
+          searchResults.classList.remove("light-theme");
+          searchQuery.classList.remove("light");
+          nav.classList.remove("light");
+          links.forEach((link) => link.classList.remove("lightlinks"));
+          ovals.forEach((oval) => oval.classList.remove("light-theme"));
+          profile.classList.remove("border");
+          Array.from(categories).forEach((category) =>
+            category.classList.remove("light-colour")
+          );
+          theme = "DARK";
+        } else {
+          btn.classList.add("triggered");
+          body.classList.add("light");
+          screenSwitch.classList.add("light");
+          searchIcon.classList.add("lightmode");
+          searchResults.classList.add("light-theme");
+          searchQuery.classList.add("light");
+          nav.classList.add("light");
+          links.forEach((link) => link.classList.add("lightlinks"));
+          ovals.forEach((oval) => oval.classList.add("light-theme"));
+          profile.classList.add("border");
+          Array.from(categories).forEach((category) =>
+            category.classList.add("light-colour")
+          );
+          theme = "LIGHT";
         }
         localStorage.setItem("PageTheme", JSON.stringify(theme));
-}
-    let getTheme = JSON.parse(localStorage.getItem("PageTheme"));
-console.log(getTheme, "Hello");
+      }
 
-if(getTheme === 'LIGHT'){
-    btn.classList.add('triggered');
-            body.classList.add('light');
-            screenSwitch.classList.add('light');
-            searchIcon.classList.add('lightmode');
-            searchResults.classList.add('light-theme');
-            searchQuery.classList.add('light');
-            nav.classList.add('light');
-            links.forEach(link => link.classList.add('lightlinks'));
-            ovals.forEach(oval => oval.classList.add("light-theme"));
-            profile.classList.add('border');
-            Array.from(categories).forEach(category => category.classList.add('light-colour'));
+      let getTheme = JSON.parse(localStorage.getItem("PageTheme"));
+      console.log(getTheme, "Hello");
 
-}else if((getTheme === 'DARK')){
-    btn.classList.remove('triggered');
-            body.classList.remove('light');
-            screenSwitch.classList.remove('light');
-            searchIcon.classList.remove('lightmode');
-            searchResults.classList.remove('light-theme');
-            searchQuery.classList.remove('light');
-            nav.classList.remove("light");
-            links.forEach(link => link.classList.remove('lightlinks'));
-            ovals.forEach(oval => oval.classList.remove("light-theme"));
-            profile.classList.remove('border');
-            Array.from(categories).forEach(category => category.classList.remove('light-colour'));
-}
-
-
-
+      if (getTheme === "LIGHT") {
+        btn.classList.add("triggered");
+        body.classList.add("light");
+        screenSwitch.classList.add("light");
+        searchIcon.classList.add("lightmode");
+        searchResults.classList.add("light-theme");
+        searchQuery.classList.add("light");
+        nav.classList.add("light");
+        links.forEach((link) => link.classList.add("lightlinks"));
+        ovals.forEach((oval) => oval.classList.add("light-theme"));
+        profile.classList.add("border");
+        Array.from(categories).forEach((category) =>
+          category.classList.add("light-colour")
+        );
+      } else if (getTheme === "DARK") {
+        btn.classList.remove("triggered");
+        body.classList.remove("light");
+        screenSwitch.classList.remove("light");
+        searchIcon.classList.remove("lightmode");
+        searchResults.classList.remove("light-theme");
+        searchQuery.classList.remove("light");
+        nav.classList.remove("light");
+        links.forEach((link) => link.classList.remove("lightlinks"));
+        ovals.forEach((oval) => oval.classList.remove("light-theme"));
+        profile.classList.remove("border");
+        Array.from(categories).forEach((category) =>
+          category.classList.remove("light-colour")
+        );
+      }
     });
 }
-
-    

@@ -19,9 +19,9 @@
 //         resultsContainer.classList.remove('result');
 //     })
 
-//     searchBar.addEventListener('keyup', () => {
-//         searchValue = searchBar.value;
-//         console.log(searchValue);
+    // searchBar.addEventListener('keyup', () => {
+    //     searchValue = searchBar.value;
+    //     console.log(searchValue);
 
 //         filterResult = searchByName(searchValue);
 //         console.log(filterResult);

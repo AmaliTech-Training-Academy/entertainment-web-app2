@@ -167,7 +167,7 @@ fetch(json_url).then(Response => Response.json())
             const body = document.querySelector("body");
             const searchIcon = document.querySelector(".search");
             const searchQuery = document.querySelector("input");
-            const searchResults = document.querySelector("ul");  
+            // const searchResults = document.querySelector("ul");  
             const nav = document.querySelector("nav");
             const links = document.querySelectorAll("a");
             const recommendedContainer = document.querySelector(".options");
@@ -176,6 +176,16 @@ fetch(json_url).then(Response => Response.json())
             const info = recommendedContainer.querySelectorAll(".about")
             const profile = document.querySelector(".user-avatar");
             screenSwitch.addEventListener('click', lightMode);
+            const wayOut = document.querySelector(".logoutModal");
+            const content = wayOut.querySelector(".content");
+            const modalOptions = wayOut.querySelectorAll(".opt");
+            const closeModal = wayOut.querySelector(".one");
+            profile.addEventListener('click', ()=>{
+                wayOut.classList.add("wayout")
+            });
+            closeModal.addEventListener('click', ()=>{
+                wayOut.classList.remove("wayout")
+            })
         
         function lightMode() {
                 let theme;
@@ -184,11 +194,13 @@ fetch(json_url).then(Response => Response.json())
                     body.classList.remove('light');
                     screenSwitch.classList.remove('light');
                     searchIcon.classList.remove('lightmode');
-                    searchResults.classList.remove('light-theme');
+                    // searchResults.classList.remove('light-theme');
                     searchQuery.classList.remove('light');
                     nav.classList.remove("light");
                     links.forEach(link => link.classList.remove('lightlinks'));
                     profile.classList.remove('border');
+                    content.classList.remove('light-background');
+                    modalOptions.forEach(option => option.classList.remove("light-background"));
                     categories.forEach(category => category.classList.remove('light-colour'));
                     ovals.forEach(oval => oval.classList.remove("light-theme"));
                     info.forEach(about => about.classList.remove("light-text"));
@@ -199,10 +211,12 @@ fetch(json_url).then(Response => Response.json())
                     screenSwitch.classList.add('light');
                     searchIcon.classList.add('lightmode');
                     searchQuery.classList.add('light');
-                    searchResults.classList.add('light-theme');
+                    // searchResults.classList.add('light-theme');
                     nav.classList.add('light');
                     links.forEach(link => link.classList.add('lightlinks'));
                     profile.classList.add('border');
+                    modalOptions.forEach(option => option.classList.add("light-background"));
+                    content.classList.add('light-background');
                     categories.forEach(category => category.classList.add('light-colour'));
                     ovals.forEach(oval => oval.classList.add("light-theme"));
                     info.forEach(about => about.classList.add("light-text"));
@@ -219,10 +233,12 @@ fetch(json_url).then(Response => Response.json())
                     screenSwitch.classList.add('light');
                     searchIcon.classList.add('lightmode');
                     searchQuery.classList.add('light');
-                    searchResults.classList.add('light-theme');
+                    // searchResults.classList.add('light-theme');
                     nav.classList.add('light');
                     links.forEach(link => link.classList.add('lightlinks'));
                     profile.classList.add('border');
+                    modalOptions.forEach(option => option.classList.add("light-background"));
+                    content.classList.add('light-background');
                     categories.forEach(category => category.classList.add('light-colour'));
                     ovals.forEach(oval => oval.classList.add("light-theme"));
                     info.forEach(about => about.classList.add("light-text"));
@@ -233,51 +249,69 @@ fetch(json_url).then(Response => Response.json())
                     screenSwitch.classList.remove('light');
                     searchIcon.classList.remove('lightmode');
                     searchQuery.classList.remove('light');
-                    searchResults.classList.remove('light-theme');
+                    // searchResults.classList.remove('light-theme');
                     nav.classList.remove("light");
                     links.forEach(link => link.classList.remove('lightlinks'));
                     profile.classList.remove('border');
+                    modalOptions.forEach(option => option.classList.remove("light-background"));
+                    content.classList.remove('light-background');
                     categories.forEach(category => category.classList.remove('light-colour'));
                     ovals.forEach(oval => oval.classList.remove("light-theme"));
                     info.forEach(about => about.classList.remove("light-text"));
         }
     addBookmark();
-
-    const resultsContainer = document.querySelector(".searchItems");
-console.log(resultsContainer);
-
-const input = document.querySelector('input');
-input.addEventListener('keydown', function(event) {
-    if (event.key === 'Enter') {
-        window.location.href = "searchResults.html"
-    console.log('Enter key was pressed');
-    }
 });
 
-    let results = "";
-    input.addEventListener('keyup', () => {
-        const queryValue = input.value;
-        console.log(queryValue);
-        Results(queryValue);
-        })
+    
 
-    function Results(query){
-        data.forEach(element => {
-            if(element.title.toLowerCase().includes(query.toLowerCase())){
-                // window.location.href = "searchResults.html"
-                results +=  '<li>'
-                            +'<img class="search-item-img" src="'+element.thumbnail.regular.large+'"/>'
-                            +'<div class="search-item-info">'
-                            +'<div class="search-item-title">'
-                            +element.title
-                            +'</div>'
-                            +'<div class="search-item-year">'
-                            +element.year
-                            +'</div>'
-                            +'</div>'
-                            +'</li>';
-                        }
-                        resultsContainer.innerHTML = results;
-                })
-            }
-    });
+
+
+
+
+
+
+
+
+//     const resultsContainer = document.querySelector(".searchItems");
+// console.log(resultsContainer);
+
+// const input = document.querySelector('input');
+// input.addEventListener('keydown', function(event) {
+//     if (event.key === 'Enter') {
+//         window.location.href = "searchResults.html"
+//     console.log('Enter key was pressed');
+//     }
+
+
+
+
+
+
+
+
+// let results = "";
+    // input.addEventListener('keyup', () => {
+    //     const queryValue = input.value;
+    //     console.log(queryValue);
+    //     Results(queryValue);
+    //     })
+
+    // function Results(query){
+    //     data.forEach(element => {
+    //         if(element.title.toLowerCase().includes(query.toLowerCase())){
+    //             window.location.href = "searchResults.html"
+    //             results +=  '<li>'
+    //                         +'<img class="search-item-img" src="'+element.thumbnail.regular.large+'"/>'
+    //                         +'<div class="search-item-info">'
+    //                         +'<div class="search-item-title">'
+    //                         +element.title
+    //                         +'</div>'
+    //                         +'<div class="search-item-year">'
+    //                         +element.year
+    //                         +'</div>'
+    //                         +'</div>'
+    //                         +'</li>';
+    //                     }
+    //                     resultsContainer.innerHTML = results;
+    //             })
+    //         }

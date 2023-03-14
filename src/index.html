@@ -27,15 +27,14 @@
           <a class="tv-series" href="series.html"></a>
           <a class="bookmarks" href="bookmarked.html"></a>
         </div>
-        <div class="user-avatar">
-          <a href="login.html"></a>
-        </div>
+          <div class="user-avatar">
+          </div>
       </nav>
       <section>
         <header>
-          <form>
+          <form class="search_form">
             <div class="search"></div>
-            <input type="search" placeholder="Search for movies or tv-series" onkeydown="dbsearch(event)"/>
+            <input type="search" id="search_input" placeholder="Search for movies or tv-series"/>
             <div class="switch-mode">
               <div class="light-dark"></div>
             </div>
@@ -49,24 +48,21 @@
       <div class="options">
       </div>
       </section>
-        
     </main>
+    <div class="logoutModal">
+      <div class="content">
+        <div class="question">Are you sure you want to sign out?</div>
+      <div class="opt one">Cancel</div>
+      <a href="login.html" class="opt two">Sign out</a>
+      </div>
+    </div>
 
     <!-- Display recommended shows -->
-    <script>
-       function dbsearch(event) {
-      if (event.keyCode == 13) {
-         console.log("Enter key is pressed");
-         return true;
-      } else {
-         return false;
-      }
-   }
-    </script>
     <!-- <script src="search2.js"></script> -->
     <script type="module" src="index.js"></script>
     <script src="script.js"></script>
     <script src="searchbar.js"></script>
+    <script src="search2.js"></script>
     <script type="module" src="bookmarked.js"></script>
   </body>
 </html>

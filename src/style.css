@@ -21,6 +21,7 @@ body {
     background: var(--color--dark-blue);
     font-family: var(--font-outfit-light);
     overflow: hidden;
+    position: relative;
 }
 /* 
 input[type=password]:focus{
@@ -36,6 +37,10 @@ input[type=password]:focus{
     border-radius: 1rem;
     background: var(--color--semi-blue-black);
     margin: 10rem auto;
+}
+
+.switch-mode{
+    margin-left: 50rem;
 }
 
 .container .signup-form {

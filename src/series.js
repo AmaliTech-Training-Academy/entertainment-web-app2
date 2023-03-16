@@ -55,6 +55,13 @@ fetch(json_url)
       seriesContainer.innerHTML = series;
     }
 
+    const bookmarkButton = document.querySelector(".bookmark-btn");
+      window.addEventListener("load", () => {
+      const bookmarkState = localStorage.getItem("bookmarkState");
+      if (bookmarkState === "kept") {
+          bookmarkButton.classList.add("keep");
+      }
+      });
     const contentContainer = document.querySelectorAll(".series");
 
     contentContainer.forEach((series) => {
@@ -84,9 +91,11 @@ fetch(json_url)
             bookmark.addEventListener('click', ()=>{
                 if(button.classList.contains('keep')){
                     button.classList.remove('keep')
+                    localStorage.setItem("bookmarkState", "not-kept");
                 }
                 else{
                     button.classList.add('keep')
+                    localStorage.setItem("bookmarkState", "kept");
                 }
             });
             about.addEventListener('mouseover', () => {

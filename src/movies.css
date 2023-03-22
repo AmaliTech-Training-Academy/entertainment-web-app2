@@ -199,6 +199,9 @@ section .movies-items{
 .bookmark-btn .keep:hover{
     stroke: #10141E;
 }
+.movie .overlay{
+    height: 11rem;
+}
 
 
 
@@ -283,6 +286,10 @@ section .movies-items{
         justify-content: center;
         cursor: pointer;
         z-index: 2;
+    }
+    .movie .overlay{
+        height: 9.9rem;
+        /* width: 14.2rem; */
     }
     
     
@@ -370,6 +377,9 @@ section .movies-items{
         justify-content: center;
         cursor: pointer;
         z-index: 2;
+    }
+    .movie .overlay{
+        height: 13rem;
     }
     
    

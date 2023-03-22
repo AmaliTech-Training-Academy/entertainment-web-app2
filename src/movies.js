@@ -1,4 +1,5 @@
 import { addBookmark } from "./bookmarked.js";
+// import { removeBookmark } from "./removeBookmarked.js";
 
 let moviesContainer = document.querySelector(".movies-items");
 let json_url = "data.json";
@@ -80,6 +81,7 @@ fetch(json_url).then(Response => Response.json())
             });
         })
         addBookmark();
+        // removeBookmark();
 
         const btn = document.querySelector('.light-dark');
         const screenSwitch = document.querySelector('.switch-mode');

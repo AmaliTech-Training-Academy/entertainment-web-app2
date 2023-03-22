@@ -4,6 +4,24 @@
 
 // fetch(json_link).then(Response => Response.json())
 // .then((data) => {
+//     let searchList = "";
+//     // const sname = document.getElementsByClassName("search-item-info");
+//     for(i = 0; i < data.length; i++){
+//         searchList += 
+//         '<li>'
+//         +'<img class="search-item-img" src="'+data[i].thumbnail.regular.small+'"/>'
+//         +'<div class="search-item-info">'
+//         +'<div class="search-item-title">'
+//         +data[i].title
+//         +'</div>'
+//         +'<div class="search-item-year">'
+//         +data[i].year
+//         +'</div>'
+//         +'</div>'
+//         +'</li>';
+//     }
+//     resultsContainer.innerHTML = searchList;
+    
 //     const searchBar = document.querySelector("input");
 
 //     const result = document.querySelectorAll("ul");
@@ -19,9 +37,9 @@
 //         resultsContainer.classList.remove('result');
 //     })
 
-    // searchBar.addEventListener('keyup', () => {
-    //     searchValue = searchBar.value;
-    //     console.log(searchValue);
+//     searchBar.addEventListener('keyup', () => {
+//         searchValue = searchBar.value;
+//         console.log(searchValue);
 
 //         filterResult = searchByName(searchValue);
 //         console.log(filterResult);
@@ -61,21 +79,6 @@
 
 
 
-// // let searchList = "";
-// //     // const sname = document.getElementsByClassName("search-item-info");
-// //     for(i = 0; i < data.length; i++){
-// //         searchList += 
-// //         '<li>'
-// //         +'<img class="search-item-img" src="'+data[i].thumbnail.regular.small+'"/>'
-// //         +'<div class="search-item-info">'
-// //         +'<div class="search-item-title">'
-// //         +data[i].title
-// //         +'</div>'
-// //         +'<div class="search-item-year">'
-// //         +data[i].year
-// //         +'</div>'
-// //         +'</div>'
-// //         +'</li>';
-// //     }
-// //     resultsContainer.innerHTML = searchList;
+
+
 

@@ -27,7 +27,7 @@ main section{
     position: relative;
 }
 main section{
-    height: 45rem;
+    height: 48rem;
     overflow:   scroll;
     /* margin-bottom: -1rem; */
 }
@@ -460,8 +460,8 @@ position: relative;
         width: 2rem;
         height: 2rem;
         position: relative;
-        top: -14rem;
-        left: 14rem;
+        top: -13rem;
+        left: 13.5rem;
         border-radius: 50%;
         background: #10141E;
         opacity: 0.5;
@@ -533,7 +533,11 @@ position: relative;
         font-size: 1.125rem;
         line-height: 1.875rem;
     }
+    .option .overlay{
+        height: 10.5rem;
+    }
 }
+
 
 @media  only screen and (max-width: 420px) and (min-width:305px) {
     main{
@@ -552,6 +556,13 @@ position: relative;
         margin-top: 2rem;
         margin-left: 2.5rem;
     }
+    nav {
+        width: 70rem;
+    }
+    nav .links{
+        width: 20rem;
+      
+    }
     
     main section header{
         /* border: 1px solid white; */
@@ -559,7 +570,7 @@ position: relative;
         margin-top: 1.5rem;
     }
     main section{
-        height: 110rem;
+        height: 140rem;
         overflow:   scroll;
         /* margin-bottom: -1rem; */
     }
@@ -656,7 +667,7 @@ position: relative;
         height: 2rem;
         position: relative;
         top: -14rem;
-        left: 17rem;
+        left: 20rem;
         border-radius: 50%;
         background: #10141E;
         opacity: 0.5;
@@ -670,7 +681,7 @@ position: relative;
     section .options{
         display: grid;
         grid-template-columns: auto auto;
-        grid-gap: 1rem;
+        grid-gap: -2rem;
         margin-left: 4rem;
         /* width: 21.438rem; */
     }
@@ -725,7 +736,7 @@ position: relative;
     }
     .options .option .large{
         height: 12rem;
-        width: 20rem;
+        width: 23rem;
         border-radius: 0.5rem;
         margin-bottom: .4rem;
     }
@@ -744,5 +755,8 @@ position: relative;
         font-size: 1.5rem;
         line-height: 1.875rem;
     }
-
+    .option .overlay{
+        width: 23rem;
+        height: 12rem;
+    }
 }

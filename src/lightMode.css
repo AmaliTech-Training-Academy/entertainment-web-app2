@@ -79,3 +79,17 @@ body.light{
     fill: #FFFFFF;
     transition: 0.3s;
 }
+
+
+@media only screen and (max-width:820px) and (min-width:480px) {
+    .overlay{
+        height: 10.4rem;
+    }
+}
+
+@media only screen and (max-width:420px) and (min-width:320px) {
+    .overlay{
+        height: 12.4rem;
+    }
+    
+}

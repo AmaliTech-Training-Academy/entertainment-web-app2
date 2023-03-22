@@ -10,7 +10,7 @@ fetch(json_link)
         data.forEach(element => {
             if(element.title.toLowerCase().includes(query.toLowerCase())){
                 results +=  '<div class="search-item">'
-                            +'<img class="search-item-img" src="'+element.thumbnail.regular.large+'"/>'
+                            // +'<img class="search-item-img" src="'+element.thumbnail+'"/>'
                             +'<div class="search-item-info">'
                             +'<div class="search-item-title">'
                             +element.title
@@ -49,7 +49,7 @@ fetch(json_link)
         for(i = 0; i < filterResult.length; i++){
            filterList += 
            '<div class="search-item">'
-           +'<img class="search-item-img" src="'+ filterResult[i].thumbnail+'"/>'
+           +'<img class="search-item-img" src="'+ filterResult[i].thumbnail.regular.large+ '"/>'
         //    console.log(searchValue.thumbnail);
            +'<div class="search-item-info">'
            +'<div class="search-item-title">'

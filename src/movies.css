@@ -202,6 +202,74 @@ section .movies-items{
 .movie .overlay{
     height: 11rem;
 }
+.searchItems {
+    /* height: 11rem; */
+    width: 25rem;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-gap: 2rem;
+    position: relative;
+    z-index: -2;
+}
+.searchItems .search-item-info{
+    /* border: 1px solid pink; */
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    width: 10rem;
+    z-index: 5;
+}
+
+.searchItems .bookmark-btn {
+    width: 2rem;
+    height: 2rem;
+    /* border: 1px solid white; */
+    position: absolute;
+    top: 1rem;
+    left: 15.5rem;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 3;
+}
+.searchItems .bookmark-btn:hover{
+    background: #FFFFFF;
+    transition: 0.3s;
+}
+
+.searchItems .bookmark-btn svg{
+    width: 0.75rem;
+    height: 0.88rem;
+    stroke: #FFFFFF;
+    stroke-width: 1.5;
+    fill: none;
+}
+
+.searchItems .bookmark-btn .choice{
+    stroke:#10141E;
+    transition: 0.3s;
+}
+
+.searchItems .bookmark-btn .keep{
+    stroke: #FFFFFF;
+    fill: #FFFFFF;
+    transition: 0.3s;
+}
+/* .searchItems .search-item{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-gap: 2rem;
+    position: relative;
+} */
+.search-item-img{
+   width: 18rem;
+   height: 12rem;
+   border-radius: .5rem;
+}
+
 
 
 

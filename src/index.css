@@ -237,6 +237,15 @@ section .trending-items{
     fill: #FFFFFF;
     transition: 0.3s;
 }
+.searchItems {
+    /* height: 11rem; */
+    width: 100%;
+    z-index: -2;
+}
+.search-item-img{
+   width: 5rem;
+   height: 5rem;
+}
 
 section .options{
     /* border: 1px solid white; */

@@ -31,16 +31,16 @@ input[type=password]:focus{
     background: transparent;
 } */
 
+.switch-mode{
+    visibility: hidden;
+}
+
 .container .login-form {
     width: 25rem;
     height: 23rem;
     border-radius: 1rem;
     background: var(--color--semi-blue-black);
     margin: 10rem auto;
-}
-
-.switch-mode{
-    margin-left: 50rem;
 }
 
 .container .signup-form {

@@ -1,4 +1,5 @@
 import { addBookmark } from "./bookmarked.js";
+import { removeMS } from "./removeBookmarked.js";
 
 let seriesContainer = document.querySelector(".series-items");
 
@@ -68,7 +69,6 @@ fetch(json_url)
             const overlay = series.querySelector(".overlay");
             const play = series.querySelector(".play");
             const bookmark = series.querySelector(".bookmark-btn");
-            const about = series.querySelector(".series-info");
             const button = series.querySelector("svg");
             overlay.addEventListener('mouseover', () => {
                 overlay.classList.add('dark')
@@ -97,10 +97,6 @@ fetch(json_url)
                     button.classList.add('keep')
                     localStorage.setItem("bookmarkState", "kept");
                 }
-            });
-            about.addEventListener('mouseover', () => {
-                overlay.classList.add('dark')
-                play.classList.add('show')
             });
     });
 
@@ -185,4 +181,5 @@ if(getTheme === 'LIGHT'){
 }
 
     addBookmark();
+    // removeMS();
   });

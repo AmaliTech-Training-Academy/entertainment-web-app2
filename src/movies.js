@@ -51,7 +51,6 @@ fetch(json_url).then(Response => Response.json())
             const overlay = movie.querySelector(".overlay");
             const play = movie.querySelector(".play");
             const bookmark = movie.querySelector(".bookmark-btn");
-            const about = movie.querySelector(".movie-info");
             const button = movie.querySelector("svg");
             overlay.addEventListener('mouseover', () => {
                 overlay.classList.add('dark')

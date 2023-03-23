@@ -94,6 +94,16 @@ function fetchBookmarks() {
 	const ovals = document.querySelectorAll(".oval");
 	const categories = document.getElementsByTagName("i");
 	const profile = document.querySelector(".user-avatar");
+  const wayOut = document.querySelector(".logoutModal");
+  const content = wayOut.querySelector(".content");
+  const modalOptions = wayOut.querySelectorAll(".opt");
+  const closeModal = wayOut.querySelector(".one");
+  profile.addEventListener('click', ()=>{
+      wayOut.classList.add("wayout")
+            });
+      closeModal.addEventListener('click', ()=>{
+      wayOut.classList.remove("wayout")
+            })
 	screenSwitch.addEventListener("click", lightMode);
 
       function lightMode() {
@@ -106,6 +116,8 @@ function fetchBookmarks() {
           searchResults.classList.remove("light-theme");
           searchQuery.classList.remove("light");
           nav.classList.remove("light");
+          content.classList.remove('light-background');
+          modalOptions.forEach(option => option.classList.remove("light-background"));
           links.forEach((link) => link.classList.remove("lightlinks"));
           ovals.forEach((oval) => oval.classList.remove("light-theme"));
           profile.classList.remove("border");
@@ -121,6 +133,8 @@ function fetchBookmarks() {
           searchResults.classList.add("light-theme");
           searchQuery.classList.add("light");
           nav.classList.add("light");
+          content.classList.add('light-background');
+          modalOptions.forEach(option => option.classList.add("light-background"));
           links.forEach((link) => link.classList.add("lightlinks"));
           ovals.forEach((oval) => oval.classList.add("light-theme"));
           profile.classList.add("border");
@@ -143,6 +157,8 @@ function fetchBookmarks() {
         searchResults.classList.add("light-theme");
         searchQuery.classList.add("light");
         nav.classList.add("light");
+        content.classList.add('light-background');
+        modalOptions.forEach(option => option.classList.add("light-background"));
         links.forEach((link) => link.classList.add("lightlinks"));
         ovals.forEach((oval) => oval.classList.add("light-theme"));
         profile.classList.add("border");
@@ -157,6 +173,8 @@ function fetchBookmarks() {
         searchResults.classList.remove("light-theme");
         searchQuery.classList.remove("light");
         nav.classList.remove("light");
+        content.classList.remove('light-background');
+        modalOptions.forEach(option => option.classList.remove("light-background"));
         links.forEach((link) => link.classList.remove("lightlinks"));
         ovals.forEach((oval) => oval.classList.remove("light-theme"));
         profile.classList.remove("border");

@@ -93,6 +93,16 @@ fetch(json_url).then(Response => Response.json())
         const categories = document.querySelectorAll("i");
         const info = recommendedContainer.querySelectorAll(".about")
         const profile = document.querySelector(".user-avatar");
+        const wayOut = document.querySelector(".logoutModal");
+            const content = wayOut.querySelector(".content");
+            const modalOptions = wayOut.querySelectorAll(".opt");
+            const closeModal = wayOut.querySelector(".one");
+            profile.addEventListener('click', ()=>{
+                wayOut.classList.add("wayout")
+            });
+            closeModal.addEventListener('click', ()=>{
+                wayOut.classList.remove("wayout")
+            })
         screenSwitch.addEventListener('click', lightMode);
     
     function lightMode() {
@@ -105,6 +115,8 @@ fetch(json_url).then(Response => Response.json())
                 nav.classList.remove("light");
                 links.forEach(link => link.classList.remove('lightlinks'));
                 profile.classList.remove('border');
+                content.classList.remove('light-background');
+                    modalOptions.forEach(option => option.classList.remove("light-background"));
                 categories.forEach(category => category.classList.remove('light-colour'));
                 ovals.forEach(oval => oval.classList.remove("light-theme"));
                 info.forEach(about => about.classList.remove("light-text"));
@@ -117,6 +129,8 @@ fetch(json_url).then(Response => Response.json())
                 nav.classList.add('light');
                 links.forEach(link => link.classList.add('lightlinks'));
                 profile.classList.add('border');
+                content.classList.add('light-background');
+        modalOptions.forEach(option => option.classList.add("light-background"));
                 categories.forEach(category => category.classList.add('light-colour'));
                 ovals.forEach(oval => oval.classList.add("light-theme"));
                 info.forEach(about => about.classList.add("light-text"));
@@ -133,6 +147,8 @@ fetch(json_url).then(Response => Response.json())
                 screenSwitch.classList.add('light');
                 searchIcon.classList.add('lightmode');
                 nav.classList.add('light');
+                content.classList.add('light-background');
+        modalOptions.forEach(option => option.classList.add("light-background"));
                 links.forEach(link => link.classList.add('lightlinks'));
                 profile.classList.add('border');
                 categories.forEach(category => category.classList.add('light-colour'));
@@ -145,6 +161,8 @@ fetch(json_url).then(Response => Response.json())
                 screenSwitch.classList.remove('light');
                 searchIcon.classList.remove('lightmode');
                 nav.classList.remove("light");
+                content.classList.remove('light-background');
+                    modalOptions.forEach(option => option.classList.remove("light-background"));
                 links.forEach(link => link.classList.remove('lightlinks'));
                 profile.classList.remove('border');
                 categories.forEach(category => category.classList.remove('light-colour'));

@@ -21,6 +21,7 @@ body {
     background: var(--color--dark-blue);
     font-family: var(--font-outfit-light);
     overflow: hidden;
+    position: relative;
 }
 /* 
 input[type=password]:focus{
@@ -29,6 +30,10 @@ input[type=password]:focus{
     opacity: 1;
     background: transparent;
 } */
+
+.switch-mode{
+    visibility: hidden;
+}
 
 .container .login-form {
     width: 25rem;

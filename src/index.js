@@ -225,7 +225,7 @@ fetch(json_url).then(Response => Response.json())
                 localStorage.setItem("PageTheme", JSON.stringify(theme));
         }
             let getTheme = JSON.parse(localStorage.getItem("PageTheme"));
-        console.log(getTheme, "Hello");
+        // console.log(getTheme, "Hello");
         
         if(getTheme === 'LIGHT'){
             btn.classList.add('triggered');

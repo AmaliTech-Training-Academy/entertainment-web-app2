@@ -202,7 +202,7 @@ section .movies-items{
 .movie .overlay{
     height: 11rem;
 }
-.searchItems {
+.searchItems{
     /* height: 11rem; */
     width: 25rem;
     display: grid;
@@ -211,7 +211,8 @@ section .movies-items{
     position: relative;
     z-index: -2;
 }
-.searchItems .search-item-info{
+
+ .search-item-info{
     /* border: 1px solid pink; */
     display: flex;
     flex-direction: column;
@@ -220,13 +221,12 @@ section .movies-items{
     z-index: 5;
 }
 
-.searchItems .bookmark-btn {
+.search-item .bookmark-btn {
     width: 2rem;
     height: 2rem;
-    /* border: 1px solid white; */
-    position: absolute;
-    top: 1rem;
-    left: 15.5rem;
+    position: relative;
+    top: -12rem;
+    margin-left: -.5rem;
     border-radius: 50%;
     background: rgba(0, 0, 0, 0.5);
     display: flex;
@@ -235,12 +235,12 @@ section .movies-items{
     cursor: pointer;
     z-index: 3;
 }
-.searchItems .bookmark-btn:hover{
+.search-item .bookmark-btn:hover{
     background: #FFFFFF;
     transition: 0.3s;
 }
 
-.searchItems .bookmark-btn svg{
+.search-item .bookmark-btn svg{
     width: 0.75rem;
     height: 0.88rem;
     stroke: #FFFFFF;
@@ -360,6 +360,65 @@ section .movies-items{
         /* width: 14.2rem; */
     }
     
+    .searchItems{
+        /* height: 11rem; */
+        width: 20rem;
+        display: grid;
+        grid-template-columns: auto auto auto;
+        position: relative;
+        margin-left: 4.5rem;
+    }
+    
+     .search-item-info{
+        /* border: 1px solid pink; */
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        width: 10rem;
+        z-index: 5;
+    }
+    
+    .search-item .bookmark-btn {
+        width: 2rem;
+        height: 2rem;
+        top: -7rem;
+        left: 7.5rem;
+       
+    }
+    .search-item .bookmark-btn:hover{
+        background: #FFFFFF;
+        transition: 0.3s;
+    }
+    
+    .search-item .bookmark-btn svg{
+        width: 0.75rem;
+        height: 0.88rem;
+        stroke: #FFFFFF;
+        stroke-width: 1.5;
+        fill: none;
+    }
+    
+    .searchItems .bookmark-btn .choice{
+        stroke:#10141E;
+        transition: 0.3s;
+    }
+    
+    .searchItems .bookmark-btn .keep{
+        stroke: #FFFFFF;
+        fill: #FFFFFF;
+        transition: 0.3s;
+    }
+    /* .searchItems .search-item{
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+        grid-gap: 2rem;
+        position: relative;
+    } */
+    .search-item-img{
+        width: 10rem;
+        height: 7rem;
+        border-radius: .5rem;
+     }
     
     
 }
@@ -450,6 +509,67 @@ section .movies-items{
         height: 13rem;
     }
     
+    .searchItems{
+        /* height: 11rem; */
+        margin-top: 5rem;
+        width: 10rem;
+        display: grid;
+        grid-template-columns: auto auto ;
+        grid-gap: 2rem ;
+        position: relative;
+        z-index: -2;
+        margin-left: 10rem;
+    }
+    .searchItems .search-item-info{
+        /* border: 1px solid pink; */
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        width: 10rem;
+        z-index: 5;
+    }
+    
+    .searchItems .bookmark-btn {
+        width: 2rem;
+        height: 2rem;
+        top: -10rem;
+        left: 11.5rem;
+       
+    }
+    .searchItems .bookmark-btn:hover{
+        background: #FFFFFF;
+        transition: 0.3s;
+    }
+    
+    .searchItems .bookmark-btn svg{
+        width: 0.75rem;
+        height: 0.88rem;
+        stroke: #FFFFFF;
+        stroke-width: 1.5;
+        fill: none;
+    }
+    
+    .searchItems .bookmark-btn .choice{
+        stroke:#10141E;
+        transition: 0.3s;
+    }
+    
+    .searchItems .bookmark-btn .keep{
+        stroke: #FFFFFF;
+        fill: #FFFFFF;
+        transition: 0.3s;
+    }
+    /* .searchItems .search-item{
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+        grid-gap: 2rem;
+        position: relative;
+    } */
+    .search-item-img{
+       width: 15rem;
+       height: 11rem;
+       border-radius: .5rem;
+    }
    
 }
 

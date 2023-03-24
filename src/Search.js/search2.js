@@ -34,22 +34,13 @@ fetch(json_link)
         
     }
 
-    // input.addEventListener('keydown' ,function(event) {
-        //     event.preventDefault();
-        //     if (event.key === 'Enter') {
-            //             window.location.href = "searchResults.html"
-            //             const queryValue = input.value;
-            //             console.log(queryValue);
-            //             searchResults(queryValue);
-            //     } 
-            
-            // });
+    //Home page
             
     const input = document.querySelector('input');
     input.addEventListener('keyup', () => {
       resultsContainer.style.display = "grid" 
        document.querySelector(".trending").style.display = "none"; 
-       document.querySelector(".options").style.display = "none"; 
+       document.querySelector(".options").style.display = "none";
        if (input.value === "") {
         document.querySelector(".trending").style.display = "block"; 
        document.querySelector(".options").style.display = "grid"; 
@@ -99,7 +90,8 @@ fetch(json_link)
                 }
                 return results;
               };
-        
+
+              
 
 });
 

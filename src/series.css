@@ -25,13 +25,15 @@ main section{
     width: 93%;
     padding: 4rem 2rem 0 2rem;
     position: relative;
-    
-}
-main section{
     height: 48rem;
     overflow:   scroll;
     margin-bottom: -1rem;
 }
+/* main section{
+    height: 48rem;
+    overflow:   scroll;
+    margin-bottom: -1rem;
+} */
 
 main section header{
     margin-bottom: 2.5rem;
@@ -198,6 +200,74 @@ section .series-items{
 .series .overlay{
     height: 11rem;
 }
+ .searchItems{
+    /* height: 11rem; */
+    width: 25rem;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-gap: 2rem;
+    position: relative;
+    z-index: -2;
+}
+
+ .search-item-info{
+    /* border: 1px solid pink; */
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    width: 10rem;
+    z-index: 5;
+}
+
+.search-item .bookmark-btn {
+    width: 2rem;
+    height: 2rem;
+    position: relative;
+    top: -12rem;
+    margin-left: -.5rem;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 3;
+}
+.search-item .bookmark-btn:hover{
+    background: #FFFFFF;
+    transition: 0.3s;
+}
+
+.search-item .bookmark-btn svg{
+    width: 0.75rem;
+    height: 0.88rem;
+    stroke: #FFFFFF;
+    stroke-width: 1.5;
+    fill: none;
+}
+
+.searchItems .bookmark-btn .choice{
+    stroke:#10141E;
+    transition: 0.3s;
+}
+
+.searchItems .bookmark-btn .keep{
+    stroke: #FFFFFF;
+    fill: #FFFFFF;
+    transition: 0.3s;
+}
+/* .searchItems .search-item{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-gap: 2rem;
+    position: relative;
+} */
+.search-item-img{
+   width: 18rem;
+   height: 12rem;
+   border-radius: .5rem;
+}
+
 
 @media only screen and (max-width: 820px) and (min-width:480px){
     main{
@@ -210,12 +280,15 @@ section .series-items{
         width: 100%;
         padding: 0;
         position: relative;
-    }
-    main section{
         height: 80rem; 
          overflow:   scroll; 
          margin-bottom: -1rem;
     }
+    /* main section{
+        height: 80rem; 
+         overflow:   scroll; 
+         margin-bottom: -1rem;
+    } */
     
     main section header{
         margin-bottom: 2.5rem;
@@ -259,6 +332,64 @@ section .series-items{
         height: 8.7rem;
         /* width: 14.2rem; */
     }
+
+
+.searchItems{
+    /* height: 11rem; */
+    width: 10rem;
+    display: grid;
+    grid-template-columns: auto auto auto ;
+    grid-gap: 2rem;
+    position: relative;
+    z-index: -2;
+    margin-left: 3rem;
+}
+.searchItems .search-item-info{
+    /* border: 1px solid pink; */
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    width: 10rem;
+    z-index: 5;
+}
+
+.searchItems .bookmark-btn {
+    width: 2rem;
+    height: 2rem;
+    top: -7rem;
+    left: 7.5rem;
+    
+}
+.searchItems .bookmark-btn:hover{
+    background: #FFFFFF;
+    transition: 0.3s;
+}
+
+.searchItems .bookmark-btn svg{
+    width: 0.75rem;
+    height: 0.88rem;
+    stroke: #FFFFFF;
+    stroke-width: 1.5;
+    fill: none;
+}
+
+.searchItems .bookmark-btn .choice{
+    stroke:#10141E;
+    transition: 0.3s;
+}
+
+.searchItems .bookmark-btn .keep{
+    stroke: #FFFFFF;
+    fill: #FFFFFF;
+    transition: 0.3s;
+}
+
+.search-item-img{
+   width: 10rem;
+   height: 7rem;
+   border-radius: .5rem;
+}
+
 }
 
 @media only screen and (max-width: 420px) and (min-width:320px){
@@ -333,5 +464,66 @@ section .series-items{
     .series .overlay{
         height: 10rem;
         width: 14.2rem;
+    }
+
+    .searchItems{
+        /* height: 11rem; */
+        width: 10rem;
+        display: grid;
+        grid-template-columns: auto auto ;
+        grid-gap: 2rem;
+        position: relative;
+        z-index: -2;
+        margin-left: 3rem;
+    }
+    .searchItems .search-item-info{
+        /* border: 1px solid pink; */
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        width: 10rem;
+        z-index: 5;
+    }
+    
+    .searchItems .bookmark-btn {
+        width: 2rem;
+        height: 2rem;
+        top: -9rem;
+        left: 9.5rem;
+       
+    }
+    .searchItems .bookmark-btn:hover{
+        background: #FFFFFF;
+        transition: 0.3s;
+    }
+    
+    .searchItems .bookmark-btn svg{
+        width: 0.75rem;
+        height: 0.88rem;
+        stroke: #FFFFFF;
+        stroke-width: 1.5;
+        fill: none;
+    }
+    
+    .searchItems .bookmark-btn .choice{
+        stroke:#10141E;
+        transition: 0.3s;
+    }
+    
+    .searchItems .bookmark-btn .keep{
+        stroke: #FFFFFF;
+        fill: #FFFFFF;
+        transition: 0.3s;
+    }
+    /* .searchItems .search-item{
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+        grid-gap: 2rem;
+        position: relative;
+    } */
+    .search-item-img{
+       width: 12rem;
+       height: 9rem;
+       border-radius: .5rem;
     }
 }

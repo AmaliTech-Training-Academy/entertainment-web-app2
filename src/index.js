@@ -196,6 +196,7 @@ fetch(json_url).then(Response => Response.json())
                     searchIcon.classList.remove('lightmode');
                     // searchResults.classList.remove('light-theme');
                     searchQuery.classList.remove('light');
+                    searchQuery.classList.remove('lmode');
                     nav.classList.remove("light");
                     links.forEach(link => link.classList.remove('lightlinks'));
                     profile.classList.remove('border');
@@ -211,6 +212,7 @@ fetch(json_url).then(Response => Response.json())
                     screenSwitch.classList.add('light');
                     searchIcon.classList.add('lightmode');
                     searchQuery.classList.add('light');
+                    searchQuery.classList.add('lmode');
                     // searchResults.classList.add('light-theme');
                     nav.classList.add('light');
                     links.forEach(link => link.classList.add('lightlinks'));
@@ -233,6 +235,7 @@ fetch(json_url).then(Response => Response.json())
                     screenSwitch.classList.add('light');
                     searchIcon.classList.add('lightmode');
                     searchQuery.classList.add('light');
+                    searchQuery.classList.add('lmode');
                     // searchResults.classList.add('light-theme');
                     nav.classList.add('light');
                     links.forEach(link => link.classList.add('lightlinks'));
@@ -249,6 +252,7 @@ fetch(json_url).then(Response => Response.json())
                     screenSwitch.classList.remove('light');
                     searchIcon.classList.remove('lightmode');
                     searchQuery.classList.remove('light');
+                    searchQuery.classList.remove('lmode');
                     // searchResults.classList.remove('light-theme');
                     nav.classList.remove("light");
                     links.forEach(link => link.classList.remove('lightlinks'));

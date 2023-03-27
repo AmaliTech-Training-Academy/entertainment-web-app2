@@ -167,5 +167,8 @@ fetch(json_url).then(Response => Response.json())
                 ovals.forEach(oval => oval.classList.remove("light-theme"));
                 info.forEach(about => about.classList.remove("light-text"));
     }
+
+
+    
     });
     

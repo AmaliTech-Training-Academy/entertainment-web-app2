@@ -19,6 +19,14 @@ fetch(json_link)
                             +element.year
                             +'</div>'
                             +'</div>'
+                            +'<div class="bookmark-btn">'
+                            +'<svg width="12" height="14" xmlns="http://www.w3.org/2000/svg"><path d="m10.518.75.399 12.214-5.084-4.24-4.535 4.426L.75 1.036l9.768-.285Z"/></svg>' 
+                            +'</div>'
+                            +'<div class="play">'
+                            +'<div class="play-btn"></div>'
+                            +'<p>Play</p>'
+                            +'</div>'
+                            +'<div class="overlay"></div>'
                             +'</div>';
             }
         })
@@ -26,19 +34,18 @@ fetch(json_link)
         
     }
 
-    // input.addEventListener('keydown' ,function(event) {
-        //     event.preventDefault();
-        //     if (event.key === 'Enter') {
-            //             window.location.href = "searchResults.html"
-            //             const queryValue = input.value;
-            //             console.log(queryValue);
-            //             searchResults(queryValue);
-            //     } 
-            
-            // });
+    //Home page
             
     const input = document.querySelector('input');
     input.addEventListener('keyup', () => {
+      resultsContainer.style.display = "grid" 
+       document.querySelector(".trending").style.display = "none"; 
+       document.querySelector(".options").style.display = "none";
+       if (input.value === "") {
+        document.querySelector(".trending").style.display = "block"; 
+       document.querySelector(".options").style.display = "grid"; 
+       resultsContainer.style.display = "none" 
+       }
         searchValue = input.value;
         console.log(searchValue);
 
@@ -59,6 +66,14 @@ fetch(json_link)
            +filterResult[i].year
            +'</div>'
            +'</div>'
+           +'<div class="bookmark-btn">'
+          +'<svg width="12" height="14" xmlns="http://www.w3.org/2000/svg"><path d="m10.518.75.399 12.214-5.084-4.24-4.535 4.426L.75 1.036l9.768-.285Z"/></svg>' 
+          +'</div>'
+          +'<div class="play">'
+          +'<div class="play-btn"></div>'
+          +'<p>Play</p>'
+          +'</div>'
+          +'<div class="overlay"></div>'
            +'</div>';
         }
         console.log(resultsContainer)
@@ -75,7 +90,8 @@ fetch(json_link)
                 }
                 return results;
               };
-        
+
+              
 
 });
 

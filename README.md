@@ -34,6 +34,7 @@ Entertainment web app is a web application that enables users to:
 <img src="/src/assets/home.png" width=800px height=1121px>
 <img src="/src/assets/movies.png" width=800px height=729x>
 <img src="/src/assets/tv-series.png" width=800px height=729px>
+<img src="/src/assets/bookmarked.png" width=800px height=1200px height=916px>
 
 
 ### Live Project Link 

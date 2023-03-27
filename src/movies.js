@@ -1,9 +1,8 @@
 import { addBookmark } from "./bookmarked.js";
-// import { removeBookmark } from "./removeBookmarked.js";
 
 let moviesContainer = document.querySelector(".movies-items");
 let json_url = "data.json";
-
+const bookmarkedMovies = JSON.parse(localStorage.getItem("bookmarkedMovies")) || [];
 fetch(json_url).then(Response => Response.json())
 .then((data) => {
     let movies= '';
@@ -33,7 +32,7 @@ fetch(json_url).then(Response => Response.json())
             +'</h3>'
             +'</div>'
             +'<div class="bookmark-btn">'
-            +'<svg width="12" height="14" xmlns="http://www.w3.org/2000/svg"><path d="m10.518.75.399 12.214-5.084-4.24-4.535 4.426L.75 1.036l9.768-.285Z"/></svg>' 
+            +`<svg class="${bookmarkedMovies.includes(data[i].title) ? "keep" : ""}" width="12" height="14" xmlns="http://www.w3.org/2000/svg"><path d="m10.518.75.399 12.214-5.084-4.24-4.535 4.426L.75 1.036l9.768-.285Z"/></svg>` 
             +'</div>'
             +'<div class="play">'
             +'<div class="play-btn"></div>'
@@ -51,7 +50,6 @@ fetch(json_url).then(Response => Response.json())
             const overlay = movie.querySelector(".overlay");
             const play = movie.querySelector(".play");
             const bookmark = movie.querySelector(".bookmark-btn");
-            const about = movie.querySelector(".movie-info");
             const button = movie.querySelector("svg");
             overlay.addEventListener('mouseover', () => {
                 overlay.classList.add('dark')
@@ -81,7 +79,6 @@ fetch(json_url).then(Response => Response.json())
             });
         })
         addBookmark();
-        // removeBookmark();
 
         const btn = document.querySelector('.light-dark');
         const screenSwitch = document.querySelector('.switch-mode');

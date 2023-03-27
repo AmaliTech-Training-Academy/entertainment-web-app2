@@ -1,10 +1,9 @@
 import { addBookmark } from "./bookmarked.js";
-import { removeMS } from "./removeBookmarked.js";
 
 let seriesContainer = document.querySelector(".series-items");
 
 let json_url = "data.json";
-
+const bookmarkedMovies = JSON.parse(localStorage.getItem("bookmarkedMovies")) || [];
 fetch(json_url)
   .then((Response) => Response.json())
   .then((data) => {
@@ -44,7 +43,7 @@ fetch(json_url)
           "</h3>" +
           "</div>" +
           '<div class="bookmark-btn">' +
-          '<svg width="12" height="14" xmlns="http://www.w3.org/2000/svg"><path d="m10.518.75.399 12.214-5.084-4.24-4.535 4.426L.75 1.036l9.768-.285Z"/></svg>' +
+          `<svg class="${bookmarkedMovies.includes(data[i].title) ? "keep" : "" }" width="12" height="14" xmlns="http://www.w3.org/2000/svg"><path d="m10.518.75.399 12.214-5.084-4.24-4.535 4.426L.75 1.036l9.768-.285Z"/></svg>` +
           "</div>" +
           '<div class="play">' +
           '<div class="play-btn"></div>' +
@@ -56,13 +55,6 @@ fetch(json_url)
       seriesContainer.innerHTML = series;
     }
 
-    const bookmarkButton = document.querySelector(".bookmark-btn");
-      window.addEventListener("load", () => {
-      const bookmarkState = localStorage.getItem("bookmarkState");
-      if (bookmarkState === "kept") {
-          bookmarkButton.classList.add("keep");
-      }
-      });
     const contentContainer = document.querySelectorAll(".series");
 
     contentContainer.forEach((series) => {
@@ -91,11 +83,9 @@ fetch(json_url)
             bookmark.addEventListener('click', ()=>{
                 if(button.classList.contains('keep')){
                     button.classList.remove('keep')
-                    localStorage.setItem("bookmarkState", "not-kept");
                 }
                 else{
                     button.classList.add('keep')
-                    localStorage.setItem("bookmarkState", "kept");
                 }
             });
     });
@@ -199,5 +189,4 @@ if(getTheme === 'LIGHT'){
 }
 
     addBookmark();
-    // removeMS();
   });

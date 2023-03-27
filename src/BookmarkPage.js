@@ -1,5 +1,6 @@
 import { removeBookmark } from "./removeBookmarked.js";
 
+
 document.addEventListener("DOMContentLoaded", (evt) => {
   fetchBookmarks();
 });
@@ -37,7 +38,6 @@ function fetchBookmarks() {
   fetch("./data.json")
     .then((response) => response.json())
     .then((data) => {
-      // console.log(data);
       data.filter((movie) => {
         if (bookmarks.indexOf(movie.title) !== -1) {
           if (movie.category === "Movie") {
@@ -52,7 +52,6 @@ function fetchBookmarks() {
         const overlay = show.querySelector(".overlay");
         const play = show.querySelector(".play");
         const bookmark = show.querySelector(".bookmark-btn");
-        // console.log(bookmark);
         const button = show.querySelector("svg");
         overlay.addEventListener("mouseover", () => {
           overlay.classList.add("dark");

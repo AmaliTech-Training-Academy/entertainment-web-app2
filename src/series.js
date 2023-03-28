@@ -95,7 +95,6 @@ fetch(json_url)
     const body = document.querySelector("body");
     const searchIcon = document.querySelector(".search");
     const searchQuery = document.querySelector("input");
-    const searchResults = document.querySelector("ul");  
     const nav = document.querySelector("nav");
     const links = document.querySelectorAll("a");
     const recommendedContainer = document.querySelector(".series-items");
@@ -123,9 +122,10 @@ function lightMode() {
             screenSwitch.classList.remove('light');
             searchIcon.classList.remove('lightmode');
             searchQuery.classList.remove('light');
+            searchQuery.classList.remove('lmode');
             nav.classList.remove("light");
             content.classList.remove('light-background');
-                    modalOptions.forEach(option => option.classList.remove("light-background"));
+            modalOptions.forEach(option => option.classList.remove("light-background"));
             links.forEach(link => link.classList.remove('lightlinks'));
             profile.classList.remove('border');
             categories.forEach(category => category.classList.remove('light-colour'));
@@ -138,6 +138,7 @@ function lightMode() {
             screenSwitch.classList.add('light');
             searchIcon.classList.add('lightmode');
             searchQuery.classList.add('light');
+            searchQuery.classList.add('lmode');
             nav.classList.add('light');
             content.classList.add('light-background');
         modalOptions.forEach(option => option.classList.add("light-background"));
@@ -159,6 +160,7 @@ if(getTheme === 'LIGHT'){
             screenSwitch.classList.add('light');
             searchIcon.classList.add('lightmode');
             searchQuery.classList.add('light');
+            searchQuery.classList.add('lmode');
             nav.classList.add('light');
             content.classList.add('light-background');
         modalOptions.forEach(option => option.classList.add("light-background"));
@@ -174,6 +176,7 @@ if(getTheme === 'LIGHT'){
             screenSwitch.classList.remove('light');
             searchIcon.classList.remove('lightmode');
             searchQuery.classList.remove('light');
+            searchQuery.classList.remove('lmode');
             nav.classList.remove("light");
             content.classList.remove('light-background');
                     modalOptions.forEach(option => option.classList.remove("light-background"));

@@ -5,9 +5,7 @@ const password = document.getElementById("password");
 const password2 = document.getElementById("password2");
 //function for the submit button when its clicked
 
-let userStorage = JSON.parse(localStorage.getItem("User")) || [
-  { email: "", password: "" },
-];
+let userStorage = JSON.parse(localStorage.getItem("User"));
 
 
 const getUserByEmail = (email) => {
@@ -28,22 +26,24 @@ form.addEventListener("submit", (event) => {
       userID: userID,
     };
 
-    const user = getUserByEmail(userDetails.email);
-    console.log(user);
-
-    if (user) {
-      // if (user.email === email.value) {
-      alert("User ID already exists");
+    console.log(userStorage);
+    if (userStorage) {
+      const user = getUserByEmail(userDetails.email);
+      console.log("user", user);
+      if (user) {
+        alert("User ID already exists");
+        return;
+      } else {
+        userStorage.push(userDetails);
+        localStorage.setItem("User", JSON.stringify(userStorage));
+      }
     } else {
-      // console.log("userDetails", userDetails);
-      userStorage.push(userDetails);
-      localStorage.setItem("User", JSON.stringify(userStorage));
-
-      sendConfirmationEmail(userID);
-      alert("Confirmation email sent");
-      window.location.replace("login.html");
-      // return;
+      // is empty
+      localStorage.setItem("User", JSON.stringify([userDetails]));
     }
+    sendConfirmationEmail(userID);
+    alert("Confirmation email sent");
+    window.location.replace("login.html");
     // } else {
     //   console.log(userDetails);
     //   localStorage.setItem("User", JSON.stringify([].push(userDetails)));

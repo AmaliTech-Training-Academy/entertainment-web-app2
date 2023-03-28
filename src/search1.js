@@ -1,4 +1,4 @@
-const resultsContainer = document.querySelector(".searchItems");
+// const resultsContainer = document.querySelector(".searchItems");
 
 
 let json_link = "data.json";
@@ -10,7 +10,7 @@ fetch(json_link)
         data.forEach(element => {
             if(element.title.toLowerCase().includes(query.toLowerCase())){
                 results +=  '<div class="search-item">'
-                            +'<img class="search-item-img" src="'+element.thumbnail.trending.large +'"/>'
+                            +'<img class="search-item-img" src="'+ element.thumbnail.regular.large +'"/>'
                             +'<div class="search-item-info">'
                             +'<div class="search-item-title">'
                             +element.title
@@ -21,18 +21,14 @@ fetch(json_link)
                             +'</div>'
                             +'</div>';
             }
+            // resultsContainer.innerHTML = results;
         })
-        resultsContainer.innerHTML = results;
     }
 
     const input = document.querySelector('input');
-    input.addEventListener('keydown', function(event) {
-        event.preventDefault();
-        if (event.key === 'Enter') {
-                const queryValue = input.value;
-                console.log(queryValue);
-                searchResults(queryValue);
-        }
-    });
-});
-
+    input.focus();
+        
+    const queryValue = input.value;
+    console.log(queryValue);
+    searchResults(queryValue)
+  })

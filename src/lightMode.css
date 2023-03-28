@@ -4,7 +4,7 @@ body.light{
     transition: 1s;
 }
 
-.search.lightmode{
+.search-icon.lightmode{
     filter: brightness(0) saturate(100%) invert(5%) sepia(7%) saturate(4212%) hue-rotate(185deg) brightness(95%) contrast(93%);
     transition: 1s;
 }

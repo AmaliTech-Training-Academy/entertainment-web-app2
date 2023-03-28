@@ -122,7 +122,6 @@ function lightMode() {
             body.classList.remove('light');
             screenSwitch.classList.remove('light');
             searchIcon.classList.remove('lightmode');
-            searchResults.classList.remove('light-theme');
             searchQuery.classList.remove('light');
             nav.classList.remove("light");
             content.classList.remove('light-background');
@@ -138,7 +137,6 @@ function lightMode() {
             body.classList.add('light');
             screenSwitch.classList.add('light');
             searchIcon.classList.add('lightmode');
-            searchResults.classList.add('light-theme');
             searchQuery.classList.add('light');
             nav.classList.add('light');
             content.classList.add('light-background');
@@ -160,7 +158,6 @@ if(getTheme === 'LIGHT'){
             body.classList.add('light');
             screenSwitch.classList.add('light');
             searchIcon.classList.add('lightmode');
-            searchResults.classList.add('light-theme');
             searchQuery.classList.add('light');
             nav.classList.add('light');
             content.classList.add('light-background');
@@ -176,7 +173,6 @@ if(getTheme === 'LIGHT'){
             body.classList.remove('light');
             screenSwitch.classList.remove('light');
             searchIcon.classList.remove('lightmode');
-            searchResults.classList.remove('light-theme');
             searchQuery.classList.remove('light');
             nav.classList.remove("light");
             content.classList.remove('light-background');

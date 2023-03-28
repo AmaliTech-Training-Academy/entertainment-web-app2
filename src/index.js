@@ -6,7 +6,7 @@ let trendsContainer = document.querySelector(".trending-items");
 let optionsContainer = document.querySelector(".options");
 
 let json_url = "data.json";
-
+const bookmarkedMovies = JSON.parse(localStorage.getItem("bookmarkedMovies")) || [];
 fetch(json_url).then(Response => Response.json())
 .then((data) => {
     let trend= '';
@@ -36,7 +36,7 @@ fetch(json_url).then(Response => Response.json())
             +'</h3>'
             +'</div>'
             +'<div class="bookmark-btn">'
-            +'<svg width="12" height="14" xmlns="http://www.w3.org/2000/svg"><path d="m10.518.75.399 12.214-5.084-4.24-4.535 4.426L.75 1.036l9.768-.285Z"/></svg>'
+            +`<svg class="${bookmarkedMovies.includes(data[i].title) ? "keep" : ""}" width="12" height="14" xmlns="http://www.w3.org/2000/svg"><path d="m10.518.75.399 12.214-5.084-4.24-4.535 4.426L.75 1.036l9.768-.285Z"/></svg>`
             +'</div>'
             +'<div class="play">'
             +'<div class="play-btn"></div>'
@@ -74,7 +74,7 @@ fetch(json_url).then(Response => Response.json())
             +'</h3>'
             +'</div>'
             +'<div class="bookmark-btn">'
-            +'<svg width="12" height="14" xmlns="http://www.w3.org/2000/svg"><path d="m10.518.75.399 12.214-5.084-4.24-4.535 4.426L.75 1.036l9.768-.285Z"/></svg>'
+            +`<svg class="${bookmarkedMovies.includes(data[i].title) ? "keep" : ""}" width="12" height="14" xmlns="http://www.w3.org/2000/svg"><path d="m10.518.75.399 12.214-5.084-4.24-4.535 4.426L.75 1.036l9.768-.285Z"/></svg>`
             +'</div>'
             +'<div class="play-items">'
             +'<div class="play">'
@@ -196,6 +196,7 @@ fetch(json_url).then(Response => Response.json())
                     searchIcon.classList.remove('lightmode');
                     // searchResults.classList.remove('light-theme');
                     searchQuery.classList.remove('light');
+                    searchQuery.classList.remove('lmode');
                     nav.classList.remove("light");
                     links.forEach(link => link.classList.remove('lightlinks'));
                     profile.classList.remove('border');
@@ -211,6 +212,7 @@ fetch(json_url).then(Response => Response.json())
                     screenSwitch.classList.add('light');
                     searchIcon.classList.add('lightmode');
                     searchQuery.classList.add('light');
+                    searchQuery.classList.add('lmode');
                     // searchResults.classList.add('light-theme');
                     nav.classList.add('light');
                     links.forEach(link => link.classList.add('lightlinks'));
@@ -225,7 +227,7 @@ fetch(json_url).then(Response => Response.json())
                 localStorage.setItem("PageTheme", JSON.stringify(theme));
         }
             let getTheme = JSON.parse(localStorage.getItem("PageTheme"));
-        console.log(getTheme, "Hello");
+        // console.log(getTheme, "Hello");
         
         if(getTheme === 'LIGHT'){
             btn.classList.add('triggered');
@@ -233,6 +235,7 @@ fetch(json_url).then(Response => Response.json())
                     screenSwitch.classList.add('light');
                     searchIcon.classList.add('lightmode');
                     searchQuery.classList.add('light');
+                    searchQuery.classList.add('lmode');
                     // searchResults.classList.add('light-theme');
                     nav.classList.add('light');
                     links.forEach(link => link.classList.add('lightlinks'));
@@ -249,6 +252,7 @@ fetch(json_url).then(Response => Response.json())
                     screenSwitch.classList.remove('light');
                     searchIcon.classList.remove('lightmode');
                     searchQuery.classList.remove('light');
+                    searchQuery.classList.remove('lmode');
                     // searchResults.classList.remove('light-theme');
                     nav.classList.remove("light");
                     links.forEach(link => link.classList.remove('lightlinks'));

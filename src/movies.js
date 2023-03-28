@@ -1,9 +1,8 @@
 import { addBookmark } from "./bookmarked.js";
-// import { removeBookmark } from "./removeBookmarked.js";
 
 let moviesContainer = document.querySelector(".movies-items");
 let json_url = "data.json";
-
+const bookmarkedMovies = JSON.parse(localStorage.getItem("bookmarkedMovies")) || [];
 fetch(json_url).then(Response => Response.json())
 .then((data) => {
     let movies= '';
@@ -33,7 +32,7 @@ fetch(json_url).then(Response => Response.json())
             +'</h3>'
             +'</div>'
             +'<div class="bookmark-btn">'
-            +'<svg width="12" height="14" xmlns="http://www.w3.org/2000/svg"><path d="m10.518.75.399 12.214-5.084-4.24-4.535 4.426L.75 1.036l9.768-.285Z"/></svg>' 
+            +`<svg class="${bookmarkedMovies.includes(data[i].title) ? "keep" : ""}" width="12" height="14" xmlns="http://www.w3.org/2000/svg"><path d="m10.518.75.399 12.214-5.084-4.24-4.535 4.426L.75 1.036l9.768-.285Z"/></svg>` 
             +'</div>'
             +'<div class="play">'
             +'<div class="play-btn"></div>'
@@ -51,7 +50,6 @@ fetch(json_url).then(Response => Response.json())
             const overlay = movie.querySelector(".overlay");
             const play = movie.querySelector(".play");
             const bookmark = movie.querySelector(".bookmark-btn");
-            const about = movie.querySelector(".movie-info");
             const button = movie.querySelector("svg");
             overlay.addEventListener('mouseover', () => {
                 overlay.classList.add('dark')
@@ -81,7 +79,6 @@ fetch(json_url).then(Response => Response.json())
             });
         })
         addBookmark();
-        // removeBookmark();
 
         const btn = document.querySelector('.light-dark');
         const screenSwitch = document.querySelector('.switch-mode');
@@ -94,6 +91,16 @@ fetch(json_url).then(Response => Response.json())
         const categories = document.querySelectorAll("i");
         const info = recommendedContainer.querySelectorAll(".about")
         const profile = document.querySelector(".user-avatar");
+        const wayOut = document.querySelector(".logoutModal");
+            const content = wayOut.querySelector(".content");
+            const modalOptions = wayOut.querySelectorAll(".opt");
+            const closeModal = wayOut.querySelector(".one");
+            profile.addEventListener('click', ()=>{
+                wayOut.classList.add("wayout")
+            });
+            closeModal.addEventListener('click', ()=>{
+                wayOut.classList.remove("wayout")
+            })
         screenSwitch.addEventListener('click', lightMode);
     
     function lightMode() {
@@ -106,6 +113,8 @@ fetch(json_url).then(Response => Response.json())
                 nav.classList.remove("light");
                 links.forEach(link => link.classList.remove('lightlinks'));
                 profile.classList.remove('border');
+                content.classList.remove('light-background');
+                    modalOptions.forEach(option => option.classList.remove("light-background"));
                 categories.forEach(category => category.classList.remove('light-colour'));
                 ovals.forEach(oval => oval.classList.remove("light-theme"));
                 info.forEach(about => about.classList.remove("light-text"));
@@ -118,6 +127,8 @@ fetch(json_url).then(Response => Response.json())
                 nav.classList.add('light');
                 links.forEach(link => link.classList.add('lightlinks'));
                 profile.classList.add('border');
+                content.classList.add('light-background');
+        modalOptions.forEach(option => option.classList.add("light-background"));
                 categories.forEach(category => category.classList.add('light-colour'));
                 ovals.forEach(oval => oval.classList.add("light-theme"));
                 info.forEach(about => about.classList.add("light-text"));
@@ -134,6 +145,8 @@ fetch(json_url).then(Response => Response.json())
                 screenSwitch.classList.add('light');
                 searchIcon.classList.add('lightmode');
                 nav.classList.add('light');
+                content.classList.add('light-background');
+        modalOptions.forEach(option => option.classList.add("light-background"));
                 links.forEach(link => link.classList.add('lightlinks'));
                 profile.classList.add('border');
                 categories.forEach(category => category.classList.add('light-colour'));
@@ -146,11 +159,16 @@ fetch(json_url).then(Response => Response.json())
                 screenSwitch.classList.remove('light');
                 searchIcon.classList.remove('lightmode');
                 nav.classList.remove("light");
+                content.classList.remove('light-background');
+                    modalOptions.forEach(option => option.classList.remove("light-background"));
                 links.forEach(link => link.classList.remove('lightlinks'));
                 profile.classList.remove('border');
                 categories.forEach(category => category.classList.remove('light-colour'));
                 ovals.forEach(oval => oval.classList.remove("light-theme"));
                 info.forEach(about => about.classList.remove("light-text"));
     }
+
+
+    
     });
     

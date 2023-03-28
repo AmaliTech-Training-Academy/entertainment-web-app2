@@ -11,10 +11,10 @@
       href="assets/favicon-32x32.png"
     />
     <link rel="stylesheet" href="nav.css" />
-    <!-- <link rel="stylesheet" href="index.css"> -->
     <link rel="stylesheet" href="searchbar.css" />
     <link rel="stylesheet" href="movies.css" />
     <link rel="stylesheet" href="lightMode.css" />
+    <link rel="stylesheet" href="modal.css">
 
     <title>Entertainment web app</title>
   </head>
@@ -40,15 +40,22 @@
             <div class="switch-mode">
               <div class="light-dark"></div>
             </div>
-            <ul class="searchItems"></ul>
           </form>
+          <div class="searchItems" id="search-item"></div>
         </header>
-        <div class="moviesContainer">
+        <div class="moviesContainer" id="movies">
           <h1>Movies</h1>
           <div class="movies-items"></div>
         </div>
       </section>
     </main>
+    <div class="logoutModal">
+      <div class="content">
+        <div class="question">Are you sure you want to sign out?</div>
+      <div class="opt one">Cancel</div>
+      <a href="login.html" class="opt two">Sign out</a>
+      </div>
+    </div>
 
     <!-- Display movies -->
 
@@ -56,6 +63,6 @@
     <script type="module" src="index.js"></script>
     <script src="script.js"></script>
     <script type="module" src="movies.js"></script>
-    <script src="searchbar.js"></script>
+    <script src="./Search.js/search3.js"></script>
   </body>
 </html>

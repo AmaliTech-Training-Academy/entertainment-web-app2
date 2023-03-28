@@ -48,7 +48,6 @@ form2.addEventListener("submit", (event) => {
 
   console.log(userStorage);
   console.log(userDetails);
-  // alert()
   // Check if the user's input email and password match the stored credentials
   if (user) {
     if ( user.password === userDetails.password ) {

@@ -21,9 +21,13 @@ const form2 = document.getElementById("form2-login");
 //     inputControl.classList.remove("error");
 //   };
 
+const getUserByEmail = (email) => {
+  return userStorage.find((user) => user.email === email);
+};
 
 
 const userStorage = JSON.parse(localStorage.getItem("User"));
+// console.log(userStorage)
 
 // const getUserByEmail = (email) => userStorage[email];
 
@@ -39,25 +43,25 @@ form2.addEventListener("submit", (event) => {
     email: email,
     password: password,
   };
+
+  let user = getUserByEmail(userDetails.email);
+
   console.log(userStorage);
-  alert()
+  console.log(userDetails);
+  // alert()
   // Check if the user's input email and password match the stored credentials
-  if (
-    // userStorage.email === userDetails.email &&
-    // userStorage.password === userDetails.password
-    userStorage.email === userStorage.email &&
-    userStorage.password === userStorage.password
-    ) {
-      alert("Login successful");
-    // Authentication successful
-    window.location.href = "index.html";
-  } else {
-    // Authentication failed
-    const error = document.getElementsByClassName("error");
-      error.innerHTML = "Incorrect email or password";
-      alert("Incorrect email or password")
+  if (user) {
+    if ( user.password === userDetails.password ) {
+        alert("Login successful");
+      // Authentication successful
+      window.location.href = "index.html";
+    } else {
+      // Authentication failed
+      const error = document.getElementsByClassName("error");
+        error.innerHTML = "Incorrect email or password";
+        alert("Incorrect email or password")
+    }
   }
-  //   }
 });
 
 const btn = document.querySelector('.light-dark');

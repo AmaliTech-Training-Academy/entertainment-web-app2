@@ -22,7 +22,8 @@ fetch(json_link)
                             +'</div>';
             }
         })
-        resultsContainer.innerHTML = results;
+        // resultsContainer.innerHTML = results;
+        resultsContainer.innerHTML = ""
     }
 
     const input = document.querySelector('input');

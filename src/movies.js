@@ -84,6 +84,7 @@ fetch(json_url).then(Response => Response.json())
         const screenSwitch = document.querySelector('.switch-mode');
         const body = document.querySelector("body");
         const searchIcon = document.querySelector(".search");
+        const searchQuery = document.querySelector("input");
         const nav = document.querySelector("nav");
         const links = document.querySelectorAll("a");
         const recommendedContainer = document.querySelector(".movies-items");
@@ -110,6 +111,8 @@ fetch(json_url).then(Response => Response.json())
                 body.classList.remove('light');
                 screenSwitch.classList.remove('light');
                 searchIcon.classList.remove('lightmode');
+                searchQuery.classList.remove('light');
+                searchQuery.classList.remove('lmode');
                 nav.classList.remove("light");
                 links.forEach(link => link.classList.remove('lightlinks'));
                 profile.classList.remove('border');
@@ -123,6 +126,8 @@ fetch(json_url).then(Response => Response.json())
                 btn.classList.add('triggered');
                 body.classList.add('light');
                 screenSwitch.classList.add('light');
+                searchQuery.classList.add('light');
+                searchQuery.classList.add('lmode');
                 searchIcon.classList.add('lightmode');
                 nav.classList.add('light');
                 links.forEach(link => link.classList.add('lightlinks'));
@@ -144,6 +149,8 @@ fetch(json_url).then(Response => Response.json())
                 body.classList.add('light');
                 screenSwitch.classList.add('light');
                 searchIcon.classList.add('lightmode');
+                searchQuery.classList.add('light');
+                searchQuery.classList.add('lmode');
                 nav.classList.add('light');
                 content.classList.add('light-background');
         modalOptions.forEach(option => option.classList.add("light-background"));
@@ -158,6 +165,8 @@ fetch(json_url).then(Response => Response.json())
                 body.classList.remove('light');
                 screenSwitch.classList.remove('light');
                 searchIcon.classList.remove('lightmode');
+                searchQuery.classList.remove('light');
+                searchQuery.classList.remove('lmode');
                 nav.classList.remove("light");
                 content.classList.remove('light-background');
                     modalOptions.forEach(option => option.classList.remove("light-background"));

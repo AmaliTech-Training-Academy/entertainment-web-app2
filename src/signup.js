@@ -5,9 +5,7 @@ const password = document.getElementById("password");
 const password2 = document.getElementById("password2");
 //function for the submit button when its clicked
 
-let userStorage = JSON.parse(localStorage.getItem("User")) || [
-  { email: "", password: "" },
-];
+let userStorage = JSON.parse(localStorage.getItem("User"));
 
 
 const getUserByEmail = (email) => {
@@ -28,22 +26,24 @@ form.addEventListener("submit", (event) => {
       userID: userID,
     };
 
-    const user = getUserByEmail(userDetails.email);
-    console.log(user);
-
-    if (user) {
-      // if (user.email === email.value) {
-      alert("User ID already exists");
+    console.log(userStorage);
+    if (userStorage) {
+      const user = getUserByEmail(userDetails.email);
+      console.log("user", user);
+      if (user) {
+        alert("User ID already exists");
+        return;
+      } else {
+        userStorage.push(userDetails);
+        localStorage.setItem("User", JSON.stringify(userStorage));
+      }
     } else {
-      // console.log("userDetails", userDetails);
-      userStorage.push(userDetails);
-      localStorage.setItem("User", JSON.stringify(userStorage));
-
-      sendConfirmationEmail(userID);
-      alert("Confirmation email sent");
-      window.location.replace("login.html");
-      // return;
+      // is empty
+      localStorage.setItem("User", JSON.stringify([userDetails]));
     }
+    sendConfirmationEmail(userID);
+    alert("Confirmation email sent");
+    window.location.replace("index.html");
     // } else {
     //   console.log(userDetails);
     //   localStorage.setItem("User", JSON.stringify([].push(userDetails)));
@@ -140,3 +140,81 @@ function generateUserID() {
 //   userDetails[email] = { email, password };
 //   localStorage.setItem('users', JSON.stringify(userDetails));
 // }
+
+const btn = document.querySelector('.light-dark');
+const screenSwitch = document.querySelector('.switch-mode');
+const body = document.querySelector("body");
+screenSwitch.addEventListener('click', lightMode);
+
+function lightMode() {
+  let theme;
+  if(btn.classList.contains('triggered')){
+      btn.classList.remove('triggered');
+      body.classList.remove('light');
+      screenSwitch.classList.remove('light');
+      // searchIcon.classList.remove('lightmode');
+      // searchResults.classList.remove('light-theme');
+      // searchQuery.classList.remove('light');
+      // nav.classList.remove("light");
+      // links.forEach(link => link.classList.remove('lightlinks'));
+      // profile.classList.remove('border');
+      // content.classList.remove('light-background');
+      // modalOptions.forEach(option => option.classList.remove("light-background"));
+      // categories.forEach(category => category.classList.remove('light-colour'));
+      // ovals.forEach(oval => oval.classList.remove("light-theme"));
+      // info.forEach(about => about.classList.remove("light-text"));
+      theme = 'DARK';
+  }else{
+      btn.classList.add('triggered');
+      body.classList.add('light');
+      screenSwitch.classList.add('light');
+      // searchIcon.classList.add('lightmode');
+      // searchQuery.classList.add('light');
+      // searchResults.classList.add('light-theme');
+      // nav.classList.add('light');
+      // links.forEach(link => link.classList.add('lightlinks'));
+      // profile.classList.add('border');
+      // modalOptions.forEach(option => option.classList.add("light-background"));
+      // content.classList.add('light-background');
+      // categories.forEach(category => category.classList.add('light-colour'));
+      // ovals.forEach(oval => oval.classList.add("light-theme"));
+      // info.forEach(about => about.classList.add("light-text"));
+      theme = 'LIGHT';
+  }
+  localStorage.setItem("PageTheme", JSON.stringify(theme));
+}
+let getTheme = JSON.parse(localStorage.getItem("PageTheme"));
+console.log(getTheme, "Hello");
+
+if(getTheme === 'LIGHT'){
+btn.classList.add('triggered');
+      body.classList.add('light');
+      screenSwitch.classList.add('light');
+      // searchIcon.classList.add('lightmode');
+      // searchQuery.classList.add('light');
+      // searchResults.classList.add('light-theme');
+      // nav.classList.add('light');
+      // links.forEach(link => link.classList.add('lightlinks'));
+      // profile.classList.add('border');
+      // modalOptions.forEach(option => option.classList.add("light-background"));
+      // content.classList.add('light-background');
+      // categories.forEach(category => category.classList.add('light-colour'));
+      // ovals.forEach(oval => oval.classList.add("light-theme"));
+      // info.forEach(about => about.classList.add("light-text"));
+
+}else if((getTheme === 'DARK')){
+btn.classList.remove('triggered');
+      body.classList.remove('light');
+      screenSwitch.classList.remove('light');
+      // searchIcon.classList.remove('lightmode');
+      // searchQuery.classList.remove('light');
+      // searchResults.classList.remove('light-theme');
+      // nav.classList.remove("light");
+      // links.forEach(link => link.classList.remove('lightlinks'));
+      // profile.classList.remove('border');
+      // modalOptions.forEach(option => option.classList.remove("light-background"));
+      // content.classList.remove('light-background');
+      // categories.forEach(category => category.classList.remove('light-colour'));
+      // ovals.forEach(oval => oval.classList.remove("light-theme"));
+      // info.forEach(about => about.classList.remove("light-text"));
+}

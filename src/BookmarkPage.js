@@ -114,6 +114,7 @@ function fetchBookmarks() {
           searchIcon.classList.remove("lightmode");
           searchResults.classList.remove("light-theme");
           searchQuery.classList.remove("light");
+          searchQuery.classList.remove('lmode');
           nav.classList.remove("light");
           content.classList.remove('light-background');
           modalOptions.forEach(option => option.classList.remove("light-background"));
@@ -131,6 +132,7 @@ function fetchBookmarks() {
           searchIcon.classList.add("lightmode");
           searchResults.classList.add("light-theme");
           searchQuery.classList.add("light");
+          searchQuery.classList.add('lmode');
           nav.classList.add("light");
           content.classList.add('light-background');
           modalOptions.forEach(option => option.classList.add("light-background"));
@@ -155,6 +157,7 @@ function fetchBookmarks() {
         searchIcon.classList.add("lightmode");
         searchResults.classList.add("light-theme");
         searchQuery.classList.add("light");
+        searchQuery.classList.add('lmode');
         nav.classList.add("light");
         content.classList.add('light-background');
         modalOptions.forEach(option => option.classList.add("light-background"));
@@ -171,6 +174,7 @@ function fetchBookmarks() {
         searchIcon.classList.remove("lightmode");
         searchResults.classList.remove("light-theme");
         searchQuery.classList.remove("light");
+        searchQuery.classList.remove('lmode');
         nav.classList.remove("light");
         content.classList.remove('light-background');
         modalOptions.forEach(option => option.classList.remove("light-background"));

@@ -89,7 +89,10 @@ const resultsContainer = document.querySelector(".searchItems");
             }
             return results;
           };
-})
+
+          
+
+ })
 
 
 // for (let i = 0; i < data.length; i++) {

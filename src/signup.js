@@ -43,7 +43,7 @@ form.addEventListener("submit", (event) => {
     }
     sendConfirmationEmail(userID);
     alert("Confirmation email sent");
-    window.location.replace("login.html");
+    window.location.replace("index.html");
     // } else {
     //   console.log(userDetails);
     //   localStorage.setItem("User", JSON.stringify([].push(userDetails)));

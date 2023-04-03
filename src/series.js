@@ -176,7 +176,6 @@ if(getTheme === 'LIGHT'){
             body.classList.remove('light');
             screenSwitch.classList.remove('light');
             searchIcon.classList.remove('lightmode');
-            searchResults.classList.remove('light-theme');
             searchQuery.classList.remove('light');
             nav.classList.remove("light");
             content.classList.remove('light-background');

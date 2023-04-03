@@ -53,12 +53,13 @@ form2.addEventListener("submit", (event) => {
     if ( user.password === userDetails.password ) {
         alert("Login successful");
       // Authentication successful
-      window.location.href = "index.html";
+      window.location.href = "home.html";
     } else {
       // Authentication failed
-      const error = document.getElementsByClassName("error");
-        error.innerHTML = "Incorrect email or password";
-        alert("Incorrect email or password")
+      // const error = document.getElementsByClassName("error");
+      //   error.innerHTML = "Incorrect email or password";
+      //   alert("Incorrect email or password")
+      // alert("You do not have an account on this site.")
     }
   }
 });

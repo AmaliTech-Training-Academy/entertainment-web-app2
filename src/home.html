@@ -11,13 +11,10 @@
       href="./assets/favicon-32x32.png"
     />
     <link rel="stylesheet" href="nav.css" />
-    <!-- <link rel="stylesheet" href="index.css" />
-    <link rel="stylesheet" href="movies.css" /> -->
+    <link rel="stylesheet" href="index.css" />
     <link rel="stylesheet" href="searchbar.css" />
-    <link rel="stylesheet" href="bookmarked.css"/>
-    <link rel="stylesheet" href="liteMode.css" />
+    <link rel="stylesheet" href="lightMode.css" />
     <link rel="stylesheet" href="modal.css">
-
 
     <title>Entertainment web app</title>
   </head>
@@ -31,29 +28,30 @@
           <a class="tv-series" href="series.html"></a>
           <a class="bookmarks" href="bookmarked.html"></a>
         </div>
-        <div class="user-avatar">
-          <a href="index.html"></a>
-        </div>
+          <div class="user-avatar">
+          </div>
       </nav>
       <section>
         <header>
-          <form>
-            <div class="search"></div>
-            <input type="search" placeholder="Search for bookmarked shows" />
-              <div class="switch-mode">
-                <div class="light-dark"></div>
-              </div>
-              <ul class="searchItems"></ul>
+          <form class="search_form">
+            <div class="search-icon"></div>
+            <input type="search" placeholder="Search for movies or tv-series"/>
+            <div class="switch-mode">
+              <div class="light-dark"></div>
+            </div>
           </form>
-          <div class="movies-section">
-            <h1>Bookmarked Movies</h1>
-            <div class="movies-items"></div>
-          </div>
-        </header>
-        <div class="series-section">
-          <h1>Bookmarked TV Series</h1>
-          <div class="series-items"></div>
+          <!-- <div class="searchItems"></div> -->
+          <div class="trending">
+            <h1>Trending</h1>
+            <div class="trending-items"></div>
         </div>
+      </header>
+      <div class="options-container">
+        <h1>Recommended for you</h1>
+        <div class="options">
+
+        </div>
+      </div>
       </section>
     </main>
     <div class="logoutModal">
@@ -63,15 +61,14 @@
       <a href="index.html" class="opt two">Sign out</a>
       </div>
     </div>
+    
 
     <!-- Display recommended shows -->
-
-    
-    <script>
-    </script>
-    <script src="script.js"></script>
-    <script type="module" src="index.js"></script>
+    <script src="index.js"></script>
+    <!-- <script src="script.js"></script>
     <script src="searchbar.js"></script>
-    <script type="module" src="BookmarkPage.js"></script>
+    <script src="./Search.js/search2.js"></script> -->
+    <!-- <script type="module" src="bookmarked.js"></script> --> 
+    <script src="storage.js"></script>
   </body>
 </html>

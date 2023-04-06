@@ -27,7 +27,6 @@ main section{
     position: relative;
 }
 main section{
-    height: 48rem;
     overflow:   scroll;
     /* margin-bottom: -1rem; */
 }
@@ -220,11 +219,10 @@ section .trending-items{
 }
 
 .trend .bookmark-btn svg{
-    width: 0.75rem;
+    /* width: 0.75rem;
     height: 0.88rem;
     stroke: #FFFFFF;
-    stroke-width: 1.5;
-    fill: none;
+    stroke-width: 1.5; */
 }
 
 .trend .bookmark-btn .choice{
@@ -315,56 +313,56 @@ main section h1{
     margin-bottom: 2rem;
 }
 
-.options .option{
+.options .regular{
     /* border: 1px solid white; */
     width: 100%;
     position: relative; 
 }
 
-.option .option-image{
+.regular .regular-image{
     /* border: 1px solid white; */
     z-index: 1;
 }
 
-.options .option .play{
+.options .regular .play{
     position: absolute;
     top: 4rem;
     right: 30%;
 }
 
-.option-image:hover{
+.regular-image:hover{
     opacity: 0.5;
     cursor: pointer;
 }
 
-.options .option .large{
+.options .regular .large{
     height: 11rem;
     width: 100%;
     border-radius: 0.5rem;
     margin-bottom: .4rem;
 }
 
-.options .option .medium, .small{
+.options .oregular.medium, .small{
     display: none;
 }
-.option .about{
+.regular .about{
     /* border: 1px solid burlywood; */
     display: flex;
 }
 
-.option .option-info{
+.regular .regular-info{
 position: relative;
     z-index: 5;
 }
 
-.option .option-info .option-title{
+.regular .regular-info .regular-title{
     font-style: normal;
     font-weight: 500;
     font-size: 1.5rem;
     line-height: 1.875rem;
 }
 
-.option .bookmark-btn{
+.regular .bookmark-btn{
     width: 2rem;
     height: 2rem;
     position: absolute;
@@ -379,11 +377,11 @@ position: relative;
     z-index: 3;
 }
 
-.option .bookmark-btn:hover{
+.regular .bookmark-btn:hover{
     background: #FFFFFF;
 }
 
-.option .bookmark-btn svg{
+.regular .bookmark-btn svg{
     width: 0.75rem;
     height: 0.88rem;
     stroke: #fff;
@@ -391,36 +389,17 @@ position: relative;
     fill: none;
 }
 
-.option .bookmark-btn .choice{
+.regular .bookmark-btn .choice{
     stroke: #10141E;
     transition: 0.3s;
 }
-.option .bookmark-btn .keep{
+.regular .bookmark-btn .keep{
     stroke: #fff;
     fill: #fff;
     transition: 0.3s;
 }
-.option .overlay{
+.regular .overlay{
     height: 11rem;
-}
-.searchItems{
-    /* height: 11rem; */
-    width: 25rem;
-    display: grid;
-    grid-template-columns: auto auto auto auto;
-    grid-gap: 2rem;
-    position: relative;
-    z-index: -2;
-    margin-top: 3rem;
-}
-
- .search-item-info{
-    /* border: 1px solid pink; */
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    width: 10rem;
-    z-index: 5;
 }
 
 .search-item .bookmark-btn {
@@ -581,7 +560,7 @@ position: relative;
         line-height: 1.875rem;
     }
     
-    .option .bookmark-btn{
+    .regular .bookmark-btn{
         width: 2rem;
         height: 2rem;
         position: relative;
@@ -616,49 +595,50 @@ position: relative;
         margin-bottom: 2rem;
     }
     
-    .options .option{
+    .options .regular{
         /* border: 1px solid white; */
         width: 100%;
         position: relative;   
     }
     
-    .option .option-image{
+    .regular .option-image{
         /* border: 1px solid white; */
         z-index: 1;
     }
     
-    .options .option .play{
+    .options .regular .play{
         left: 25%;
         /* right: 20%; */
     }
     
-    .option-image:hover{
+    regular-image:hover{
         opacity: 0.5;
         cursor: pointer;
     }
     
-    .options .option .large, .small{
+    .options .regular .large, .small{
         display: none;
     }
     
-    .options .option .medium{
+    .options .regular .medium{
         display: block;
         width: 100%;
         border-radius: 0.5rem;
         margin-bottom: .4rem;
     }
-    .option .about{
+    .regular .about{
         /* border: 1px solid burlywood; */
         display: flex;
     }
     
-    .option .option-info .option-title{
+    .regular-info .regular-title{
         font-style: normal;
         font-weight: 500;
         font-size: 1.125rem;
         line-height: 1.875rem;
     }
-    .option .overlay{
+
+    .regular .overlay{
         height: 10.5rem;
     }
     .searchItems{
@@ -849,7 +829,7 @@ position: relative;
         line-height: 1.875rem;
     }
     
-    .option .bookmark-btn{
+    .regular .bookmark-btn{
         width: 2rem;
         height: 2rem;
         position: relative;
@@ -883,13 +863,13 @@ position: relative;
         margin-bottom: 2rem;
     }
     
-    .options .option{
+    .options .regular{
         /* border: 1px solid white; */
         width: 100%;
         /* position: relative;    */
     }
     
-    .option .option-image{
+    .regular .option-image{
         /* border: 1px solid white; */
         z-index: 1;
         width: 20rem;
@@ -902,7 +882,7 @@ position: relative;
         right: 4rem;
     } */
     
-    .option-image:hover{
+    .regular-image:hover{
         opacity: 0.5;
         cursor: pointer;
     }
@@ -914,35 +894,35 @@ position: relative;
         z-index: 5;
         background-position: center;
     } */
-    .option .play{
+    .regular .play{
         z-index: 3;
         top: 6.6rem;
         margin-right: 7rem;
         width: 7.3rem;
         height: 3rem;
     }
-    .options .option .large{
+    .options .regular .large{
         height: 12rem;
         width: 23rem;
         border-radius: 0.5rem;
         margin-bottom: .4rem;
     }
     
-    .options .option .medium, .small{
+    .options .regular .medium, .small{
         display: none;
     }
-    .option .about{
+    .regular .about{
         /* border: 1px solid burlywood; */
         display: flex;
     }
     
-    .option .option-info .option-title{
+    .regular .regular-info .regular-title{
         font-style: normal;
         font-weight: 500;
         font-size: 1.5rem;
         line-height: 1.875rem;
     }
-    .option .overlay{
+    .regular .overlay{
         width: 23rem;
         height: 12rem;
     }

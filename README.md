@@ -38,7 +38,7 @@ Entertainment web app is a web application that enables users to:
 
 
 ### Live Project Link 
-https:///
+https://entertainment-web-app2-aj6j.vercel.app/
 
 ## Process
 

@@ -14,9 +14,9 @@
     <link rel="stylesheet" href="index.css" />
     <link rel="stylesheet" href="searchbar.css" />
     <link rel="stylesheet" href="lightMode.css" />
-    <link rel="stylesheet" href="modal.css">
+    <link rel="stylesheet" href="modal.css" />
 
-    <title>Entertainment web app</title>
+    <title></title>
   </head>
   <body>
     <main>
@@ -28,14 +28,13 @@
           <a class="tv-series" href="series.html"></a>
           <a class="bookmarks" href="bookmarked.html"></a>
         </div>
-          <div class="user-avatar">
-          </div>
+        <div class="user-avatar"></div>
       </nav>
       <section>
         <header>
           <form class="search_form">
             <div class="search-icon"></div>
-            <input type="search" placeholder="Search for movies or tv-series"/>
+            <input type="search" placeholder="Search for movies or tv-series" />
             <div class="switch-mode">
               <div class="light-dark"></div>
             </div>
@@ -44,31 +43,29 @@
           <div class="trending">
             <h1>Trending</h1>
             <div class="trending-items"></div>
+          </div>
+        </header>
+        <div class="options-container">
+          <h1>Recommended for you</h1>
+          <div class="options"></div>
         </div>
-      </header>
-      <div class="options-container">
-        <h1>Recommended for you</h1>
-        <div class="options">
-
-        </div>
-      </div>
       </section>
     </main>
     <div class="logoutModal">
       <div class="content">
         <div class="question">Are you sure you want to sign out?</div>
-      <div class="opt one">Cancel</div>
-      <a href="index.html" class="opt two">Sign out</a>
+        <div class="opt one">Cancel</div>
+        <a href="index.html" class="opt two">Sign out</a>
       </div>
     </div>
-    
 
     <!-- Display recommended shows -->
     <script src="index.js"></script>
     <!-- <script src="script.js"></script>
-    <script src="searchbar.js"></script>
-    <script src="./Search.js/search2.js"></script> -->
-    <!-- <script type="module" src="bookmarked.js"></script> --> 
+      <script src="searchbar.js"></script>
+      <script src="./Search.js/search2.js"></script> -->
+    <!-- <script type="module" src="bookmarked.js"></script> -->
     <script src="storage.js"></script>
+    <script src="protectedRoute.js"></script>
   </body>
 </html>

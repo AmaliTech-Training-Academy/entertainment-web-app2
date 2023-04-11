@@ -4,7 +4,7 @@ const getUserByEmail = (email) => {
   return userStorage.find((user) => user.email === email);
 };
 
-const userStorage = JSON.parse(localStorage.getItem("User"));
+const userStorage = JSON.parse(localStorage.getItem("User")) || [];
 // console.log(userStorage)
 
 // const getUserByEmail = (email) => userStorage[email];
@@ -41,9 +41,9 @@ form2.addEventListener("submit", (event) => {
   }
 });
 
-const load = async () => {
-  throw
-}
+// const load = async () => {
+//   throw
+// }
 
 const btn = document.querySelector(".light-dark");
 const screenSwitch = document.querySelector(".switch-mode");

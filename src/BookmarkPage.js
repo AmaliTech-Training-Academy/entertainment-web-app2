@@ -1,6 +1,5 @@
 import { removeBookmark } from "./removeBookmarked.js";
 
-
 document.addEventListener("DOMContentLoaded", (evt) => {
   fetchBookmarks();
 });
@@ -79,31 +78,31 @@ function fetchBookmarks() {
           }
         });
         // location.reload();
-	});
-	removeBookmark();
+      });
+      removeBookmark();
 
-	const btn = document.querySelector(".light-dark");
-	const screenSwitch = document.querySelector(".switch-mode");
-	const body = document.querySelector("body");
-	const searchIcon = document.querySelector(".search");
-	const searchQuery = document.querySelector("input");
-	const searchResults = document.querySelector("ul");
-	const nav = document.querySelector("nav");
-	const links = document.querySelectorAll("a");
-	const ovals = document.querySelectorAll(".oval");
-	const categories = document.getElementsByTagName("i");
-	const profile = document.querySelector(".user-avatar");
-  const wayOut = document.querySelector(".logoutModal");
-  const content = wayOut.querySelector(".content");
-  const modalOptions = wayOut.querySelectorAll(".opt");
-  const closeModal = wayOut.querySelector(".one");
-  profile.addEventListener('click', ()=>{
-      wayOut.classList.add("wayout")
-            });
-      closeModal.addEventListener('click', ()=>{
-      wayOut.classList.remove("wayout")
-            })
-	screenSwitch.addEventListener("click", lightMode);
+      const btn = document.querySelector(".light-dark");
+      const screenSwitch = document.querySelector(".switch-mode");
+      const body = document.querySelector("body");
+      const searchIcon = document.querySelector(".search");
+      const searchQuery = document.querySelector("input");
+      const searchResults = document.querySelector("ul");
+      const nav = document.querySelector("nav");
+      const links = document.querySelectorAll("a");
+      const ovals = document.querySelectorAll(".oval");
+      const categories = document.getElementsByTagName("i");
+      const profile = document.querySelector(".user-avatar");
+      const wayOut = document.querySelector(".logoutModal");
+      const content = wayOut.querySelector(".content");
+      const modalOptions = wayOut.querySelectorAll(".opt");
+      const closeModal = wayOut.querySelector(".one");
+      profile.addEventListener("click", () => {
+        wayOut.classList.add("wayout");
+      });
+      closeModal.addEventListener("click", () => {
+        wayOut.classList.remove("wayout");
+      });
+      screenSwitch.addEventListener("click", lightMode);
 
       function lightMode() {
         let theme;
@@ -114,10 +113,12 @@ function fetchBookmarks() {
           searchIcon.classList.remove("lightmode");
           searchResults.classList.remove("light-theme");
           searchQuery.classList.remove("light");
-          searchQuery.classList.remove('lmode');
+          searchQuery.classList.remove("lmode");
           nav.classList.remove("light");
-          content.classList.remove('light-background');
-          modalOptions.forEach(option => option.classList.remove("light-background"));
+          content.classList.remove("light-background");
+          modalOptions.forEach((option) =>
+            option.classList.remove("light-background")
+          );
           links.forEach((link) => link.classList.remove("lightlinks"));
           ovals.forEach((oval) => oval.classList.remove("light-theme"));
           profile.classList.remove("border");
@@ -132,10 +133,12 @@ function fetchBookmarks() {
           searchIcon.classList.add("lightmode");
           searchResults.classList.add("light-theme");
           searchQuery.classList.add("light");
-          searchQuery.classList.add('lmode');
+          searchQuery.classList.add("lmode");
           nav.classList.add("light");
-          content.classList.add('light-background');
-          modalOptions.forEach(option => option.classList.add("light-background"));
+          content.classList.add("light-background");
+          modalOptions.forEach((option) =>
+            option.classList.add("light-background")
+          );
           links.forEach((link) => link.classList.add("lightlinks"));
           ovals.forEach((oval) => oval.classList.add("light-theme"));
           profile.classList.add("border");
@@ -148,7 +151,7 @@ function fetchBookmarks() {
       }
 
       let getTheme = JSON.parse(localStorage.getItem("PageTheme"));
-      console.log(getTheme, "Hello");
+      // console.log(getTheme, "Hello");
 
       if (getTheme === "LIGHT") {
         btn.classList.add("triggered");
@@ -157,10 +160,12 @@ function fetchBookmarks() {
         searchIcon.classList.add("lightmode");
         searchResults.classList.add("light-theme");
         searchQuery.classList.add("light");
-        searchQuery.classList.add('lmode');
+        searchQuery.classList.add("lmode");
         nav.classList.add("light");
-        content.classList.add('light-background');
-        modalOptions.forEach(option => option.classList.add("light-background"));
+        content.classList.add("light-background");
+        modalOptions.forEach((option) =>
+          option.classList.add("light-background")
+        );
         links.forEach((link) => link.classList.add("lightlinks"));
         ovals.forEach((oval) => oval.classList.add("light-theme"));
         profile.classList.add("border");
@@ -174,10 +179,12 @@ function fetchBookmarks() {
         searchIcon.classList.remove("lightmode");
         searchResults.classList.remove("light-theme");
         searchQuery.classList.remove("light");
-        searchQuery.classList.remove('lmode');
+        searchQuery.classList.remove("lmode");
         nav.classList.remove("light");
-        content.classList.remove('light-background');
-        modalOptions.forEach(option => option.classList.remove("light-background"));
+        content.classList.remove("light-background");
+        modalOptions.forEach((option) =>
+          option.classList.remove("light-background")
+        );
         links.forEach((link) => link.classList.remove("lightlinks"));
         ovals.forEach((oval) => oval.classList.remove("light-theme"));
         profile.classList.remove("border");

@@ -7,5 +7,4 @@ fetch(json_url).then(Response => Response.json())
         webAppDb.push(data[i]);
     }
     localStorage.setItem("showDb", JSON.stringify(webAppDb));
-
 });

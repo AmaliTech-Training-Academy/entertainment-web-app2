@@ -11,13 +11,11 @@
       href="./assets/favicon-32x32.png"
     />
     <link rel="stylesheet" href="nav.css" />
-    <!-- <link rel="stylesheet" href="index.css" />
-    <link rel="stylesheet" href="movies.css" /> -->
+    <link rel="stylesheet" href="index.css" />
     <link rel="stylesheet" href="searchbar.css" />
-    <link rel="stylesheet" href="bookmarked.css"/>
+    <!-- <link rel="stylesheet" href="bookmarked.css"/> -->
     <link rel="stylesheet" href="lightMode.css" />
-
-
+    
     <title>Entertainment web app</title>
   </head>
   <body>
@@ -25,7 +23,7 @@
       <nav>
         <div class="logo"></div>
         <div class="links">
-          <a class="home" href="index.html"></a>
+          <a class="home" href="home.html"></a>
           <a class="movies" href="movies.html"></a>
           <a class="tv-series" href="series.html"></a>
           <a class="bookmarks" href="bookmarked.html"></a>
@@ -43,7 +41,12 @@
                 <div class="light-dark"></div>
               </div>
           </form>
-          <div class="searchItems"></div>
+          <div class="results-container">
+            <h1 id="number"></h1>
+        <div class="container" id="results">
+
+        </div>
+          </div>
       </section>
     </main>
 
@@ -52,10 +55,6 @@
     
     <script>
     </script>
-    <script src="script.js"></script>
-    <script type="module" src="index.js"></script>
-    <script src="search1.js"></script>
-    <script src="searchbar.js"></script>
-    <script src="removeBookmarked.js"></script>
+    <script src="searchPage.js"></script>
   </body>
 </html>

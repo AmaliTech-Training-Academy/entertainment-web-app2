@@ -19,11 +19,6 @@ const allowedRoutes = {
     description: "Page Not found",
   },
 
-//   404: {
-//     template: "/entertainment-web-app2/src/login",
-//     title: "404 | " + urlPageTitle,
-//     description: "This is the login page",
-//   },
   home: {
     template: "/entertainment-web-app2/src/home.html",
     title: "home | " + urlPageTitle,

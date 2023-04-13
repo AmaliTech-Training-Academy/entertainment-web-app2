@@ -1,39 +1,189 @@
-import { removeBookmark } from "./removeBookmarked.js";
+let shows = JSON.parse(localStorage.getItem('showDb'));
 
+<<<<<<< HEAD
+let bookmarkedMoviesContainer = document.querySelector("#bookmarked-movies");
+
+const bookmarkedMovies = shows.filter(show => show.isBookmarked && show.category === 'Movie')
+.map(regular => {
+        let option = document.createElement('div');
+        option.classList.add('regular');
+        option.classList.add('show');
+    
+        let optionImage = document.createElement('div');
+        optionImage.classList.add('regular-image');
+    
+        let large = document.createElement('div');
+        large.classList.add('large');
+        large.style.background = `url(${regular.thumbnail.regular.large})`;
+        large.style.backgroundSize = 'cover';
+        optionImage.appendChild(large);
+
+        let medium = document.createElement('div');
+        medium.classList.add('medium');
+        medium.style.background = `url(${regular.thumbnail.regular.medium})`;
+        medium.style.backgroundSize = 'cover';
+        optionImage.appendChild(medium);
+        option.appendChild(optionImage);
+    
+        let small = document.createElement('div');
+        small.classList.add('small');
+        small.style.background = `url(${regular.thumbnail.regular.small})`;
+        small.style.backgroundSize = 'cover';
+        optionImage.appendChild(small);
+        option.appendChild(optionImage);
+    
+        let optionInfo = document.createElement('div');
+        optionInfo.classList.add('regular-info');
+    
+        let optionTitle = document.createElement('h3');
+        optionTitle.classList.add('regular-title');
+        optionTitle.innerHTML = regular.title;
+    
+        optionInfo.appendChild(optionTitle);
+    
+        let about = document.createElement('div');
+        about.classList.add('about');
+        about.innerHTML = `
+        ${regular.year}
+        <div class="oval"></div>
+        <i class="category" style="background:url(${regular.logo})"></i>
+        ${regular.category}
+        <div class="oval"></div>
+        ${regular.rating}
+    `;
+    optionInfo.appendChild(about);
+    
+    option.appendChild(optionInfo);
+    
+    let bookmarkBtn = document.createElement('div');
+    bookmarkBtn.classList.add('bookmark-btn');
+    
+    let bookmarkFull = document.createElement('img');
+    bookmarkFull.setAttribute('src', '/src/assets/icon-bookmark-full.svg');
+    bookmarkFull.classList.add('full');
+    bookmarkBtn.appendChild(bookmarkFull);
+    
+    option.appendChild(bookmarkBtn);
+    
+    let play = document.createElement('div');
+    play.classList.add('play');
+    
+    let playBtn = document.createElement('div');
+    playBtn.classList.add('play-btn');
+    play.appendChild(playBtn);
+    
+    let playText = document.createElement('p');
+    playText.textContent = 'Play';
+    play.appendChild(playText);
+    
+    option.appendChild(play);
+    
+    let overlay = document.createElement('div');
+    overlay.classList.add('overlay');
+    option.appendChild(overlay);
+    
+    bookmarkedMoviesContainer.appendChild(option);
+=======
 document.addEventListener("DOMContentLoaded", (evt) => {
   fetchBookmarks();
+>>>>>>> b9261cb6e92335ac1e2575fec21669675da125d3
 });
 
-const renderMovie = (movie) => `
-    <div class="movie">
-        <div class="movie-image">
-            <img class="large" src="${movie.thumbnail.regular.large}">
-            <img class="medium" src="${movie.thumbnail.regular.medium}">
-            <img class="small" src="${movie.thumbnail.regular.small}">
-        </div>
-        <div class="movie-info">
-            <div class="about">${movie.year}
-                <div class="oval"></div>
-                <i class="category" style="background:url(${movie.logo})"></i>${movie.category}
-                <div class="oval"></div>${movie.rating}
-            </div>
-        <h3 class="movie-title">${movie.title}</h3>
-        </div>
-        <div class="bookmark-btn"><svg width="12" height="14" xmlns="http://www.w3.org/2000/svg"><path d="m10.518.75.399 12.214-5.084-4.24-4.535 4.426L.75 1.036l9.768-.285Z"></path></svg>
-        </div>
-        <div class="play">
-            <div class="play-btn">
-            </div><p>Play</p></div>
-        <div class="overlay"></div>
-</div>`;
+// Bookmarked Series
 
-function fetchBookmarks() {
-  const movieItems = document.querySelector(".movies-items");
-  const seriesItems = document.querySelector(".series-items");
-  //Getting bookmarks from localStorage
-  const bookmarks = JSON.parse(localStorage.getItem("bookmarkedMovies")) || [];
-  //Getting output id
+let bookmarkedSeriesContainer = document.querySelector("#bookmarked-series");
 
+<<<<<<< HEAD
+const bookmarkedSeries = shows.filter(show => show.isBookmarked && show.category === 'TV Series')
+.map(regular => {
+        let option = document.createElement('div');
+        option.classList.add('regular');
+        option.classList.add('show');
+    
+        let optionImage = document.createElement('div');
+        optionImage.classList.add('regular-image');
+    
+        let large = document.createElement('div');
+        large.classList.add('large');
+        large.style.background = `url(${regular.thumbnail.regular.large})`;
+        large.style.backgroundSize = 'cover';
+        optionImage.appendChild(large);
+
+        let medium = document.createElement('div');
+        medium.classList.add('medium');
+        medium.style.background = `url(${regular.thumbnail.regular.medium})`;
+        medium.style.backgroundSize = 'cover';
+        optionImage.appendChild(medium);
+        option.appendChild(optionImage);
+    
+        let small = document.createElement('div');
+        small.classList.add('small');
+        small.style.background = `url(${regular.thumbnail.regular.small})`;
+        small.style.backgroundSize = 'cover';
+        optionImage.appendChild(small);
+        option.appendChild(optionImage);
+    
+        let optionInfo = document.createElement('div');
+        optionInfo.classList.add('regular-info');
+    
+        let optionTitle = document.createElement('h3');
+        optionTitle.classList.add('regular-title');
+        optionTitle.innerHTML = regular.title;
+    
+        optionInfo.appendChild(optionTitle);
+    
+        let about = document.createElement('div');
+        about.classList.add('about');
+        about.innerHTML = `
+        ${regular.year}
+        <div class="oval"></div>
+        <i class="category" style="background:url(${regular.logo})"></i>
+        ${regular.category}
+        <div class="oval"></div>
+        ${regular.rating}
+    `;
+    optionInfo.appendChild(about);
+    
+    option.appendChild(optionInfo);
+    
+    let bookmarkBtn = document.createElement('div');
+    bookmarkBtn.classList.add('bookmark-btn');
+    
+    if(regular.isBookmarked){
+      let bookmarkFull = document.createElement('img');
+      bookmarkFull.setAttribute('src', '/src/assets/icon-bookmark-full.svg');
+      bookmarkFull.classList.add('full');
+      bookmarkBtn.appendChild(bookmarkFull);
+  } 
+  else{
+      let bookmarkEmpty = document.createElement('img');
+      bookmarkEmpty.classList.add('empty');
+      bookmarkEmpty.setAttribute('src', '/src/assets/icon-bookmark-empty.svg');
+      bookmarkBtn.appendChild(bookmarkEmpty);
+  }
+    
+    option.appendChild(bookmarkBtn);
+    
+    let play = document.createElement('div');
+    play.classList.add('play');
+    
+    let playBtn = document.createElement('div');
+    playBtn.classList.add('play-btn');
+    play.appendChild(playBtn);
+    
+    let playText = document.createElement('p');
+    playText.textContent = 'Play';
+    play.appendChild(playText);
+    
+    option.appendChild(play);
+    
+    let overlay = document.createElement('div');
+    overlay.classList.add('overlay');
+    option.appendChild(overlay);
+    
+    bookmarkedSeriesContainer.appendChild(option);
+});
+=======
   fetch("./data.json")
     .then((response) => response.json())
     .then((data) => {
@@ -194,3 +344,4 @@ function fetchBookmarks() {
       }
     });
 }
+>>>>>>> b9261cb6e92335ac1e2575fec21669675da125d3

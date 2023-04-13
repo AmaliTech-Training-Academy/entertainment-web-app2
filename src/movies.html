@@ -12,8 +12,9 @@
     />
     <link rel="stylesheet" href="nav.css" />
     <link rel="stylesheet" href="searchbar.css" />
-    <link rel="stylesheet" href="movies.css" />
-    <link rel="stylesheet" href="lightMode.css" />
+    <link rel="stylesheet" href="index.css">
+    <!-- <link rel="stylesheet" href="movies.css" /> -->
+    <!-- <link rel="stylesheet" href="lightMode.css" /> -->
     <link rel="stylesheet" href="modal.css">
 
     <title>Entertainment web app</title>
@@ -41,11 +42,10 @@
               <div class="light-dark"></div>
             </div>
           </form>
-          <div class="searchItems" id="search-item"></div>
         </header>
-        <div class="moviesContainer" id="movies">
+        <div class="moviesContainer">
           <h1>Movies</h1>
-          <div class="movies-items"></div>
+          <div class="container" id="movies-items"></div>
         </div>
       </section>
     </main>
@@ -60,11 +60,12 @@
     <!-- Display movies -->
 
 
-    <script type="module" src="index.js"></script>
-    <script src="script.js"></script>
-    <script type="module" src="movies.js"></script>
-    <script src="./Search.js/search3.js"></script>
-    <script src="protectedRoute.js"></script>
-
+    <!-- <script type="module" src="index.js"></script> -->
+    <!-- <script src="script.js"></script> -->
+    <script src="movies.js"></script>
+    <script src="globalEvents.js"></script>
+    <script src="bookmarked.js"></script>
+    <script src="searchbar.js"></script>
+    <!-- <script src="./Search.js/search3.js"></script> -->
   </body>
 </html>

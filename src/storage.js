@@ -6,7 +6,7 @@ fetch(json_url)
     // console.log(data);
     let webAppDb = [];
     for (let i = 0; i < data.length; i++) {
-      webAppDb.push(data[i]);
+        webAppDb.push(data[i]);
     }
     localStorage.setItem("showDb", JSON.stringify(webAppDb));
-  });
+});

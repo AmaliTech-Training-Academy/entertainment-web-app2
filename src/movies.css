@@ -43,6 +43,12 @@ letter-spacing: -0.5px;
 margin-bottom: 1.56rem;
 }
 
+section .movies-items{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-gap: 2rem;
+    position: relative;
+}
 
 .play{
     position: absolute;
@@ -88,7 +94,8 @@ margin-bottom: 1.56rem;
 ::-webkit-scrollbar {
     display: none;
     }
-section .movies-items{
+
+#movies-items{
     display: grid;
     grid-template-columns: auto auto auto auto;
     grid-gap: 2rem;

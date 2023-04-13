@@ -1,10 +1,12 @@
 let data = JSON.parse(localStorage.getItem('showDb'));
+console.log(data);
 
 // Trending section
 
 let trendsContainer = document.querySelector(".trending-items");
 
 const trends = data.filter(show => show.isTrending);
+console.log("trends::", trends);
 
 trends.map(show => {
     let trend = document.createElement('div');

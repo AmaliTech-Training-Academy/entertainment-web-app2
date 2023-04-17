@@ -1,8 +1,8 @@
 let searchResults = JSON.parse(localStorage.getItem('Results'));
 let query = JSON.parse(localStorage.getItem('Query'));
 
-let searchBar = document.querySelector('input');
-searchBar.setAttribute('placeholder', `${query}`)
+let search = document.querySelector('input');
+search.setAttribute('placeholder', `${query}`)
 
 let number = document.querySelector('#number');
 number.innerHTML = `Found ${searchResults.length} results for '${query}'`

@@ -14,11 +14,11 @@
     <link rel="stylesheet" href="index.css" />
     <link rel="stylesheet" href="searchbar.css" />
     <link rel="stylesheet" href="lightMode.css" />
+    <link rel="stylesheet" href="modal.css">
     
     <title>Entertainment web app</title>
   </head>
   <body>
-    <main>
       <nav>
         <div class="logo"></div>
         <div class="links">
@@ -31,7 +31,8 @@
           <a href="login.html"></a>
         </div>
       </nav>
-      <section>
+
+      <!-- Search bar and light mode toggle icon -->
         <header>
           <form>
             <div class="search-icon"></div>
@@ -40,14 +41,14 @@
                 <div class="light-dark"></div>
               </div>
           </form>
-          <div class="results-container">
-            <h1 id="number"></h1>
-        <div class="container" id="results">
+          </header>
 
-        </div>
-          </div>
-      </section>
-    </main>
+          <section>
+            <div class="results-container">
+              <h1 id="number"></h1>
+          <div class="container" id="results"></div>
+            </div>
+          </section>
 
     <div class="logoutModal">
       <div class="content">
@@ -61,6 +62,8 @@
     </script>
     <script src="searchPage.js"></script>
     <script src="globalEvents.js"></script>
+    <script src="bookmarked.js"></script>
+    <script src="searchbar.js"></script>
     <script src="lightMode.js"></script>
   </body>
 </html>

@@ -8,7 +8,7 @@ searchBar.addEventListener('keydown', (event) => {
     const query = event.target.value;
     const querySmall = query.toLowerCase();
 
-    let searchResults; 
+    // let searchResults; 
     if(window.location.href.includes('movies.html')){
         let searchResults = showDatabase.filter(show => 
             show.title.toLowerCase().includes(querySmall) && show.category === 'Movie');
@@ -16,9 +16,16 @@ searchBar.addEventListener('keydown', (event) => {
             localStorage.setItem('Results', JSON.stringify(searchResults));
             window.location.href = 'searchResults.html';
     }
-    else if(window.location.href = 'series.html'){
+    else if(window.location.href.includes('series.html')){
         let searchResults = showDatabase.filter(show =>
-            show.title.toLowerCase().includes(querySmall) &&show.category === 'TV Series');
+            show.title.toLowerCase().includes(querySmall) && show.category === 'TV Series');
+            localStorage.setItem('Query', JSON.stringify(query));
+            localStorage.setItem('Results', JSON.stringify(searchResults));
+            window.location.href = 'searchResults.html';
+    }
+    else if(window.location.href.includes('bookmarked.html')){
+        let searchResults = showDatabase.filter(show =>
+            show.title.toLowerCase().includes(querySmall) && show.isBookmarked);
             localStorage.setItem('Query', JSON.stringify(query));
             localStorage.setItem('Results', JSON.stringify(searchResults));
             window.location.href = 'searchResults.html';

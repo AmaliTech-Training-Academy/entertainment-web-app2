@@ -1,8 +1,8 @@
-let shows = JSON.parse(localStorage.getItem('showDb'));
+let showDb = JSON.parse(localStorage.getItem('showDb'));
 
 let bookmarkedMoviesContainer = document.querySelector("#bookmarked-movies");
 
-const bookmarkedMovies = shows.filter(show => show.isBookmarked && show.category === 'Movie')
+const bookmarkedMovies = showDb.filter(show => show.isBookmarked && show.category === 'Movie')
 .map(regular => {
         let option = document.createElement('div');
         option.classList.add('regular');
@@ -88,7 +88,7 @@ const bookmarkedMovies = shows.filter(show => show.isBookmarked && show.category
 
 let bookmarkedSeriesContainer = document.querySelector("#bookmarked-series");
 
-const bookmarkedSeries = shows.filter(show => show.isBookmarked && show.category === 'TV Series')
+const bookmarkedSeries = showDb.filter(show => show.isBookmarked && show.category === 'TV Series')
 .map(regular => {
         let option = document.createElement('div');
         option.classList.add('regular');

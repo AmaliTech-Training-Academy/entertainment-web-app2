@@ -1,14 +1,14 @@
-const btn = document.querySelector('.light-dark');
+        const btn = document.querySelector('.light-dark');
         const screenSwitch = document.querySelector('.switch-mode');
         const body = document.querySelector("body");
         const searchIcon = document.querySelector(".search-icon");
         const searchQuery = document.querySelector("input");
         const nav = document.querySelector("nav");
         const links = document.querySelectorAll("a");
-        const container = document.querySelector(".container");
+        // const container = document.querySelectorAll(".container");
         const ovals = document.querySelectorAll(".oval");
         const categories = document.querySelectorAll("i");
-        const info = container.querySelectorAll(".about")
+        const info = document.querySelectorAll(".about")
         const profile = document.querySelector(".user-avatar");
         const wayOut = document.querySelector(".logoutModal");
         const content = wayOut.querySelector(".content");
@@ -51,7 +51,7 @@ const btn = document.querySelector('.light-dark');
                 links.forEach(link => link.classList.add('lightlinks'));
                 profile.classList.add('border');
                 content.classList.add('light-background');
-        modalOptions.forEach(option => option.classList.add("light-background"));
+                modalOptions.forEach(option => option.classList.add("light-background"));
                 categories.forEach(category => category.classList.add('light-colour'));
                 ovals.forEach(oval => oval.classList.add("light-theme"));
                 info.forEach(about => about.classList.add("light-text"));

@@ -12,14 +12,13 @@
     />
     <link rel="stylesheet" href="nav.css" />
     <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="trending.css">
     <link rel="stylesheet" href="searchbar.css" />
     <link rel="stylesheet" href="lightMode.css" />
     <link rel="stylesheet" href="modal.css" />
 
     <title></title>
   </head>
-  <body>
-    <main>
       <nav>
         <div class="logo"></div>
         <div class="links">
@@ -30,30 +29,32 @@
         </div>
         <div class="user-avatar"></div>
       </nav>
-      <section>
-        <a href="/src/assets/icon-bookmark-full.svg"></a>
-        <header>
-          <form class="search_form">
-            <div class="search-icon"></div>
-            <input type="search" placeholder="Search for movies or tv-series" />
-            <div class="switch-mode">
-              <div class="light-dark"></div>
-            </div>
-          </form>
-          <!-- <div class="searchItems"></div> -->
-          <div class="trending">
-            <h1>Trending</h1>
-            <div class="trending-items"></div>
+
+    <header>
+      <!-- Search bar and toggle icon for light mode -->
+      <form class="search_form">
+        <div class="search-icon"></div>
+        <input type="search" placeholder="Search for movies or tv-series" />
+        <div class="switch-mode">
+          <div class="light-dark"></div>
         </div>
-      </header>
-      <div class="options-container">
+      </form>
+
+      <!-- Trending Shows -->
+      <div class="trending">
+        <h1>Trending</h1>
+        <div class="trending-items"></div>
+    </div>
+    </header>
+
+    <!-- Regular Shows -->
+      <section>
+        <div class="options-container">
         <h1>Recommended for you</h1>
         <div class="container" id="all-items">
-
         </div>
       </div>
       </section>
-    </main>
     <div class="logoutModal">
       <div class="content">
         <div class="question">Are you sure you want to sign out?</div>
@@ -61,7 +62,6 @@
         <a href="index.html" class="opt two">Sign out</a>
       </div>
     </div>
-
     <!-- <script src="storage.js"></script> -->
     <script src="index.js"></script>
     <script src="globalEvents.js"></script>

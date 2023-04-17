@@ -32,8 +32,11 @@ const shows = document.querySelectorAll(".show");
         bookmark.addEventListener('click', ()=>{
             if(bookmarkBtn.classList.contains('full')){
                 bookmarkBtn.classList.remove('full');
-            bookmarkBtn.classList.add('empty');
-            bookmarkBtn.setAttribute('src', '/src/assets/icon-bookmark-empty.svg');
+                bookmarkBtn.classList.add('empty');
+                bookmarkBtn.setAttribute('src', '/src/assets/icon-bookmark-empty.svg');
+                if(window.location.href= 'bookmarked.html'){
+                    window.location.reload;
+                }
             } 
             else{
                 bookmarkBtn.classList.remove('empty');
@@ -42,6 +45,14 @@ const shows = document.querySelectorAll(".show");
             }
             })
         });
+
+        const navLinks = document.querySelectorAll("a");
+        const activePage = window.location.pathname;
+        navLinks.forEach(link => {
+        if(link.href.includes(activePage)){
+        link.classList.add('active');
+    }
+});
 
          // const save = (index) => {
         //     let data = JSON.parse(localStorage.getItem('showDb'));

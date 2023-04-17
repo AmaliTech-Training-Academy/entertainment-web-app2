@@ -17,76 +17,78 @@ const bookmarkedMovies = showDb.filter(show => show.isBookmarked && show.categor
         large.style.backgroundSize = 'cover';
         optionImage.appendChild(large);
 
-        let medium = document.createElement('div');
-        medium.classList.add('medium');
-        medium.style.background = `url(${regular.thumbnail.regular.medium})`;
-        medium.style.backgroundSize = 'cover';
-        optionImage.appendChild(medium);
-        option.appendChild(optionImage);
-    
-        let small = document.createElement('div');
-        small.classList.add('small');
-        small.style.background = `url(${regular.thumbnail.regular.small})`;
-        small.style.backgroundSize = 'cover';
-        optionImage.appendChild(small);
-        option.appendChild(optionImage);
-    
-        let optionInfo = document.createElement('div');
-        optionInfo.classList.add('regular-info');
-    
-        let optionTitle = document.createElement('h3');
-        optionTitle.classList.add('regular-title');
-        optionTitle.innerHTML = regular.title;
-    
-        optionInfo.appendChild(optionTitle);
-    
-        let about = document.createElement('div');
-        about.classList.add('about');
-        about.innerHTML = `
-        ${regular.year}
-        <div class="oval"></div>
-        <i class="category" style="background:url(${regular.logo})"></i>
-        ${regular.category}
-        <div class="oval"></div>
-        ${regular.rating}
-    `;
+    let medium = document.createElement("div");
+    medium.classList.add("medium");
+    medium.style.background = `url(${regular.thumbnail.regular.medium})`;
+    medium.style.backgroundSize = "cover";
+    optionImage.appendChild(medium);
+    option.appendChild(optionImage);
+
+    let small = document.createElement("div");
+    small.classList.add("small");
+    small.style.background = `url(${regular.thumbnail.regular.small})`;
+    small.style.backgroundSize = "cover";
+    optionImage.appendChild(small);
+    option.appendChild(optionImage);
+
+    let optionInfo = document.createElement("div");
+    optionInfo.classList.add("regular-info");
+
+    let optionTitle = document.createElement("h3");
+    optionTitle.classList.add("regular-title");
+    optionTitle.innerHTML = regular.title;
+
+    optionInfo.appendChild(optionTitle);
+
+    let about = document.createElement("div");
+    about.classList.add("about");
+    about.innerHTML = `
+  ${regular.year}
+  <div class="oval"></div>
+  <i class="category" style="background:url(${regular.logo})"></i>
+  ${regular.category}
+  <div class="oval"></div>
+  ${regular.rating}
+  `;
     optionInfo.appendChild(about);
-    
+
     option.appendChild(optionInfo);
-    
-    let bookmarkBtn = document.createElement('div');
-    bookmarkBtn.classList.add('bookmark-btn');
-    
-    let bookmarkFull = document.createElement('img');
-    bookmarkFull.setAttribute('src', '/src/assets/icon-bookmark-full.svg');
-    bookmarkFull.classList.add('full');
+
+    let bookmarkBtn = document.createElement("div");
+    bookmarkBtn.classList.add("bookmark-btn");
+
+    let bookmarkFull = document.createElement("img");
+    bookmarkFull.setAttribute("src", "/src/assets/icon-bookmark-full.svg");
+    bookmarkFull.classList.add("full");
     bookmarkBtn.appendChild(bookmarkFull);
-    
+
     option.appendChild(bookmarkBtn);
-    
-    let play = document.createElement('div');
-    play.classList.add('play');
-    
-    let playBtn = document.createElement('div');
-    playBtn.classList.add('play-btn');
+
+    let play = document.createElement("div");
+    play.classList.add("play");
+
+    let playBtn = document.createElement("div");
+    playBtn.classList.add("play-btn");
     play.appendChild(playBtn);
-    
-    let playText = document.createElement('p');
-    playText.textContent = 'Play';
+
+    let playText = document.createElement("p");
+    playText.textContent = "Play";
     play.appendChild(playText);
-    
+
     option.appendChild(play);
-    
-    let overlay = document.createElement('div');
-    overlay.classList.add('overlay');
+
+    let overlay = document.createElement("div");
+    overlay.classList.add("overlay");
     option.appendChild(overlay);
-    
+
     bookmarkedMoviesContainer.appendChild(option);
 });
 
-// Bookmarked Series
+    // Bookmarked Series
 
-let bookmarkedSeriesContainer = document.querySelector("#bookmarked-series");
+    let bookmarkedSeriesContainer =
+      document.querySelector("#bookmarked-series");
+    console.log(bookmarkedSeriesContainer);
 
 const bookmarkedSeries = showDb.filter(show => show.isBookmarked && show.category === 'TV Series')
 .map(regular => {

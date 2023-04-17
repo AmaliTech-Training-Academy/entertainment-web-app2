@@ -1,0 +1,254 @@
+header .trending-items{
+    display: flex;
+    position: relative;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    justify-content: space-between;
+    margin-top: 1.56rem;
+
+}
+
+header h1{
+    font-style: normal;
+    font-weight: 300;
+    font-size: 2rem;
+    line-height: 2.5rem;
+    letter-spacing: -0.5px;
+    /* margin-bottom: 1.56rem; */
+}
+
+.trending-items .trend{
+    /* border: 1px solid green; */
+    margin-right: 2.5rem;
+    position: relative;
+    border-radius: .5rem;
+    cursor: pointer;
+}
+
+.trend-image{
+    position: relative;
+    border-radius: .5rem;
+}
+
+.trend:nth-of-type(5){
+    margin-right: 0;
+}
+
+.trend-image{
+    border-radius: .5rem;
+    overflow: hidden;
+}
+
+.trend .trend-image .small{
+    display: none;
+} 
+
+.trend .trend-image .large{
+    width: 29rem;
+    height: 14rem;
+    background-size: cover;
+}
+
+.trend .trend-info{
+    /* border: 1px solid pink; */
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 9.4rem;
+    left: 1.5rem;
+    width: auto;
+    z-index: 5;
+}
+
+.trend .trend-info .trend-title{
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.5rem;
+    line-height: 1.875rem;
+    color: #FFFFFF;
+}
+
+.trend .bookmark-btn{
+    width: 2rem;
+    height: 2rem;
+    /* border: 1px solid white; */
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 3;
+}
+
+.trend .bookmark-btn:hover{
+    background: #FFFFFF;
+    transition: 0.3s;
+}
+
+@media screen and (max-width: 820px){
+    header h1{
+        font-style: normal;
+        font-weight: 300;
+        font-size: 2rem;
+        line-height: 2.5rem;
+        letter-spacing: -0.5px;
+        }
+        
+        header .trending-items{
+            display: flex;
+            position: relative;
+            overflow-x: scroll;
+            scroll-behavior: smooth;
+            justify-content: space-between;
+        }
+        
+        ::-webkit-scrollbar {
+            display: none;
+            }
+        
+        .trending-items .trend{
+            /* border: 1px solid green; */
+            margin-right: 2.5rem;
+            position: relative;
+            border-radius: .5rem;
+            cursor: pointer;
+        }
+        
+        .trend-image{
+            position: relative;
+        }
+
+        .trend:nth-of-type(5){
+            margin-right: 0;
+        }
+        
+        .trend .trend-image .small{
+            display: none;
+        } 
+        
+        .trend .trend-image .large{
+            width: 29rem;
+            height: 14rem;
+            background-size: cover;
+            border-radius: .5rem;
+        }
+        
+        .trend .trend-info{
+            /* border: 1px solid pink; */
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            top: 9.4rem;
+            left: 1.5rem;
+            width: auto;
+            z-index: 5;
+        }
+        
+        .trend .trend-info .trend-title{
+            font-style: normal;
+            font-weight: 500;
+            font-size: 1.5rem;
+            line-height: 1.875rem;
+            color: #FFFFFF;
+        }
+        
+        .trend .bookmark-btn{
+            width: 2rem;
+            height: 2rem;
+            /* border: 1px solid white; */
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            border-radius: 50%;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 3;
+        }
+        
+        .trend .bookmark-btn:hover{
+            background: #FFFFFF;
+            transition: 0.3s;
+        }
+}
+
+@media screen and (max-width: 480px){
+    header h1{
+        font-size: 1.25rem;
+        line-height: 1.25rem;
+        margin-top: 1.5rem;
+        }
+        
+        header .trending-items{
+            margin-top: 1rem;
+        }
+        
+        ::-webkit-scrollbar {
+            display: none;
+            }
+        
+        .trending-items .trend{
+            /* border: 1px solid green; */
+            margin-right: 1rem;
+        }
+    
+        .trend:nth-of-type(5){
+            margin-right: 0;
+        }
+        
+        .trend .trend-image .small{
+            display: block;
+            width: 15rem;
+            height: 8.75rem;
+        } 
+        
+        .trend .trend-image .large{
+            display: none;
+        }
+        
+        .trend .trend-info{
+            /* border: 1px solid pink; */
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            top: 5.3rem;
+            left: 1rem;
+            width: auto;
+            z-index: 5;
+        }
+    
+        .trend .trend-info .trend-title{
+            font-style: normal;
+            font-weight: 500;
+            font-size: 1rem;
+            line-height: 1.18rem;
+            color: #FFFFFF;
+        }
+        
+        .trend .bookmark-btn{
+            width: 2rem;
+            height: 2rem;
+            /* border: 1px solid white; */
+            position: absolute;
+            top: 0.5rem;
+            right: 0.5rem;
+            border-radius: 50%;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 3;
+        }
+        
+        .trend .bookmark-btn:hover{
+            background: #FFFFFF;
+            transition: 0.3s;
+        }
+}

@@ -1,3 +1,46 @@
+let showDatabase = JSON.parse(localStorage.getItem('showDb'));
+
+const searchBar = document.querySelector('input');
+
+searchBar.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') {
+    event.preventDefault();
+    const query = event.target.value;
+    const querySmall = query.toLowerCase();
+
+    // let searchResults; 
+    if(window.location.href.includes('movies.html')){
+        let searchResults = showDatabase.filter(show => 
+            show.title.toLowerCase().includes(querySmall) && show.category === 'Movie');
+            localStorage.setItem('Query', JSON.stringify(query));
+            localStorage.setItem('Results', JSON.stringify(searchResults));
+            window.location.href = 'searchResults.html';
+    }
+    else if(window.location.href.includes('series.html')){
+        let searchResults = showDatabase.filter(show =>
+            show.title.toLowerCase().includes(querySmall) && show.category === 'TV Series');
+            localStorage.setItem('Query', JSON.stringify(query));
+            localStorage.setItem('Results', JSON.stringify(searchResults));
+            window.location.href = 'searchResults.html';
+    }
+    else if(window.location.href.includes('bookmarked.html')){
+        let searchResults = showDatabase.filter(show =>
+            show.title.toLowerCase().includes(querySmall) && show.isBookmarked);
+            localStorage.setItem('Query', JSON.stringify(query));
+            localStorage.setItem('Results', JSON.stringify(searchResults));
+            window.location.href = 'searchResults.html';
+    }
+    else {
+        let searchResults = showDatabase.filter(show => 
+            show.title.toLowerCase().includes(querySmall));
+            localStorage.setItem('Query', JSON.stringify(query));
+            localStorage.setItem('Results', JSON.stringify(searchResults));
+            window.location.href = 'searchResults.html';
+    }
+    }
+});
+
+
 // let resultsContainer = document.querySelector(".searchItems");
 
 // let json_link = "data.json";

@@ -1,11 +1,15 @@
-let data = JSON.parse(localStorage.getItem('showDb'));
+let searchResults = JSON.parse(localStorage.getItem('Results'));
+let query = JSON.parse(localStorage.getItem('Query'));
 
-// Regular Movies
+let search = document.querySelector('input');
+search.setAttribute('placeholder', `${query}`)
 
-let moviesContainer = document.querySelector("#movies-items")
+let number = document.querySelector('#number');
+number.innerHTML = `Found ${searchResults.length} results for '${query}'`
 
-const regularMovies = data.filter(show => show.category === 'Movie');
-regularMovies.map(movie => {
+let resultsContainer = document.querySelector('#results');
+
+searchResults.map(regular => {
         let option = document.createElement('div');
         option.classList.add('regular');
         option.classList.add('show');
@@ -15,20 +19,20 @@ regularMovies.map(movie => {
     
         let large = document.createElement('div');
         large.classList.add('large');
-        large.style.background = `url(${movie.thumbnail.regular.large})`;
+        large.style.background = `url(${regular.thumbnail.regular.large})`;
         large.style.backgroundSize = 'cover';
         optionImage.appendChild(large);
 
         let medium = document.createElement('div');
         medium.classList.add('medium');
-        medium.style.background = `url(${movie.thumbnail.regular.medium})`;
+        medium.style.background = `url(${regular.thumbnail.regular.medium})`;
         medium.style.backgroundSize = 'cover';
         optionImage.appendChild(medium);
         option.appendChild(optionImage);
     
         let small = document.createElement('div');
         small.classList.add('small');
-        small.style.background = `url(${movie.thumbnail.regular.small})`;
+        small.style.background = `url(${regular.thumbnail.regular.small})`;
         small.style.backgroundSize = 'cover';
         optionImage.appendChild(small);
         option.appendChild(optionImage);
@@ -38,27 +42,28 @@ regularMovies.map(movie => {
     
         let optionTitle = document.createElement('h3');
         optionTitle.classList.add('regular-title');
-        optionTitle.innerHTML = movie.title;
+        optionTitle.innerHTML = regular.title;
     
         optionInfo.appendChild(optionTitle);
     
         let about = document.createElement('div');
         about.classList.add('about');
         about.innerHTML = `
-        ${movie.year}
+        ${regular.year}
         <div class="oval"></div>
-        <i class="category" style="background:url(${movie.logo})"></i>
-        ${movie.category}
+        <i class="category" style="background:url(${regular.logo})"></i>
+        ${regular.category}
         <div class="oval"></div>
-        ${movie.rating}
+        ${regular.rating}
     `;
     optionInfo.appendChild(about);
     
     option.appendChild(optionInfo);
     
     let bookmarkBtn = document.createElement('div');
-    bookmarkBtn.classList.add('bookmark-btn'); 
-    if(movie.isBookmarked){
+    bookmarkBtn.classList.add('bookmark-btn');
+    
+    if(regular.isBookmarked){
         let bookmarkFull = document.createElement('img');
         bookmarkFull.setAttribute('src', '/src/assets/icon-bookmark-full.svg');
         bookmarkFull.classList.add('full');
@@ -90,5 +95,7 @@ regularMovies.map(movie => {
     overlay.classList.add('overlay');
     option.appendChild(overlay);
     
-    moviesContainer.appendChild(option);
+    resultsContainer.appendChild(option);
 });
+
+

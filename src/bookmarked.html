@@ -11,18 +11,16 @@
       href="./assets/favicon-32x32.png"
     />
     <link rel="stylesheet" href="nav.css" />
-    <!-- <link rel="stylesheet" href="index.css" />
-    <link rel="stylesheet" href="movies.css" /> -->
+    <link rel="stylesheet" href="index.css" />
     <link rel="stylesheet" href="searchbar.css" />
-    <link rel="stylesheet" href="bookmarked.css"/>
-    <link rel="stylesheet" href="liteMode.css" />
+    <link rel="stylesheet" href="lightMode.css" />
     <link rel="stylesheet" href="modal.css">
-
+    <!-- <script src="protectedRoute.js"></script> -->
 
     <title>Entertainment web app</title>
   </head>
   <body>
-    <main>
+    
       <nav>
         <div class="logo"></div>
         <div class="links">
@@ -35,27 +33,31 @@
           <a href="index.html"></a>
         </div>
       </nav>
-      <section>
+
+      <!-- Search bar and light mode toggle icon -->
         <header>
           <form>
-            <div class="search"></div>
+            <div class="search-icon"></div>
             <input type="search" placeholder="Search for bookmarked shows" />
               <div class="switch-mode">
                 <div class="light-dark"></div>
               </div>
-              <ul class="searchItems"></ul>
           </form>
-          <div class="movies-section">
-            <h1>Bookmarked Movies</h1>
-            <div class="movies-items"></div>
-          </div>
         </header>
+
+        <!-- Bookmarks -->
+        <section>
+        <div class="movies-section">
+          <h1>Bookmarked Movies</h1>
+          <div class="container" id="bookmarked-movies"></div>
+        </div>
+
         <div class="series-section">
           <h1>Bookmarked TV Series</h1>
-          <div class="series-items"></div>
+          <div class="container" id="bookmarked-series"></div>
         </div>
       </section>
-    </main>
+      
     <div class="logoutModal">
       <div class="content">
         <div class="question">Are you sure you want to sign out?</div>
@@ -63,15 +65,16 @@
       <a href="index.html" class="opt two">Sign out</a>
       </div>
     </div>
-
-    <!-- Display recommended shows -->
-
     
     <script>
     </script>
-    <script src="script.js"></script>
-    <script type="module" src="index.js"></script>
+    <!-- <script src="searchbar.js"></script> -->
+    <script src="BookmarkPage.js"></script>
+    <script src="globalEvents.js"></script>
+    <script src="bookmarked.js"></script>
     <script src="searchbar.js"></script>
-    <script type="module" src="BookmarkPage.js"></script>
+    <script src="lightMode.js"></script>
+    <script src="searchbar.js"></script>
+    <!-- <script src="protectedRoute.js"></script> -->
   </body>
 </html>

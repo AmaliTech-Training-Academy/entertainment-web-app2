@@ -81,7 +81,7 @@ body.light{
 }
 
 
-@media only screen and (max-width:820px) and (min-width:480px) {
+/* @media only screen and (max-width:820px) and (min-width:480px) {
     .overlay{
         height: 10.4rem;
     }
@@ -92,4 +92,4 @@ body.light{
         height: 12.4rem;
     }
     
-}
+} */
